@@ -1,15 +1,38 @@
 {
-  "name": "cli",
+  "name": "@devmed555/angular-clean-architecture-cli",
   "version": "0.0.1",
+  "description": "CLI generator for Angular Clean Architecture features using NgRx SignalStore",
+  "keywords": [
+    "angular",
+    "clean-architecture",
+    "ngrx",
+    "signal-store",
+    "cli",
+    "generator",
+    "schematics"
+  ],
+  "author": "Mohamed Bouattour <mohamedbouattour123@gmail.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MohamedBouattour/angular-clean-architecture"
+  },
+  "bin": {
+    "aca": "./bin/index.js"
+  },
   "dependencies": {
     "@nx/devkit": "20.0.4",
     "@nx/js": "20.0.4",
     "@nx/angular": "20.0.4",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "inquirer": "^9.2.12"
   },
   "type": "commonjs",
   "main": "./src/index.js",
   "typings": "./src/index.d.ts",
-  "private": true,
+  "private": false,
   "generators": "./generators.json"
 }

@@ -32,6 +32,11 @@
             "input": "./apps/cli",
             "glob": "executors.json",
             "output": "."
+          },
+          {
+            "input": "./apps/cli/bin",
+            "glob": "*",
+            "output": "./bin"
           }
         ]
       }

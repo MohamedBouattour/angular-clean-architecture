@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "generate:feature": "nx g cli:clean-feature",
+    "generate:feature:interactive": "nx g cli:clean-feature --interactive",
     "cli:build": "nx build cli",
+    "cli:publish": "node scripts/publish-cli.js",
     "cli:test": "nx test cli",
     "cli:lint": "nx lint cli",
     "sandbox:serve": "nx serve sandbox",
@@ -15,7 +16,10 @@
     "all:lint": "nx run-many -t lint",
     "all:test": "nx run-many -t test",
     "all:build": "nx run-many -t build",
-    "full-check": "npm run all:lint && npm run all:test && npm run all:build"
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "clean": "nx reset && rm -rf node_modules",
+    "full-check": "npm run format:check && npm run all:lint && npm run all:test && npm run all:build"
   },
   "workspaces": [
     "apps/*"
@@ -29,9 +33,11 @@
     "@angular/platform-browser": "~18.2.0",
     "@angular/platform-browser-dynamic": "~18.2.0",
     "@angular/router": "~18.2.0",
+    "@ngrx/signals": "~18.0.0",
     "@nx/devkit": "20.0.4",
     "@nx/nx-win32-x64-msvc": "20.0.4",
     "rxjs": "~7.8.0",
+    "user": "^0.0.0",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
@@ -48,7 +54,6 @@
     "@nx/jest": "20.0.4",
     "@nx/js": "20.0.4",
     "@nx/plugin": "20.0.4",
-
     "@schematics/angular": "~18.2.0",
     "@swc-node/register": "~1.9.1",
     "@swc/cli": "~0.3.12",

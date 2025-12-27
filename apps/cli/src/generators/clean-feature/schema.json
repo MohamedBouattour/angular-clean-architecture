@@ -6,12 +6,17 @@
   "properties": {
     "name": {
       "type": "string",
-      "description": "",
+      "description": "The name of the feature to generate",
       "$default": {
         "$source": "argv",
         "index": 0
       },
       "x-prompt": "What name would you like to use?"
+    },
+    "attributes": {
+      "type": "string",
+      "description": "Comma-separated list of attributes (e.g., name:string,age:number)",
+      "x-prompt": "Enter attributes (format: name:string,age:number) or leave empty:"
     }
   },
   "required": ["name"]

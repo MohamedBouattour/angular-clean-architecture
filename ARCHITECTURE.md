@@ -26,6 +26,30 @@ The application is structured into four main layers within each feature:
     *   **DTOing**: Mapping between API payloads and Domain Models (if necessary).
     *   **Path**: `src/app/features/<feature>/infrastructure/`
 
+## File Naming Conventions
+
+*   **Interfaces/Types**: PascalCase (e.g., `User`, `Product`)
+*   **Services**: PascalCase with "Service" suffix (e.g., `UserService`)
+*   **Stores**: PascalCase with "Store" suffix (e.g., `UserStore`)
+*   **Components**: PascalCase with "Component" suffix (e.g., `UserComponent`)
+*   **Files**: kebab-case with type suffix (e.g., `model.ts`, `service.ts`, `store.ts`, `component.ts`)
+
+## Generated Feature Example
+
+When you generate a feature named `user`, you get:
+
+```
+src/app/features/user/
+├── domain/
+│   └── model.ts              # User interface definition
+├── infrastructure/
+│   └── service.ts            # UserService with HTTP operations
+├── application/
+│   └── store.ts              # UserStore with SignalStore
+└── ui/
+    └── component.ts          # UserComponent with store injection
+```
+
 ## Core & Shared
 
 *   **Core (`src/app/core`)**: Singleton services, interceptors, guards, and global configuration.

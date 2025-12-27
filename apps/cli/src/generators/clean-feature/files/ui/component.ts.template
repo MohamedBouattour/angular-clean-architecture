@@ -1,9 +1,44 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { <%= pascalName %>Store } from '../application/store';
 
 @Component({
   selector: 'app-<%= name %>-feature',
   standalone: true,
-  template: `<h1><%= name %> Feature</h1>`,
-  styles: ``,
+  imports: [CommonModule],
+  template: `
+    <div class="<%= name %>-feature">
+      <h1><%= pascalName %> Feature</h1>
+      
+      @if (store.loading()) {
+        <p>Loading...</p>
+      } @else {
+        <p>Ready to build your <%= name %> feature!</p>
+        
+        <!-- Example list of <%= name %> items -->
+        <ul>
+          @for (item of []; track item.id) {
+            <li>
+              <% attributes.forEach(function(attr) { %>
+              <strong><%= attr.name %>:</strong> {{ item.<%= attr.name %> }}<br/>
+              <% }); %>
+            </li>
+          }
+        </ul>
+      }
+    </div>
+  `,
+  styles: `
+    .<%= name %>-feature {
+      padding: 1rem;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+  `,
 })
-export class <%= name %>Component {}
+export class <%= pascalName %>Component {
+  protected readonly store = inject(<%= pascalName %>Store);
+}
