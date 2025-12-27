@@ -1,0 +1,304 @@
+{
+  "17144279462449982291_apps/cli/tsconfig.json": {
+    "targets": {
+      "typecheck": {
+        "dependsOn": [
+          "^typecheck"
+        ],
+        "command": "tsc --build --emitDeclarationOnly --pretty --verbose",
+        "options": {
+          "cwd": "apps/cli"
+        },
+        "cache": true,
+        "inputs": [
+          "production",
+          "!{workspaceRoot}/node_modules",
+          "!{workspaceRoot}/tmp",
+          {
+            "dependentTasksOutputFiles": "**/*.d.ts"
+          },
+          {
+            "externalDependencies": [
+              "typescript"
+            ]
+          }
+        ],
+        "outputs": [],
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ],
+        "metadata": {
+          "technologies": [
+            "typescript"
+          ],
+          "description": "Runs type-checking for the project.",
+          "help": {
+            "command": "npx tsc --build --help",
+            "example": {
+              "args": [
+                "--force"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "9542720637611448862_apps/cli/tsconfig.lib.json": {
+    "targets": {
+      "build": {
+        "dependsOn": [
+          "^build"
+        ],
+        "command": "tsc --build tsconfig.lib.json --pretty --verbose",
+        "options": {
+          "cwd": "apps/cli"
+        },
+        "cache": true,
+        "inputs": [
+          "{projectRoot}/tsconfig.json",
+          "{workspaceRoot}/tsconfig.base.json",
+          "{projectRoot}/tsconfig.lib.json",
+          "{projectRoot}/src/**/*.ts",
+          "!{projectRoot}/jest.config.ts",
+          "!{projectRoot}/src/**/*.spec.ts",
+          "!{projectRoot}/src/**/*.test.ts",
+          "^production",
+          {
+            "externalDependencies": [
+              "typescript"
+            ]
+          }
+        ],
+        "outputs": [
+          "{workspaceRoot}/apps/dist/out-tsc"
+        ],
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ],
+        "metadata": {
+          "technologies": [
+            "typescript"
+          ],
+          "description": "Builds the project with `tsc`.",
+          "help": {
+            "command": "npx tsc --build --help",
+            "example": {
+              "args": [
+                "--force"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "7594013757932330904_apps/cli/tsconfig.spec.json": {
+    "targets": {}
+  },
+  "15827832130740945628_apps/sandbox/tsconfig.app.json": {
+    "targets": {}
+  },
+  "17649401026521093509_apps/sandbox/tsconfig.editor.json": {
+    "targets": {}
+  },
+  "15599843444191914895_apps/sandbox/tsconfig.json": {
+    "targets": {
+      "typecheck": {
+        "dependsOn": [
+          "^typecheck"
+        ],
+        "command": "tsc --build --emitDeclarationOnly --pretty --verbose",
+        "options": {
+          "cwd": "apps/sandbox"
+        },
+        "cache": true,
+        "inputs": [
+          "production",
+          "!{workspaceRoot}/node_modules",
+          "!{workspaceRoot}/tmp",
+          {
+            "dependentTasksOutputFiles": "**/*.d.ts"
+          },
+          {
+            "externalDependencies": [
+              "typescript"
+            ]
+          }
+        ],
+        "outputs": [],
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ],
+        "metadata": {
+          "technologies": [
+            "typescript"
+          ],
+          "description": "Runs type-checking for the project.",
+          "help": {
+            "command": "npx tsc --build --help",
+            "example": {
+              "args": [
+                "--force"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "13767267970945371906_apps/sandbox/tsconfig.spec.json": {
+    "targets": {}
+  },
+  "3014114310496346608_apps/cli/tsconfig.json": {
+    "targets": {
+      "typecheck": {
+        "dependsOn": [
+          "^typecheck"
+        ],
+        "command": "tsc --build --emitDeclarationOnly --pretty --verbose",
+        "options": {
+          "cwd": "apps/cli"
+        },
+        "cache": true,
+        "inputs": [
+          "production",
+          "!{workspaceRoot}/node_modules",
+          "!{workspaceRoot}/tmp",
+          {
+            "dependentTasksOutputFiles": "**/*.d.ts"
+          },
+          {
+            "externalDependencies": [
+              "typescript"
+            ]
+          }
+        ],
+        "outputs": [],
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ],
+        "metadata": {
+          "technologies": [
+            "typescript"
+          ],
+          "description": "Runs type-checking for the project.",
+          "help": {
+            "command": "npx tsc --build --help",
+            "example": {
+              "args": [
+                "--force"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "10502889970285663268_apps/cli/tsconfig.lib.json": {
+    "targets": {
+      "build": {
+        "dependsOn": [
+          "^build"
+        ],
+        "command": "tsc --build tsconfig.lib.json --pretty --verbose",
+        "options": {
+          "cwd": "apps/cli"
+        },
+        "cache": true,
+        "inputs": [
+          "{projectRoot}/tsconfig.json",
+          "{workspaceRoot}/tsconfig.base.json",
+          "{projectRoot}/tsconfig.lib.json",
+          "{projectRoot}/src/**/*.ts",
+          "!{projectRoot}/jest.config.ts",
+          "!{projectRoot}/src/**/*.spec.ts",
+          "!{projectRoot}/src/**/*.test.ts",
+          "^production",
+          {
+            "externalDependencies": [
+              "typescript"
+            ]
+          }
+        ],
+        "outputs": [
+          "{workspaceRoot}/apps/dist/out-tsc"
+        ],
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ],
+        "metadata": {
+          "technologies": [
+            "typescript"
+          ],
+          "description": "Builds the project with `tsc`.",
+          "help": {
+            "command": "npx tsc --build --help",
+            "example": {
+              "args": [
+                "--force"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "16173542872989874104_apps/cli/tsconfig.spec.json": {
+    "targets": {}
+  },
+  "11486445069028586648_apps/sandbox/tsconfig.app.json": {
+    "targets": {}
+  },
+  "7362753333492068749_apps/sandbox/tsconfig.editor.json": {
+    "targets": {}
+  },
+  "17663087049053267457_apps/sandbox/tsconfig.json": {
+    "targets": {
+      "typecheck": {
+        "dependsOn": [
+          "^typecheck"
+        ],
+        "command": "tsc --build --emitDeclarationOnly --pretty --verbose",
+        "options": {
+          "cwd": "apps/sandbox"
+        },
+        "cache": true,
+        "inputs": [
+          "production",
+          "!{workspaceRoot}/node_modules",
+          "!{workspaceRoot}/tmp",
+          {
+            "dependentTasksOutputFiles": "**/*.d.ts"
+          },
+          {
+            "externalDependencies": [
+              "typescript"
+            ]
+          }
+        ],
+        "outputs": [],
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ],
+        "metadata": {
+          "technologies": [
+            "typescript"
+          ],
+          "description": "Runs type-checking for the project.",
+          "help": {
+            "command": "npx tsc --build --help",
+            "example": {
+              "args": [
+                "--force"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "5977444914916773698_apps/sandbox/tsconfig.spec.json": {
+    "targets": {}
+  }
+}

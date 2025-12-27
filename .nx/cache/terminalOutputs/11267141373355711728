@@ -1,0 +1,11 @@
+
+[0m[7m[1m[31m NX [39m[22m[27m[0m  [31m[31m[1m[1m● [22m[1mValidation Error[22m:[39m[31m[39m
+
+[31m[39m
+[31m  Preset [1m../jest.preset.js[22m not found.[39m
+[31m[39m
+[31m  [1mConfiguration Documentation:[22m[39m
+[31m  https://jestjs.io/docs/configuration[39m
+[31m[39m
+Pass --verbose to see the stacktrace.
+

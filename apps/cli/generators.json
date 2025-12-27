@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "clean-feature": {
+      "factory": "./src/generators/clean-feature/generator",
+      "schema": "./src/generators/clean-feature/schema.json",
+      "description": "clean-feature generator"
+    }
+  }
+}

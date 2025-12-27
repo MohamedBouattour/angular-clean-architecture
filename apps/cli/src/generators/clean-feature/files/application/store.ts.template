@@ -1,0 +1,6 @@
+import { signalStore, withState } from '@ngrx/signals';
+
+export const <%= name %>Store = signalStore(
+  { providedIn: 'root' },
+  withState({ loading: false })
+);
