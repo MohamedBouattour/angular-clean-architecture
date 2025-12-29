@@ -12,6 +12,21 @@ This document outlines the current features and planned enhancements for the Ang
 - ✅ TypeScript strict mode support
 - ✅ HTTP service templates with CRUD operations
 - ✅ Comprehensive component templates with store injection
+- ✅ Blueprint mode for complex multi-model features
+- ✅ Interactive mode with prompts (default)
+
+### Core Generator
+- ✅ Auth service generation with login/logout/register
+- ✅ Route guards (canActivate patterns)
+- ✅ HTTP interceptors (JWT, error handling)
+- ✅ Custom services (logging, etc.)
+- ✅ Translation/i18n setup with @ngx-translate
+- ✅ Language selector component
+- ✅ Navigation components (navbar, menu)
+
+### Shared Generator
+- ✅ Reusable UI components
+- ✅ Utility functions
 
 ### Project Structure
 - ✅ Nx monorepo with optimized caching

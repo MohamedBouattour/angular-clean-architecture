@@ -1,19 +1,42 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+
+export interface ConfirmDialogData {
+  title: string;
+  message: string;
+}
 
 @Component({
   selector: 'app-<%= name %>',
   standalone: true,
-  imports: [CommonModule],
+  imports: [MatDialogModule, MatButtonModule],
   template: `
-    <div class="<%= name %>-container">
-      <p><%= name %> works!</p>
-    </div>
+    <h2 mat-dialog-title>{{ data.title }}</h2>
+    <mat-dialog-content>
+      <p>{{ data.message }}</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button (click)="onCancel()">Cancel</button>
+      <button mat-raised-button color="warn" (click)="onConfirm()">Confirm</button>
+    </mat-dialog-actions>
   `,
   styles: `
-    .<%= name %>-container {
-      display: block;
+    mat-dialog-content p {
+      margin: 1rem 0;
     }
-  `
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class <%= pascalName %>Component {}
+export class <%= pascalName %>Component {
+  private readonly dialogRef = inject(MatDialogRef<<%= pascalName %>Component>);
+  protected readonly data = inject<ConfirmDialogData>(MAT_DIALOG_DATA);
+
+  onCancel(): void {
+    this.dialogRef.close(false);
+  }
+
+  onConfirm(): void {
+    this.dialogRef.close(true);
+  }
+}

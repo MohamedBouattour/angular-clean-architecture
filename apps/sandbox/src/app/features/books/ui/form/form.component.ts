@@ -1,5 +1,9 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {
+  Component,
+  inject,
+  OnInit,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -21,7 +25,6 @@ import { Book } from '../../domain/model';
   selector: 'app-book-form',
   standalone: true,
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     MatDialogModule,
     MatFormFieldModule,
@@ -51,16 +54,20 @@ import { Book } from '../../domain/model';
         </mat-form-field>
 
         <mat-form-field class="form-field">
-          <mat-label>Price</mat-label>
-          <input matInput type="number" formControlName="price" />
-          @if (form.get('price')?.hasError('required')) {
+          <mat-label>Isbn</mat-label>
+          <input matInput formControlName="isbn" />
+          @if (form.get('isbn')?.hasError('required')) {
           <mat-error>This field is required</mat-error>
           }
         </mat-form-field>
 
-        <mat-checkbox formControlName="available" class="form-field">
-          Available
-        </mat-checkbox>
+        <mat-form-field class="form-field">
+          <mat-label>PublishedDate</mat-label>
+          <input matInput formControlName="publishedDate" />
+          @if (form.get('publishedDate')?.hasError('required')) {
+          <mat-error>This field is required</mat-error>
+          }
+        </mat-form-field>
       </form>
     </mat-dialog-content>
 
@@ -89,6 +96,7 @@ import { Book } from '../../domain/model';
       width: 100%;
     }
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BookFormComponent implements OnInit {
   private readonly dialogRef = inject(MatDialogRef<BookFormComponent>);
@@ -99,15 +107,15 @@ export class BookFormComponent implements OnInit {
 
   form!: FormGroup;
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.form = this.fb.group({
       title: [this.data?.title ?? '', Validators.required],
 
       author: [this.data?.author ?? '', Validators.required],
 
-      price: [this.data?.price ?? 0, [Validators.required, Validators.min(0)]],
+      isbn: [this.data?.isbn ?? '', Validators.required],
 
-      available: [this.data?.available ?? false, Validators.required],
+      publishedDate: [this.data?.publishedDate ?? '', Validators.required],
     });
   }
 

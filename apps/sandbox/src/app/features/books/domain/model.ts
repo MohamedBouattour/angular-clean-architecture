@@ -2,8 +2,8 @@ export interface Book {
   id: string;
   title: string;
   author: string;
-  price: number;
-  available: boolean;
+  isbn: string;
+  publishedDate: Date;
   createdAt: Date;
   updatedAt: Date;
 }

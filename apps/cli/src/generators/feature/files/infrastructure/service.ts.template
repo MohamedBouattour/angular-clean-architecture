@@ -1,13 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { <%= pascalName %> } from '../domain/model';
 
 @Injectable({ providedIn: 'root' })
 export class <%= pascalName %>Service {
+  private readonly http = inject(HttpClient);
   private readonly apiUrl = '/api/<%= name %>';
-
-  constructor(private http: HttpClient) {}
 
   getAll(): Observable<<%= pascalName %>[]> {
     return this.http.get<<%= pascalName %>[]>(this.apiUrl);

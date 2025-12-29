@@ -1,5 +1,9 @@
-import { Component, inject, output } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {
+  Component,
+  inject,
+  output,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,7 +14,6 @@ import { AuthService } from '../auth/auth.service';
   selector: 'app-navbar',
   standalone: true,
   imports: [
-    CommonModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
@@ -18,13 +21,14 @@ import { AuthService } from '../auth/auth.service';
   ],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent {
-  public readonly authService = inject(AuthService);
+  protected readonly authService = inject(AuthService);
 
-  toggleSidenav = output<void>();
+  readonly toggleSidenav = output<void>();
 
-  onToggleSidenav() {
+  onToggleSidenav(): void {
     this.toggleSidenav.emit();
   }
 }

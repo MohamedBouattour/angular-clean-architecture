@@ -4,8 +4,8 @@ import {
   OnInit,
   ChangeDetectionStrategy,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { DatePipe, DecimalPipe } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatButtonModule } from '@angular/material/button';
@@ -22,11 +22,12 @@ import { Book } from '../domain/model';
 import { ConfirmDialogComponent } from '../../../shared/ui/confirm-dialog/confirm-dialog.component';
 
 @Component({
-  selector: 'app-book',
+  selector: 'app-book-feature',
   standalone: true,
   imports: [
-    CommonModule,
     FormsModule,
+    DatePipe,
+    DecimalPipe,
     MatTableModule,
     MatSortModule,
     MatButtonModule,
@@ -47,27 +48,27 @@ export class BookComponent implements OnInit {
   private readonly dialog = inject(MatDialog);
   private readonly snackBar = inject(MatSnackBar);
 
-  displayedColumns: string[] = [
+  protected readonly displayedColumns: string[] = [
     'title',
     'author',
-    'price',
-    'available',
+    'isbn',
+    'publishedDate',
     'actions',
   ];
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.store.loadAll();
   }
 
-  onFilterChange(value: string) {
+  onFilterChange(value: string): void {
     this.store.setFilter(value);
   }
 
-  onSortChange(field: keyof Book, direction: 'asc' | 'desc') {
+  onSortChange(field: keyof Book, direction: 'asc' | 'desc'): void {
     this.store.setSort(field, direction);
   }
 
-  openCreateDialog() {
+  openCreateDialog(): void {
     const dialogRef = this.dialog.open(BookFormComponent, {
       width: '500px',
       data: null,
@@ -83,7 +84,7 @@ export class BookComponent implements OnInit {
     });
   }
 
-  openEditDialog(item: Book) {
+  openEditDialog(item: Book): void {
     const dialogRef = this.dialog.open(BookFormComponent, {
       width: '500px',
       data: item,
@@ -99,20 +100,20 @@ export class BookComponent implements OnInit {
     });
   }
 
-  confirmDelete(item: Book) {
+  confirmDelete(item: Book): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '400px',
       data: {
-        title: 'Delete Book',
-        message: `Are you sure you want to delete this book?`
-      }
+        title: 'Delete book',
+        message: `Are you sure you want to delete this book?`,
+      },
     });
 
     dialogRef.afterClosed().subscribe((confirmed) => {
       if (confirmed) {
         this.store.delete(item.id);
         this.snackBar.open('Book deleted successfully', 'Close', {
-          duration: 3000
+          duration: 3000,
         });
       }
     });

@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { DatePipe, DecimalPipe } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatButtonModule } from '@angular/material/button';
@@ -17,11 +17,12 @@ import { <%= pascalName %> } from '../domain/model';
 import { ConfirmDialogComponent } from '../../../shared/ui/confirm-dialog/confirm-dialog.component';
 
 @Component({
-  selector: 'app-<%= singularName %>',
+  selector: 'app-<%= singularName %>-feature',
   standalone: true,
   imports: [
-    CommonModule,
     FormsModule,
+    DatePipe,
+    DecimalPipe,
     MatTableModule,
     MatSortModule,
     MatButtonModule,
@@ -42,21 +43,21 @@ export class <%= pascalName %>Component implements OnInit {
   private readonly dialog = inject(MatDialog);
   private readonly snackBar = inject(MatSnackBar);
   
-  displayedColumns: string[] = [<% attributes.forEach(function(attr, index) { %>'<%= attr.name %>'<% if (index < attributes.length - 1 || true) { %>, <% } %><% }); %>'actions'];
+  protected readonly displayedColumns: string[] = [<% attributes.forEach(function(attr, index) { %>'<%= attr.name %>', <% }); %>'actions'];
   
-  ngOnInit() {
+  ngOnInit(): void {
     this.store.loadAll();
   }
   
-  onFilterChange(value: string) {
+  onFilterChange(value: string): void {
     this.store.setFilter(value);
   }
   
-  onSortChange(field: keyof <%= pascalName %>, direction: 'asc' | 'desc') {
+  onSortChange(field: keyof <%= pascalName %>, direction: 'asc' | 'desc'): void {
     this.store.setSort(field, direction);
   }
   
-  openCreateDialog() {
+  openCreateDialog(): void {
     const dialogRef = this.dialog.open(<%= pascalName %>FormComponent, {
       width: '500px',
       data: null
@@ -72,7 +73,7 @@ export class <%= pascalName %>Component implements OnInit {
     });
   }
   
-  openEditDialog(item: <%= pascalName %>) {
+  openEditDialog(item: <%= pascalName %>): void {
     const dialogRef = this.dialog.open(<%= pascalName %>FormComponent, {
       width: '500px',
       data: item
@@ -88,7 +89,7 @@ export class <%= pascalName %>Component implements OnInit {
     });
   }
   
-  confirmDelete(item: <%= pascalName %>) {
+  confirmDelete(item: <%= pascalName %>): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '400px',
       data: {

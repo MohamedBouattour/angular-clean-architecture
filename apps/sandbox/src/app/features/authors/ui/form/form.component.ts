@@ -1,5 +1,9 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {
+  Component,
+  inject,
+  OnInit,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -21,7 +25,6 @@ import { Author } from '../../domain/model';
   selector: 'app-author-form',
   standalone: true,
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     MatDialogModule,
     MatFormFieldModule,
@@ -46,6 +49,14 @@ import { Author } from '../../domain/model';
           <mat-label>Bio</mat-label>
           <input matInput formControlName="bio" />
           @if (form.get('bio')?.hasError('required')) {
+          <mat-error>This field is required</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+          <mat-label>BirthDate</mat-label>
+          <input matInput formControlName="birthDate" />
+          @if (form.get('birthDate')?.hasError('required')) {
           <mat-error>This field is required</mat-error>
           }
         </mat-form-field>
@@ -77,6 +88,7 @@ import { Author } from '../../domain/model';
       width: 100%;
     }
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthorFormComponent implements OnInit {
   private readonly dialogRef = inject(MatDialogRef<AuthorFormComponent>);
@@ -87,11 +99,13 @@ export class AuthorFormComponent implements OnInit {
 
   form!: FormGroup;
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.form = this.fb.group({
       name: [this.data?.name ?? '', Validators.required],
 
       bio: [this.data?.bio ?? '', Validators.required],
+
+      birthDate: [this.data?.birthDate ?? '', Validators.required],
     });
   }
 

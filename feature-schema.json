@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2025-12-29T00:40:18.900Z",
+  "lastUpdated": "2025-12-29T16:28:39.305Z",
   "features": {
     "product": {
       "name": "product",
@@ -31,12 +31,12 @@
           "type": "string"
         },
         {
-          "name": "price",
-          "type": "number"
+          "name": "isbn",
+          "type": "string"
         },
         {
-          "name": "available",
-          "type": "boolean"
+          "name": "publishedDate",
+          "type": "Date"
         }
       ]
     },
@@ -50,6 +50,10 @@
         {
           "name": "bio",
           "type": "string"
+        },
+        {
+          "name": "birthDate",
+          "type": "Date"
         }
       ]
     }

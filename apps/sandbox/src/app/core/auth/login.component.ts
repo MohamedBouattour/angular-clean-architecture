@@ -1,18 +1,16 @@
-import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { AuthService } from '../auth.service';
+import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
@@ -35,6 +33,11 @@ import { Router } from '@angular/router';
                 type="email"
                 placeholder="Enter your email"
               />
+              @if (loginForm.get('email')?.hasError('required')) {
+              <mat-error>Email is required</mat-error>
+              } @if (loginForm.get('email')?.hasError('email')) {
+              <mat-error>Please enter a valid email</mat-error>
+              }
             </mat-form-field>
 
             <mat-form-field appearance="outline">
@@ -45,6 +48,9 @@ import { Router } from '@angular/router';
                 type="password"
                 placeholder="Enter your password"
               />
+              @if (loginForm.get('password')?.hasError('required')) {
+              <mat-error>Password is required</mat-error>
+              }
             </mat-form-field>
 
             <button
@@ -78,18 +84,19 @@ import { Router } from '@angular/router';
       margin-top: 16px;
     }
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent {
-  private fb = inject(FormBuilder);
-  private authService = inject(AuthService);
-  private router = inject(Router);
+  private readonly fb = inject(FormBuilder);
+  private readonly authService = inject(AuthService);
+  private readonly router = inject(Router);
 
-  loginForm = this.fb.group({
+  readonly loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required]],
   });
 
-  onSubmit() {
+  onSubmit(): void {
     if (this.loginForm.valid) {
       this.authService.login({ email: this.loginForm.value.email! });
       this.router.navigate(['/']);

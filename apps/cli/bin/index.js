@@ -7,7 +7,6 @@ const args = process.argv.slice(2);
 
 function findWorkspaceRoot(dir) {
   if (fs.existsSync(path.join(dir, 'nx.json')) || fs.existsSync(path.join(dir, 'package.json'))) {
-    // Check if it's the monorepo root (has apps/cli)
     if (fs.existsSync(path.join(dir, 'nx.json'))) {
         return dir;
     }
@@ -19,21 +18,16 @@ function findWorkspaceRoot(dir) {
 
 const root = findWorkspaceRoot(process.cwd());
 
-// Map "generate feature <name>" to "nx g cli:feature --name=<name>"
-// Example: aca generate feature products --attributes="..."
-if (args[0] === 'generate' && args[1] === 'feature') {
-  const name = args[2];
-  const remainingArgs = args.slice(3);
+/**
+ * Executes an Nx generator command
+ * @param {string} generator - The generator name (e.g., 'feature', 'core', 'shared')
+ * @param {string[]} remainingArgs - Additional arguments to pass
+ */
+function runGenerator(generator, remainingArgs) {
+  const nxArgs = ['g', `cli:${generator}`];
   
-  const nxArgs = ['g', 'cli:feature'];
-  
-  if (name && !name.startsWith('-')) {
-    nxArgs.push(`--name=${name}`);
-  }
-  
-  // Pass through other flags like --attributes or --blueprint
   remainingArgs.forEach(arg => {
-      nxArgs.push(arg);
+    nxArgs.push(arg);
   });
   
   console.log(`Executing: npx nx ${nxArgs.join(' ')}`);
@@ -47,18 +41,62 @@ if (args[0] === 'generate' && args[1] === 'feature') {
   child.on('exit', (code) => {
     process.exit(code || 0);
   });
+}
+
+// Parse commands
+if (args[0] === 'generate' || args[0] === 'g') {
+  const generatorType = args[1];
+  const remainingArgs = args.slice(2);
+  
+  // Parse name from positional argument
+  const nxArgs = [];
+  if (remainingArgs[0] && !remainingArgs[0].startsWith('-')) {
+    nxArgs.push(`--name=${remainingArgs[0]}`);
+    remainingArgs.shift();
+  }
+  
+  // Pass through all other flags
+  remainingArgs.forEach(arg => nxArgs.push(arg));
+  
+  switch (generatorType) {
+    case 'feature':
+    case 'f':
+      runGenerator('feature', nxArgs);
+      break;
+    case 'core':
+    case 'c':
+      runGenerator('core', nxArgs);
+      break;
+    case 'shared':
+    case 's':
+      runGenerator('shared', nxArgs);
+      break;
+    default:
+      console.log('\x1b[31m%s\x1b[0m', `Unknown generator: ${generatorType}`);
+      console.log('Available generators: feature (f), core (c), shared (s)');
+      process.exit(1);
+  }
 } else {
   console.log('\x1b[36m%s\x1b[0m', 'Angular Clean Architecture CLI');
   console.log('');
   console.log('Usage:');
-  console.log('  aca generate feature <name> [options]');
+  console.log('  aca generate <generator> [name] [options]');
+  console.log('  aca g <generator> [name] [options]');
   console.log('');
-  console.log('Options:');
-  console.log('  --attributes="name:type,..."  Define model attributes');
-  console.log('  --blueprint=path/to/file.json Use a blueprint file');
-  console.log('  --interactive                 Run in interactive mode');
+  console.log('Generators:');
+  console.log('  feature (f)   Generate a Clean Architecture feature');
+  console.log('  core (c)      Generate a core asset (auth, guard, interceptor, etc.)');
+  console.log('  shared (s)    Generate a shared component or utility');
   console.log('');
-  console.log('Example:');
-  console.log('  aca generate feature products --attributes="name:string,price:number"');
+  console.log('Examples:');
+  console.log('  aca g feature products --attributes="name:string,price:number"');
+  console.log('  aca g core auth-service --type=service');
+  console.log('  aca g core app --type=navbar');
+  console.log('  aca g shared button --type=ui');
+  console.log('');
+  console.log('Run without options for interactive mode:');
+  console.log('  aca g feature');
+  console.log('  aca g core');
   process.exit(0);
 }
+

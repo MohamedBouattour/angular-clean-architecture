@@ -4,8 +4,8 @@ import {
   OnInit,
   ChangeDetectionStrategy,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { DatePipe, DecimalPipe } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatButtonModule } from '@angular/material/button';
@@ -22,11 +22,12 @@ import { Author } from '../domain/model';
 import { ConfirmDialogComponent } from '../../../shared/ui/confirm-dialog/confirm-dialog.component';
 
 @Component({
-  selector: 'app-author',
+  selector: 'app-author-feature',
   standalone: true,
   imports: [
-    CommonModule,
     FormsModule,
+    DatePipe,
+    DecimalPipe,
     MatTableModule,
     MatSortModule,
     MatButtonModule,
@@ -47,21 +48,26 @@ export class AuthorComponent implements OnInit {
   private readonly dialog = inject(MatDialog);
   private readonly snackBar = inject(MatSnackBar);
 
-  displayedColumns: string[] = ['name', 'bio', 'actions'];
+  protected readonly displayedColumns: string[] = [
+    'name',
+    'bio',
+    'birthDate',
+    'actions',
+  ];
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.store.loadAll();
   }
 
-  onFilterChange(value: string) {
+  onFilterChange(value: string): void {
     this.store.setFilter(value);
   }
 
-  onSortChange(field: keyof Author, direction: 'asc' | 'desc') {
+  onSortChange(field: keyof Author, direction: 'asc' | 'desc'): void {
     this.store.setSort(field, direction);
   }
 
-  openCreateDialog() {
+  openCreateDialog(): void {
     const dialogRef = this.dialog.open(AuthorFormComponent, {
       width: '500px',
       data: null,
@@ -77,7 +83,7 @@ export class AuthorComponent implements OnInit {
     });
   }
 
-  openEditDialog(item: Author) {
+  openEditDialog(item: Author): void {
     const dialogRef = this.dialog.open(AuthorFormComponent, {
       width: '500px',
       data: item,
@@ -93,7 +99,7 @@ export class AuthorComponent implements OnInit {
     });
   }
 
-  confirmDelete(item: Author) {
+  confirmDelete(item: Author): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '400px',
       data: {

@@ -18,7 +18,11 @@ import { TranslateService } from '../translate/translate.service';
 
     <mat-menu #menu="matMenu" xPosition="before">
       @for (lang of languages; track lang.code) {
-      <button mat-menu-item (click)="changeLang(lang.code)" [class.active-lang]="translate.currentLang() === lang.code">
+      <button
+        mat-menu-item
+        (click)="changeLang(lang.code)"
+        [class.active-lang]="translate.currentLang() === lang.code"
+      >
         <mat-icon *ngIf="translate.currentLang() === lang.code">check</mat-icon>
         <span>{{ lang.label }}</span>
       </button>
