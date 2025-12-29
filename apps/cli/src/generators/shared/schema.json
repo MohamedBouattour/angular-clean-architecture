@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "CleanSharedGenerator",
+  "title": "Clean Shared Generator",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the shared asset",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of shared asset",
+      "enum": ["ui", "util"],
+      "x-prompt": "What type of shared asset would you like to generate?"
+    }
+  },
+  "required": ["name", "type"]
+}

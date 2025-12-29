@@ -15,10 +15,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { Book } from '../../domain/model';
+import { Author } from '../../domain/model';
 
 @Component({
-  selector: 'app-book-form',
+  selector: 'app-author-form',
   standalone: true,
   imports: [
     CommonModule,
@@ -30,37 +30,25 @@ import { Book } from '../../domain/model';
     MatCheckboxModule,
   ],
   template: `
-    <h2 mat-dialog-title>{{ data ? 'Edit' : 'Create' }} Book</h2>
+    <h2 mat-dialog-title>{{ data ? 'Edit' : 'Create' }} Author</h2>
 
     <mat-dialog-content>
       <form [formGroup]="form" class="form-container">
         <mat-form-field class="form-field">
-          <mat-label>Title</mat-label>
-          <input matInput formControlName="title" />
-          @if (form.get('title')?.hasError('required')) {
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" />
+          @if (form.get('name')?.hasError('required')) {
           <mat-error>This field is required</mat-error>
           }
         </mat-form-field>
 
         <mat-form-field class="form-field">
-          <mat-label>Author</mat-label>
-          <input matInput formControlName="author" />
-          @if (form.get('author')?.hasError('required')) {
+          <mat-label>Bio</mat-label>
+          <input matInput formControlName="bio" />
+          @if (form.get('bio')?.hasError('required')) {
           <mat-error>This field is required</mat-error>
           }
         </mat-form-field>
-
-        <mat-form-field class="form-field">
-          <mat-label>Price</mat-label>
-          <input matInput type="number" formControlName="price" />
-          @if (form.get('price')?.hasError('required')) {
-          <mat-error>This field is required</mat-error>
-          }
-        </mat-form-field>
-
-        <mat-checkbox formControlName="available" class="form-field">
-          Available
-        </mat-checkbox>
       </form>
     </mat-dialog-content>
 
@@ -90,9 +78,9 @@ import { Book } from '../../domain/model';
     }
   `,
 })
-export class BookFormComponent implements OnInit {
-  private readonly dialogRef = inject(MatDialogRef<BookFormComponent>);
-  protected readonly data = inject<Partial<Book> | null>(MAT_DIALOG_DATA, {
+export class AuthorFormComponent implements OnInit {
+  private readonly dialogRef = inject(MatDialogRef<AuthorFormComponent>);
+  protected readonly data = inject<Partial<Author> | null>(MAT_DIALOG_DATA, {
     optional: true,
   });
   private readonly fb = inject(FormBuilder);
@@ -101,13 +89,9 @@ export class BookFormComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      title: [this.data?.title ?? '', Validators.required],
+      name: [this.data?.name ?? '', Validators.required],
 
-      author: [this.data?.author ?? '', Validators.required],
-
-      price: [this.data?.price ?? 0, [Validators.required, Validators.min(0)]],
-
-      available: [this.data?.available ?? false, Validators.required],
+      bio: [this.data?.bio ?? '', Validators.required],
     });
   }
 

@@ -1,0 +1,19 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-<%= name %>',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <div class="<%= name %>-container">
+      <p><%= name %> works!</p>
+    </div>
+  `,
+  styles: `
+    .<%= name %>-container {
+      display: block;
+    }
+  `
+})
+export class <%= pascalName %>Component {}

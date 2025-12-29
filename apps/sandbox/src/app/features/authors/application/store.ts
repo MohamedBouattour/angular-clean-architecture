@@ -9,21 +9,21 @@ import { computed, inject } from '@angular/core';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { pipe, tap, switchMap, catchError, of } from 'rxjs';
 import { tapResponse } from '@ngrx/operators';
-import { BookService } from '../infrastructure/service';
-import { Book } from '../domain/model';
+import { AuthorService } from '../infrastructure/service';
+import { Author } from '../domain/model';
 
-interface BookState {
-  items: Book[];
+interface AuthorState {
+  items: Author[];
   loading: boolean;
   error: string | null;
   filter: string;
-  sortField: keyof Book;
+  sortField: keyof Author;
   sortDirection: 'asc' | 'desc';
 }
 
-export const BookStore = signalStore(
+export const AuthorStore = signalStore(
   { providedIn: 'root' },
-  withState<BookState>({
+  withState<AuthorState>({
     items: [],
     loading: false,
     error: null,
@@ -58,7 +58,7 @@ export const BookStore = signalStore(
       return items;
     }),
   })),
-  withMethods((store, service = inject(BookService)) => ({
+  withMethods((store, service = inject(AuthorService)) => ({
     loadAll: rxMethod<void>(
       pipe(
         tap(() => patchState(store, { loading: true, error: null })),
@@ -74,7 +74,7 @@ export const BookStore = signalStore(
       )
     ),
 
-    create: rxMethod<Omit<Book, 'id' | 'createdAt' | 'updatedAt'>>(
+    create: rxMethod<Omit<Author, 'id' | 'createdAt' | 'updatedAt'>>(
       pipe(
         tap(() => patchState(store, { loading: true, error: null })),
         switchMap((data) =>
@@ -93,7 +93,7 @@ export const BookStore = signalStore(
       )
     ),
 
-    update: rxMethod<{ id: string; data: Partial<Book> }>(
+    update: rxMethod<{ id: string; data: Partial<Author> }>(
       pipe(
         tap(() => patchState(store, { loading: true, error: null })),
         switchMap(({ id, data }) =>
@@ -135,7 +135,7 @@ export const BookStore = signalStore(
 
     setFilter: (filter: string) => patchState(store, { filter }),
 
-    setSort: (field: keyof Book, direction: 'asc' | 'desc') =>
+    setSort: (field: keyof Author, direction: 'asc' | 'desc') =>
       patchState(store, { sortField: field, sortDirection: direction }),
   }))
 );

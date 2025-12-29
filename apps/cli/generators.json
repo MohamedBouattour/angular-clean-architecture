@@ -4,6 +4,11 @@
       "factory": "./src/generators/feature/generator",
       "schema": "./src/generators/feature/schema.json",
       "description": "Generate a Clean Architecture feature with domain, infrastructure, application, and UI layers"
+    },
+    "shared": {
+      "factory": "./src/generators/shared/generator",
+      "schema": "./src/generators/shared/schema.json",
+      "description": "Generate a shared UI component or utility"
     }
   }
 }

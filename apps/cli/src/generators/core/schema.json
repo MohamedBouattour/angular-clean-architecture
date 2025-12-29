@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "CleanCoreGenerator",
+  "title": "Clean Core Generator",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the core asset",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of core asset",
+      "enum": ["auth", "guard", "interceptor", "service"],
+      "x-prompt": "What type of core asset would you like to generate?"
+    }
+  },
+  "required": ["name", "type"]
+}

@@ -36,6 +36,7 @@
     "@angular/platform-browser-dynamic": "~18.2.0",
     "@angular/router": "~18.2.0",
     "@devmed555/angular-clean-architecture-cli": "^0.0.2",
+    "@ngrx/operators": "^21.0.1",
     "@ngrx/signals": "~18.0.0",
     "@nx/devkit": "20.0.4",
     "@nx/nx-win32-x64-msvc": "20.0.4",

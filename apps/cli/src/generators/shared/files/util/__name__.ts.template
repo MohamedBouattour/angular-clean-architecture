@@ -1,0 +1,7 @@
+/**
+ * <%= pascalName %> utility function
+ */
+export function <%= camelName %>() {
+  // TODO: Implement utility logic
+  return true;
+}

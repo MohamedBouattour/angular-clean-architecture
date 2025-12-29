@@ -59,6 +59,43 @@ function saveFeatureSchema(tree: Tree, schema: any): void {
   tree.write('feature-schema.json', JSON.stringify(schema, null, 2));
 }
 
+/**
+ * Updates app.routes.ts to include the new feature
+ */
+function updateAppRoutes(tree: Tree, featureName: string, folderName: string, pascalName: string) {
+  const routesPath = 'apps/sandbox/src/app/app.routes.ts';
+  if (!tree.exists(routesPath)) return;
+
+  let content = tree.read(routesPath)!.toString();
+  
+  // Check if route already exists
+  if (content.includes(`path: '${folderName}'`)) return;
+
+  const newRoute = `  {
+    path: '${folderName}',
+    loadComponent: () => import('./features/${folderName}/ui/${featureName}.component').then(m => m.${pascalName}Component),
+    data: { label: '${pascalName}s' }
+  },`;
+
+  // Find the appRoutes array
+  const routesArrayRegex = /export const appRoutes: Route\[\] = \[([\s\S]*?)\];/;
+  const match = content.match(routesArrayRegex);
+
+  if (match) {
+    const existingRoutes = match[1].trim();
+    let updatedRoutes = existingRoutes;
+    
+    if (existingRoutes && !existingRoutes.endsWith(',')) {
+      updatedRoutes += ',';
+    }
+    
+    updatedRoutes += `\n${newRoute}`;
+    
+    content = content.replace(routesArrayRegex, `export const appRoutes: Route[] = [${updatedRoutes}\n];`);
+    tree.write(routesPath, content);
+  }
+}
+
 export async function cleanFeatureGenerator(
   tree: Tree,
   options: CleanFeatureGeneratorSchema
@@ -263,6 +300,9 @@ export async function cleanFeatureGenerator(
       tmpl: '',
     }
   );
+
+  // 4. Update Routes
+  updateAppRoutes(tree, featureName, folderName, singularPascalName);
 
   await formatFiles(tree);
   

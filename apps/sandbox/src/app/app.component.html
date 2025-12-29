@@ -1,1 +1,32 @@
-<app-nx-welcome></app-nx-welcome> <router-outlet></router-outlet>
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>{{ title }}</span>
+  <span class="spacer"></span>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" opened class="sidenav">
+    <mat-nav-list>
+      <div mat-subheader>Features</div>
+      @for (feature of features; track feature.path) {
+        <a mat-list-item [routerLink]="['/', feature.path]" routerLinkActive="selected-nav">
+          <mat-icon matListItemIcon>extension</mat-icon>
+          <span matListItemTitle>{{ feature.label }}</span>
+        </a>
+      }
+      @if (features.length === 0) {
+        <div class="no-features-msg">
+          No features generated yet.
+        </div>
+      }
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content">
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

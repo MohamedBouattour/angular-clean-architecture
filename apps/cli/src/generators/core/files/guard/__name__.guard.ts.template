@@ -1,0 +1,6 @@
+import { CanActivateFn } from '@angular/router';
+
+export const <%= camelName %>Guard: CanActivateFn = (route, state) => {
+  // TODO: Implement guard logic
+  return true;
+};

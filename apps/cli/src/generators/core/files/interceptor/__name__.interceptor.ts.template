@@ -1,0 +1,6 @@
+import { HttpInterceptorFn } from '@angular/common/http';
+
+export const <%= camelName %>Interceptor: HttpInterceptorFn = (req, next) => {
+  // TODO: Implement interceptor logic
+  return next(req);
+};

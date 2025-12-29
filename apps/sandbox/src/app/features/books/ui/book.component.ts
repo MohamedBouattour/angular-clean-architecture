@@ -1,4 +1,9 @@
-import { Component, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  inject,
+  OnInit,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
@@ -11,12 +16,13 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { <%= pascalName %>Store } from '../application/store';
-import { <%= pascalName %>FormComponent } from './form/form.component';
-import { <%= pascalName %> } from '../domain/model';
+import { BookStore } from '../application/store';
+import { BookFormComponent } from './form/form.component';
+import { Book } from '../domain/model';
+import { ConfirmDialogComponent } from '../../../shared/ui/confirm-dialog/confirm-dialog.component';
 
 @Component({
-  selector: 'app-<%= singularName %>',
+  selector: 'app-book',
   standalone: true,
   imports: [
     CommonModule,
@@ -30,70 +36,85 @@ import { <%= pascalName %> } from '../domain/model';
     MatDialogModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,
-    MatTooltipModule
+    MatTooltipModule,
   ],
-  templateUrl: './<%= singularName %>.component.html',
-  styleUrls: ['./<%= singularName %>.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  templateUrl: './book.component.html',
+  styleUrls: ['./book.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class <%= pascalName %>Component implements OnInit {
-  protected readonly store = inject(<%= pascalName %>Store);
+export class BookComponent implements OnInit {
+  protected readonly store = inject(BookStore);
   private readonly dialog = inject(MatDialog);
   private readonly snackBar = inject(MatSnackBar);
-  
-  displayedColumns: string[] = [<% attributes.forEach(function(attr, index) { %>'<%= attr.name %>'<% if (index < attributes.length - 1 || true) { %>, <% } %><% }); %>'actions'];
-  
+
+  displayedColumns: string[] = [
+    'title',
+    'author',
+    'price',
+    'available',
+    'actions',
+  ];
+
   ngOnInit() {
     this.store.loadAll();
   }
-  
+
   onFilterChange(value: string) {
     this.store.setFilter(value);
   }
-  
-  onSortChange(field: keyof <%= pascalName %>, direction: 'asc' | 'desc') {
+
+  onSortChange(field: keyof Book, direction: 'asc' | 'desc') {
     this.store.setSort(field, direction);
   }
-  
+
   openCreateDialog() {
-    const dialogRef = this.dialog.open(<%= pascalName %>FormComponent, {
+    const dialogRef = this.dialog.open(BookFormComponent, {
       width: '500px',
-      data: null
+      data: null,
     });
-    
+
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.store.create(result);
-        this.snackBar.open('<%= pascalName %> created successfully', 'Close', {
-          duration: 3000
+        this.snackBar.open('Book created successfully', 'Close', {
+          duration: 3000,
         });
       }
     });
   }
-  
-  openEditDialog(item: <%= pascalName %>) {
-    const dialogRef = this.dialog.open(<%= pascalName %>FormComponent, {
+
+  openEditDialog(item: Book) {
+    const dialogRef = this.dialog.open(BookFormComponent, {
       width: '500px',
-      data: item
+      data: item,
     });
-    
+
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.store.update({ id: item.id, data: result });
-        this.snackBar.open('<%= pascalName %> updated successfully', 'Close', {
-          duration: 3000
+        this.snackBar.open('Book updated successfully', 'Close', {
+          duration: 3000,
         });
       }
     });
   }
-  
-  confirmDelete(item: <%= pascalName %>) {
-    const confirmed = confirm(`Are you sure you want to delete this <%= singularName %>?`);
-    if (confirmed) {
-      this.store.delete(item.id);
-      this.snackBar.open('<%= pascalName %> deleted successfully', 'Close', {
-        duration: 3000
-      });
-    }
+
+  confirmDelete(item: Book) {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      width: '400px',
+      data: {
+        title: 'Delete Book',
+        message: `Are you sure you want to delete this book?`
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((confirmed) => {
+      if (confirmed) {
+        this.store.delete(item.id);
+        this.snackBar.open('Book deleted successfully', 'Close', {
+          duration: 3000
+        });
+      }
+    });
   }
 }
