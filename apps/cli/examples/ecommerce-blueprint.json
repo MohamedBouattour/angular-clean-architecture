@@ -1,0 +1,41 @@
+{
+  "name": "ecommerce",
+  "models": [
+    {
+      "name": "Product",
+      "attributes": [
+        { "name": "name", "type": "string" },
+        { "name": "description", "type": "string" },
+        { "name": "price", "type": "number" },
+        { "name": "stock", "type": "number" },
+        { "name": "category", "type": "string" },
+        { "name": "imageUrl", "type": "string" },
+        { "name": "isActive", "type": "boolean" }
+      ]
+    },
+    {
+      "name": "Category",
+      "attributes": [
+        { "name": "name", "type": "string" },
+        { "name": "description", "type": "string" },
+        { "name": "parentId", "type": "string" }
+      ]
+    },
+    {
+      "name": "Cart",
+      "attributes": [
+        { "name": "userId", "type": "string" },
+        { "name": "items", "type": "CartItem[]" },
+        { "name": "total", "type": "number" }
+      ]
+    },
+    {
+      "name": "CartItem",
+      "attributes": [
+        { "name": "productId", "type": "string" },
+        { "name": "quantity", "type": "number" },
+        { "name": "price", "type": "number" }
+      ]
+    }
+  ]
+}

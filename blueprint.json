@@ -1,0 +1,19 @@
+{
+  "name": "order",
+  "models": [
+    {
+      "name": "Order",
+      "attributes": [
+        { "name": "total", "type": "number" },
+        { "name": "customerName", "type": "string" }
+      ]
+    },
+    {
+      "name": "OrderItem",
+      "attributes": [
+        { "name": "productId", "type": "string" },
+        { "name": "quantity", "type": "number" }
+      ]
+    }
+  ]
+}

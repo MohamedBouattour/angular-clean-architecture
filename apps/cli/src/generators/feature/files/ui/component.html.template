@@ -1,0 +1,103 @@
+<div class="<%= singularName %>-container">
+  <!-- Header -->
+  <div class="header">
+    <h1><%= pascalName %> Management</h1>
+    <button 
+      mat-raised-button 
+      color="primary" 
+      (click)="openCreateDialog()"
+      [disabled]="store.loading()">
+      <mat-icon>add</mat-icon>
+      Create <%= pascalName %>
+    </button>
+  </div>
+  
+  <!-- Filter -->
+  <mat-form-field class="filter-field">
+    <mat-label>Filter</mat-label>
+    <input 
+      matInput 
+      [ngModel]="store.filter()"
+      (ngModelChange)="onFilterChange($event)"
+      placeholder="Search..." />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+  
+  <!-- Loading Spinner -->
+  @if (store.loading()) {
+    <div class="loading-container">
+      <mat-spinner diameter="50"></mat-spinner>
+    </div>
+  }
+  
+  <!-- Error Message -->
+  @if (store.error()) {
+    <div class="error-message">
+      <mat-icon>error</mat-icon>
+      <span>{{ store.error() }}</span>
+    </div>
+  }
+  
+  <!-- Data Table -->
+  @if (!store.loading() && !store.error()) {
+    <div class="table-container">
+      <table mat-table [dataSource]="store.filteredAndSortedItems()" class="mat-elevation-z2">
+        <% attributes.forEach(function(attr) { %>
+        <!-- <%= attr.name.charAt(0).toUpperCase() + attr.name.slice(1) %> Column -->
+        <ng-container matColumnDef="<%= attr.name %>">
+          <th mat-header-cell *matHeaderCellDef><%= attr.name.charAt(0).toUpperCase() + attr.name.slice(1) %></th>
+          <td mat-cell *matCellDef="let item">
+            <% if (attr.type === 'boolean') { %>
+            <mat-icon [class.active]="item.<%= attr.name %>">
+              {{ item.<%= attr.name %> ? 'check_circle' : 'cancel' }}
+            </mat-icon>
+            <% } else if (attr.type === 'number') { %>
+            {{ item.<%= attr.name %> | number }}
+            <% } else if (attr.type === 'Date') { %>
+            {{ item.<%= attr.name %> | date:'short' }}
+            <% } else { %>
+            {{ item.<%= attr.name %> }}
+            <% } %>
+          </td>
+        </ng-container>
+        <% }); %>
+        
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let item">
+            <button 
+              mat-icon-button 
+              color="primary"
+              (click)="openEditDialog(item)"
+              matTooltip="Edit">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button 
+              mat-icon-button 
+              color="warn"
+              (click)="confirmDelete(item)"
+              matTooltip="Delete">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+        
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+        <!-- No Data Row -->
+        @if (store.filteredAndSortedItems().length === 0) {
+          <tr class="mat-row no-data-row">
+            <td class="mat-cell" [attr.colspan]="displayedColumns.length">
+              <div class="no-data">
+                <mat-icon>inbox</mat-icon>
+                <p>No <%= singularName %>s found</p>
+              </div>
+            </td>
+          </tr>
+        }
+      </table>
+    </div>
+  }
+</div>

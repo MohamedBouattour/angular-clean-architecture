@@ -1,0 +1,9 @@
+<% models.forEach(function(model) { %>
+export interface <%= model.name %> {
+  id: string;
+<% model.attributes.forEach(function(attr) { %>  <%= attr.name %>: <%= attr.type %>;
+<% }); %>  createdAt: Date;
+  updatedAt: Date;
+}
+
+<% }); %>

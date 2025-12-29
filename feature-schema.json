@@ -1,0 +1,44 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2025-12-28T22:42:20.732Z",
+  "features": {
+    "product": {
+      "name": "product",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "price",
+          "type": "number"
+        },
+        {
+          "name": "inStock",
+          "type": "boolean"
+        }
+      ]
+    },
+    "book": {
+      "name": "book",
+      "attributes": [
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "author",
+          "type": "string"
+        },
+        {
+          "name": "price",
+          "type": "number"
+        },
+        {
+          "name": "available",
+          "type": "boolean"
+        }
+      ]
+    }
+  }
+}

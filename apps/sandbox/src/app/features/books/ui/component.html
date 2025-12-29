@@ -1,0 +1,119 @@
+<div class="book-container">
+  <!-- Header -->
+  <div class="header">
+    <h1>Book Management</h1>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="openCreateDialog()"
+      [disabled]="store.loading()"
+    >
+      <mat-icon>add</mat-icon>
+      Create Book
+    </button>
+  </div>
+
+  <!-- Filter -->
+  <mat-form-field class="filter-field">
+    <mat-label>Filter</mat-label>
+    <input
+      matInput
+      [ngModel]="store.filter()"
+      (ngModelChange)="onFilterChange($event)"
+      placeholder="Search..."
+    />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+  <!-- Loading Spinner -->
+  @if (store.loading()) {
+  <div class="loading-container">
+    <mat-spinner diameter="50"></mat-spinner>
+  </div>
+  }
+
+  <!-- Error Message -->
+  @if (store.error()) {
+  <div class="error-message">
+    <mat-icon>error</mat-icon>
+    <span>{{ store.error() }}</span>
+  </div>
+  }
+
+  <!-- Data Table -->
+  @if (!store.loading() && !store.error()) {
+  <div class="table-container">
+    <table
+      mat-table
+      [dataSource]="store.filteredAndSortedItems()"
+      class="mat-elevation-z2"
+    >
+      <!-- Title Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>Title</th>
+        <td mat-cell *matCellDef="let item">{{ item.title }}</td>
+      </ng-container>
+
+      <!-- Author Column -->
+      <ng-container matColumnDef="author">
+        <th mat-header-cell *matHeaderCellDef>Author</th>
+        <td mat-cell *matCellDef="let item">{{ item.author }}</td>
+      </ng-container>
+
+      <!-- Price Column -->
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef>Price</th>
+        <td mat-cell *matCellDef="let item">{{ item.price | number }}</td>
+      </ng-container>
+
+      <!-- Available Column -->
+      <ng-container matColumnDef="available">
+        <th mat-header-cell *matHeaderCellDef>Available</th>
+        <td mat-cell *matCellDef="let item">
+          <mat-icon [class.active]="item.available">
+            {{ item.available ? 'check_circle' : 'cancel' }}
+          </mat-icon>
+        </td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let item">
+          <button
+            mat-icon-button
+            color="primary"
+            (click)="openEditDialog(item)"
+            matTooltip="Edit"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            color="warn"
+            (click)="confirmDelete(item)"
+            matTooltip="Delete"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <!-- No Data Row -->
+      @if (store.filteredAndSortedItems().length === 0) {
+      <tr class="mat-row no-data-row">
+        <td class="mat-cell" [attr.colspan]="displayedColumns.length">
+          <div class="no-data">
+            <mat-icon>inbox</mat-icon>
+            <p>No books found</p>
+          </div>
+        </td>
+      </tr>
+      }
+    </table>
+  </div>
+  }
+</div>

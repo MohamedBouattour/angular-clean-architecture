@@ -1,0 +1,35 @@
+{
+  "name": "blog",
+  "models": [
+    {
+      "name": "Post",
+      "attributes": [
+        { "name": "title", "type": "string" },
+        { "name": "content", "type": "string" },
+        { "name": "authorId", "type": "string" },
+        { "name": "published", "type": "boolean" },
+        { "name": "publishedAt", "type": "Date" },
+        { "name": "views", "type": "number" },
+        { "name": "tags", "type": "string[]" }
+      ]
+    },
+    {
+      "name": "Comment",
+      "attributes": [
+        { "name": "postId", "type": "string" },
+        { "name": "authorId", "type": "string" },
+        { "name": "content", "type": "string" },
+        { "name": "approved", "type": "boolean" }
+      ]
+    },
+    {
+      "name": "Author",
+      "attributes": [
+        { "name": "name", "type": "string" },
+        { "name": "email", "type": "string" },
+        { "name": "bio", "type": "string" },
+        { "name": "avatarUrl", "type": "string" }
+      ]
+    }
+  ]
+}

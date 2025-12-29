@@ -1,0 +1,15 @@
+{
+  "name": "user",
+  "models": [
+    {
+      "name": "User",
+      "attributes": [
+        { "name": "firstName", "type": "string" },
+        { "name": "lastName", "type": "string" },
+        { "name": "email", "type": "string" },
+        { "name": "age", "type": "number" },
+        { "name": "isActive", "type": "boolean" }
+      ]
+    }
+  ]
+}

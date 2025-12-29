@@ -1,4 +1,0 @@
-export interface <%= pascalName %> {
-  id: string;
-<% attributes.forEach(function(attr) { %>  <%= attr.name %>: <%= attr.type %>;
-<% }); %>}

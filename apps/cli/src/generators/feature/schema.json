@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "CleanFeature",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the feature to generate",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "attributes": {
+      "type": "string",
+      "description": "Comma-separated list of attributes (e.g., name:string,age:number)"
+    },
+    "blueprint": {
+      "type": "string",
+      "description": "Path to a JSON blueprint file defining the feature"
+    }
+  },
+  "required": []
+}

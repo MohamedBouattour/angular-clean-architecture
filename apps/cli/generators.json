@@ -1,9 +1,9 @@
 {
   "generators": {
-    "clean-feature": {
-      "factory": "./src/generators/clean-feature/generator",
-      "schema": "./src/generators/clean-feature/schema.json",
-      "description": "clean-feature generator"
+    "feature": {
+      "factory": "./src/generators/feature/generator",
+      "schema": "./src/generators/feature/schema.json",
+      "description": "Generate a Clean Architecture feature with domain, infrastructure, application, and UI layers"
     }
   }
 }

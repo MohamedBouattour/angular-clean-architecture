@@ -65,11 +65,15 @@ npm install
 ### Generate Your First Feature
 
 ```bash
-# Generate a new feature (e.g., "products")
-npm run generate:feature -- --name=products
+# Generate a new feature interactively
+npm run generate:feature
 
-# Or use interactive mode
-npm run generate:feature:interactive
+# You'll be asked for:
+# - Feature name (singular)
+# - Attributes (name and type)
+
+# Or provide name via flag:
+npm run generate:feature -- --name=products
 ```
 
 This creates a complete feature structure in `apps/sandbox/src/app/features/products/`.
@@ -79,8 +83,8 @@ This creates a complete feature structure in `apps/sandbox/src/app/features/prod
 You can install the CLI globally to use it in any Angular project:
 
 ```bash
-# Install globally given you are logged in to the npm registry
-npm install -g @angular-clean-architecture/cli
+# Install globally
+npm install -g @devmed555/angular-clean-architecture-cli
 
 # Generate a feature with attributes
 aca generate feature products --attributes="name:string,price:number,inStock:boolean"
@@ -91,9 +95,11 @@ aca generate feature products --attributes="name:string,price:number,inStock:boo
 You can also use the CLI interactively:
 
 ```bash
-aca generate feature products
+aca generate feature
 # Prompts:
-# ? Enter attributes (format: name:string,age:number) or leave empty: name:string,price:number
+# ? What is the name of the feature (singular)? product
+# ? Enter attribute name (or press enter to finish): name
+# ? Select type: string
 ```
 
 Generated model will automatically include these properties:

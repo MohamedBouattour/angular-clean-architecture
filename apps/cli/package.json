@@ -1,6 +1,6 @@
 {
   "name": "@devmed555/angular-clean-architecture-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CLI generator for Angular Clean Architecture features using NgRx SignalStore",
   "keywords": [
     "angular",
@@ -25,10 +25,8 @@
   },
   "dependencies": {
     "@nx/devkit": "20.0.4",
-    "@nx/js": "20.0.4",
-    "@nx/angular": "20.0.4",
     "tslib": "^2.3.0",
-    "inquirer": "^9.2.12"
+    "inquirer": "^8.2.6"
   },
   "type": "commonjs",
   "main": "./src/index.js",
