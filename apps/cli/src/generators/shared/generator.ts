@@ -4,44 +4,38 @@ import {
   joinPathFragments,
   Tree,
 } from '@nx/devkit';
-import { CleanSharedGeneratorSchema } from './schema';
+// import { CleanSharedGeneratorSchema } from './schema';
+import { toPascalCase, toCamelCase } from '../../utils/string-utils';
 
-/**
- * Capitalizes the first letter of a string
- */
-function capitalizeFirst(str: string): string {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
 
-/**
- * Converts a kebab-case or camelCase string to PascalCase
- */
-function toPascalCase(str: string): string {
-  return str
-    .split('-')
-    .map((part) => capitalizeFirst(part))
-    .join('');
-}
-
-/**
- * Converts a string to camelCase
- */
-function toCamelCase(str: string): string {
-  const pascal = toPascalCase(str);
-  return pascal.charAt(0).toLowerCase() + pascal.slice(1);
-}
 
 export async function cleanSharedGenerator(
   tree: Tree,
   options: CleanSharedGeneratorSchema
 ) {
+  if (options.type === 'all') {
+    // Generate a standard set of UI components
+    const commonComponents = ['button', 'card', 'input', 'icon', 'loader', 'confirm-dialog'];
+    console.log(`\n🚀 Generating standard shared UI components: ${commonComponents.join(', ')}...`);
+    
+    for (const name of commonComponents) {
+      await cleanSharedGenerator(tree, { ...options, type: 'ui', name });
+    }
+    return;
+  }
+
+  if (!options.name) {
+    if (options.type === 'ui') options.name = 'button'; // default
+    if (options.type === 'util') options.name = 'format'; // default
+  }
+
   const targetPath = joinPathFragments(
     'apps/sandbox/src/app/shared',
     options.type,
-    options.name
+    options.name!
   );
   
-  const pascalName = toPascalCase(options.name);
+  const pascalName = toPascalCase(options.name!);
 
   generateFiles(
     tree,
@@ -50,19 +44,19 @@ export async function cleanSharedGenerator(
     {
       ...options,
       pascalName,
-      camelName: toCamelCase(options.name),
+      camelName: toCamelCase(options.name!),
       tmpl: '',
     }
   );
 
   await formatFiles(tree);
   
-  console.log(`\n✓ Generated shared ${options.type} "${options.name}" in ${targetPath}`);
+  console.log(`✓ Generated shared ${options.type} "${options.name}" in ${targetPath}`);
 }
 
 export default cleanSharedGenerator;
 
 export interface CleanSharedGeneratorSchema {
-  name: string;
-  type: 'ui' | 'util';
+  name?: string;
+  type: 'all' | 'ui' | 'util';
 }

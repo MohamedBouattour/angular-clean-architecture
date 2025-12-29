@@ -23,6 +23,7 @@
 
     <div class="divider"></div>
     
+    <app-theme-selector />
     <app-language-selector />
   </div>
 </mat-toolbar>

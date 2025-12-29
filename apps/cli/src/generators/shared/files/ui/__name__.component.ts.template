@@ -1,3 +1,4 @@
+<% if (name === 'confirm-dialog') { %>
 import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
@@ -40,3 +41,19 @@ export class <%= pascalName %>Component {
     this.dialogRef.close(true);
   }
 }
+<% } else { %>
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-<%= name %>',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <p><%= name %> works!</p>
+  `,
+  styles: ``,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class <%= pascalName %>Component {}
+<% } %>

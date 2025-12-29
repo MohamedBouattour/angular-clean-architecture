@@ -1,22 +1,22 @@
 // Theme Variables - Customize these to brand your application
 // Colors
-$primary-color: #3f51b5 !default;
-$accent-color: #ff4081 !default;
-$warn-color: #f44336 !default;
-$success-color: #4caf50 !default;
-$error-color: #f44336 !default;
+$primary-color: var(--color-primary) !default;
+$accent-color: var(--color-accent) !default;
+$warn-color: var(--color-error) !default;
+$success-color: var(--color-success) !default;
+$error-color: var(--color-error) !default;
 
 // Backgrounds
-$background-color: #fafafa !default;
-$card-background: #ffffff !default;
-$table-header-background: #f5f5f5 !default;
-$table-row-hover: #f9f9f9 !default;
-$error-background: #ffebee !default;
+$background-color: var(--color-bg) !default;
+$card-background: var(--color-bg-card) !default;
+$table-header-background: var(--color-bg-elevated) !default;
+$table-row-hover: rgba(0, 0, 0, 0.04) !default;
+$error-background: rgba(244, 67, 54, 0.1) !default;
 
 // Text
-$text-primary: rgba(0, 0, 0, 0.87) !default;
-$text-secondary: rgba(0, 0, 0, 0.6) !default;
-$text-disabled: rgba(0, 0, 0, 0.38) !default;
+$text-primary: var(--color-text) !default;
+$text-secondary: var(--color-text-secondary) !default;
+$text-disabled: var(--color-text-disabled) !default;
 
 // Spacing
 $spacing-xs: 0.25rem !default;
@@ -27,7 +27,7 @@ $spacing-xl: 2rem !default;
 
 // Border
 $border-radius: 4px !default;
-$border-color: rgba(0, 0, 0, 0.12) !default;
+$border-color: var(--color-border) !default;
 
 // Shadows
 $shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1) !default;

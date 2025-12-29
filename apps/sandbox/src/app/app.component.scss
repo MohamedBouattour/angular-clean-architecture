@@ -8,15 +8,17 @@
 .sidenav-container {
   flex: 1;
   border: none;
+  background-color: var(--color-bg);
 }
 
 .sidenav {
   width: 250px;
-  background: white;
+  background-color: var(--color-bg-elevated);
+  border-right: 1px solid var(--color-border);
 }
 
 .content {
-  background: #f5f7f9;
+  background-color: var(--color-bg);
 }
 
 .main-content {

@@ -1,11 +1,66 @@
-.selected-nav {
-  background: rgba(0, 0, 0, 0.04);
-  color: var(--primary-color, #3f51b5);
+// Theme variables
+@use '@angular/material' as mat;
+
+:host {
+  display: block;
+  padding: 8px 0;
+}
+
+// Subheader styling (e.g. "Features")
+div[mat-subheader] {
+  color: var(--color-text-secondary) !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1.2px;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+
+// List item styling
+a[mat-list-item] {
+  margin: 0 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  height: 48px;
+
+  [matListItemTitle] {
+    color: var(--color-text) !important;
+    font-weight: 500;
+  }
+
+  mat-icon {
+    color: var(--color-text-secondary) !important;
+    transition: color 0.2s ease;
+  }
+
+  &:hover {
+    background-color: var(--color-bg-elevated);
+
+    mat-icon {
+      color: var(--color-text) !important;
+    }
+  }
+
+  &.selected-nav {
+    background-color: rgba(63, 81, 181, 0.15);
+    border-left: 3px solid var(--color-primary);
+
+    [matListItemTitle] {
+      color: var(--color-primary) !important;
+      font-weight: 600;
+    }
+
+    mat-icon {
+      color: var(--color-primary) !important;
+    }
+  }
 }
 
 .no-features-msg {
   padding: 16px;
-  color: #666;
+  color: var(--color-text-secondary);
   font-style: italic;
   font-size: 0.9rem;
+  text-align: center;
 }

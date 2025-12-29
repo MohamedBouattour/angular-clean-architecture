@@ -65,12 +65,13 @@ aca g feature --blueprint=./my-feature.json               # From blueprint
 
 Creates core system assets like authentication, guards, interceptors.
 
-**Types:** `auth`, `guard`, `interceptor`, `service`, `translate`, `language-selector`, `menu`, `navbar`
+**Types:** `auth`, `guard`, `interceptor`, `service`, `translate`, `language-selector`, `theme-selector`, `menu`, `navbar`
 
 **Examples:**
 ```bash
 aca g core app --type=auth                 # Auth service with login/logout
 aca g core app --type=navbar               # Navigation bar component
+aca g core app --type=theme-selector       # Dark/light theme toggle
 aca g core app --type=translate            # i18n translation setup
 aca g core jwt --type=interceptor          # HTTP interceptor
 aca g core admin --type=guard              # Route guard

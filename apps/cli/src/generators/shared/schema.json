@@ -15,9 +15,9 @@
     "type": {
       "type": "string",
       "description": "Type of shared asset",
-      "enum": ["ui", "util"],
+      "enum": ["all", "ui", "util"],
       "x-prompt": "What type of shared asset would you like to generate?"
     }
   },
-  "required": ["name", "type"]
+  "required": ["type"]
 }

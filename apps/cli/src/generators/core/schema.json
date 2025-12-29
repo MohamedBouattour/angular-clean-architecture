@@ -15,9 +15,9 @@
     "type": {
       "type": "string",
       "description": "Type of core asset",
-      "enum": ["auth", "guard", "interceptor", "service", "translate", "language-selector", "menu", "navbar"],
+      "enum": ["all", "auth", "guard", "interceptor", "service", "translate", "language-selector", "theme-selector", "menu", "navbar"],
       "x-prompt": "What type of core asset would you like to generate?"
     }
   },
-  "required": ["name", "type"]
+  "required": ["type"]
 }

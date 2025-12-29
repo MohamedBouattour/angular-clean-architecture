@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2025-12-29T16:28:39.305Z",
+  "lastUpdated": "2025-12-29T17:55:12.076Z",
   "features": {
     "product": {
       "name": "product",
@@ -54,6 +54,19 @@
         {
           "name": "birthDate",
           "type": "Date"
+        }
+      ]
+    },
+    "publisher": {
+      "name": "publisher",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "location",
+          "type": "string"
         }
       ]
     }

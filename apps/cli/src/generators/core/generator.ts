@@ -4,41 +4,37 @@ import {
   joinPathFragments,
   Tree,
 } from '@nx/devkit';
-import { CleanCoreGeneratorSchema } from './schema';
+// import { CleanCoreGeneratorSchema } from './schema';
+import { toPascalCase, toCamelCase } from '../../utils/string-utils';
 
-/**
- * Capitalizes the first letter of a string
- */
-function capitalizeFirst(str: string): string {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
 
-/**
- * Converts a kebab-case or camelCase string to PascalCase
- */
-function toPascalCase(str: string): string {
-  return str
-    .split('-')
-    .map((part) => capitalizeFirst(part))
-    .join('');
-}
-
-/**
- * Converts a string to camelCase
- */
-function toCamelCase(str: string): string {
-  const pascal = toPascalCase(str);
-  return pascal.charAt(0).toLowerCase() + pascal.slice(1);
-}
 
 export async function cleanCoreGenerator(
   tree: Tree,
   options: CleanCoreGeneratorSchema
 ) {
+  if (options.type === 'all') {
+    const coreTypes = ['navbar', 'menu', 'theme-selector', 'language-selector', 'translate', 'auth'];
+    console.log(`\n🚀 Generating ALL core assets: ${coreTypes.join(', ')}...`);
+    
+    for (const type of coreTypes) {
+      // Use provided name or default to the type name (e.g. 'navbar')
+      const name = options.name || type;
+      await cleanCoreGenerator(tree, { ...options, type: type as any, name });
+    }
+    return;
+  }
+
+  // Ensure name is present for specific types (default to type name if missing)
+  if (!options.name) {
+     options.name = options.type;
+  }
+
   const targetPath =
     options.type === 'auth' ||
     options.type === 'translate' ||
     options.type === 'language-selector' ||
+    options.type === 'theme-selector' ||
     options.type === 'menu' ||
     options.type === 'navbar'
       ? joinPathFragments('apps/sandbox/src/app/core', options.type)
@@ -48,8 +44,8 @@ export async function cleanCoreGenerator(
           options.name
         );
   
-  const pascalName = toPascalCase(options.name);
-  const camelName = toCamelCase(options.name);
+  const pascalName = toPascalCase(options.name!);
+  const camelName = toCamelCase(options.name!);
 
   generateFiles(
     tree,
@@ -65,12 +61,12 @@ export async function cleanCoreGenerator(
 
   await formatFiles(tree);
   
-  console.log(`\n✓ Generated core ${options.type} "${options.name}" in ${targetPath}`);
+  console.log(`✓ Generated core ${options.type} "${options.name}" in ${targetPath}`);
 }
 
 export default cleanCoreGenerator;
 
 export interface CleanCoreGeneratorSchema {
-  name: string;
-  type: 'auth' | 'guard' | 'interceptor' | 'service' | 'translate' | 'language-selector' | 'menu' | 'navbar';
+  name?: string;
+  type: 'all' | 'auth' | 'guard' | 'interceptor' | 'service' | 'translate' | 'language-selector' | 'theme-selector' | 'menu' | 'navbar';
 }

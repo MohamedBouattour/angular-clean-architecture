@@ -4,34 +4,11 @@ import {
   generateFiles,
   joinPathFragments,
 } from '@nx/devkit';
-import * as inquirer from 'inquirer';
+import inquirer from 'inquirer';
 import { CleanFeatureGeneratorSchema } from './schema';
+import { toPascalCase, pluralize } from '../../utils/string-utils';
 
-/**
- * Capitalizes the first letter of a string
- */
-function capitalizeFirst(str: string): string {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
 
-/**
- * Converts a kebab-case or camelCase string to PascalCase
- */
-function toPascalCase(str: string): string {
-  return str
-    .split('-')
-    .map((part) => capitalizeFirst(part))
-    .join('');
-}
-
-/**
- * Pluralizes a word (simple implementation)
- */
-function pluralize(word: string): string {
-  if (word.endsWith('s')) return word;
-  if (word.endsWith('y')) return word.slice(0, -1) + 'ies';
-  return word + 's';
-}
 
 /**
  * Load or create feature schema for persistence
@@ -100,6 +77,30 @@ export async function cleanFeatureGenerator(
   tree: Tree,
   options: CleanFeatureGeneratorSchema
 ) {
+  // 0. Bulk Generation from Schema
+  if (!options.name && !options.blueprint) {
+      const schema = loadFeatureSchema(tree);
+      const featureNames = Object.keys(schema.features || {});
+      
+      if (featureNames.length > 0) {
+        console.log(`\n🚀 Found ${featureNames.length} features in feature-schema.json. Generating...`);
+        
+        for (const name of featureNames) {
+          const feature = schema.features[name];
+          // Convert stored attributes back to string format for recursivity or handle manually
+           const attributesStr = feature.attributes.map((a: any) => `${a.name}:${a.type}`).join(',');
+           
+           console.log(`Generating feature: ${name}`);
+           await cleanFeatureGenerator(tree, { 
+             ...options, 
+             name: feature.name, 
+             attributes: attributesStr 
+           });
+        }
+        return;
+      }
+  }
+
   let featureName = options.name; // Keep original singular name
   let attributes: { name: string; type: string }[] = [];
   let models: { name: string; attributes: { name: string; type: string }[] }[] = [];
@@ -141,66 +142,7 @@ export async function cleanFeatureGenerator(
       throw e;
     }
   } 
-  // 2. Check for saved schema
-  else if (!featureName && Object.keys(featureSchema.features).length > 0) {
-    const { useSchema } = await inquirer.prompt([
-      {
-        type: 'list',
-        name: 'useSchema',
-        message: 'Found existing feature schemas. What would you like to do?',
-        choices: [
-          { name: 'Create new feature', value: 'new' },
-          { name: 'Use saved schema', value: 'use' },
-          { name: 'View saved features', value: 'view' }
-        ]
-      }
-    ]);
 
-    if (useSchema === 'view') {
-      console.log('\nSaved features:');
-      Object.keys(featureSchema.features).forEach(key => {
-        const feature = featureSchema.features[key];
-        console.log(`  - ${key}: ${feature.attributes.map((a: any) => `${a.name}:${a.type}`).join(', ')}`);
-      });
-      
-      const { proceed } = await inquirer.prompt([
-        {
-          type: 'confirm',
-          name: 'proceed',
-          message: 'Would you like to use one of these schemas?',
-          default: true
-        }
-      ]);
-
-      if (proceed) {
-        const { selectedFeature } = await inquirer.prompt([
-          {
-            type: 'list',
-            name: 'selectedFeature',
-            message: 'Select a feature schema:',
-            choices: Object.keys(featureSchema.features)
-          }
-        ]);
-        
-        const savedFeature = featureSchema.features[selectedFeature];
-        featureName = savedFeature.name;
-        attributes = savedFeature.attributes;
-      }
-    } else if (useSchema === 'use') {
-      const { selectedFeature } = await inquirer.prompt([
-        {
-          type: 'list',
-          name: 'selectedFeature',
-          message: 'Select a feature schema:',
-          choices: Object.keys(featureSchema.features)
-        }
-      ]);
-      
-      const savedFeature = featureSchema.features[selectedFeature];
-      featureName = savedFeature.name;
-      attributes = savedFeature.attributes;
-    }
-  }
 
   // 3. Interactive/Manual Mode
   if (!featureName) {

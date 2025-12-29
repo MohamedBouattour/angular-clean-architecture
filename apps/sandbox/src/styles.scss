@@ -1,8 +1,61 @@
+// Theme variables (light/dark) - must come first
+@use './styles/theme' as *;
+
+// Material Design
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
 
-/* You can add global styles to this file, and also import other style files */
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-/* Material Icons */
+// Material Icons
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+// Global Resets
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// Apply theme colors to body
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+// Card styling
+.mat-mdc-card {
+  background-color: var(--color-bg-card) !important;
+}
+
+// Toolbar theming
+.mat-toolbar {
+  &.mat-primary {
+    background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 10;
+  }
+}
+
+// Sidenav theming
+.mat-sidenav {
+  background-color: var(--color-bg-elevated) !important;
+  border-right: 1px solid var(--color-border);
+}
+
+// Dialog theming
+.mat-mdc-dialog-container {
+  --mdc-dialog-container-color: var(--color-bg-card);
+}
+
+// Table theming
+.mat-mdc-table {
+  background-color: var(--color-bg-card) !important;
+}
+
+.mat-mdc-header-cell {
+  color: var(--color-text) !important;
+}
+
+.mat-mdc-cell {
+  color: var(--color-text-secondary) !important;
+}
