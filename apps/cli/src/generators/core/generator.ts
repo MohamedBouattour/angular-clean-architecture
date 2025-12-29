@@ -35,11 +35,18 @@ export async function cleanCoreGenerator(
   tree: Tree,
   options: CleanCoreGeneratorSchema
 ) {
-  const targetPath = joinPathFragments(
-    'apps/sandbox/src/app/core',
-    options.type,
-    options.name
-  );
+  const targetPath =
+    options.type === 'auth' ||
+    options.type === 'translate' ||
+    options.type === 'language-selector' ||
+    options.type === 'menu' ||
+    options.type === 'navbar'
+      ? joinPathFragments('apps/sandbox/src/app/core', options.type)
+      : joinPathFragments(
+          'apps/sandbox/src/app/core',
+          options.type,
+          options.name
+        );
   
   const pascalName = toPascalCase(options.name);
   const camelName = toCamelCase(options.name);
@@ -65,5 +72,5 @@ export default cleanCoreGenerator;
 
 export interface CleanCoreGeneratorSchema {
   name: string;
-  type: 'auth' | 'guard' | 'interceptor' | 'service';
+  type: 'auth' | 'guard' | 'interceptor' | 'service' | 'translate' | 'language-selector' | 'menu' | 'navbar';
 }

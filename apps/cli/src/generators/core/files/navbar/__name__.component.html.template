@@ -1,0 +1,28 @@
+<mat-toolbar color="primary" class="navbar">
+  <div class="navbar-left">
+    <button mat-icon-button (click)="onToggleSidenav()" aria-label="Toggle sidenav">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="brand-title">Clean Architecture</span>
+  </div>
+
+  <span class="spacer"></span>
+
+  <div class="navbar-right">
+    @if (authService.currentUser(); as user) {
+      <div class="user-profile">
+        <div class="user-info">
+          <span class="user-label">Logged in as</span>
+          <span class="user-email">{{ user.email }}</span>
+        </div>
+        <div class="user-avatar" [title]="user.email">
+          {{ user.email.charAt(0).toUpperCase() }}
+        </div>
+      </div>
+    }
+
+    <div class="divider"></div>
+    
+    <app-language-selector />
+  </div>
+</mat-toolbar>

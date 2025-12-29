@@ -1,0 +1,28 @@
+import { Injectable, signal } from '@angular/core';
+
+export interface User {
+  id: string;
+  email: string;
+  name: string;
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+  private _currentUser = signal<User | null>(null);
+  currentUser = this._currentUser.asReadonly();
+
+  isAuthenticated = signal(false);
+
+  login(credentials: { email: string }) {
+    // Mock login
+    this._currentUser.set({ id: '1', email: credentials.email, name: 'Demo User' });
+    this.isAuthenticated.set(true);
+  }
+
+  logout() {
+    this._currentUser.set(null);
+    this.isAuthenticated.set(false);
+  }
+}

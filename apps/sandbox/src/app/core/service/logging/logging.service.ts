@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class <%= pascalName %>Service {
-  private prefix = '[<%= pascalName %>]';
+export class LoggingService {
+  private prefix = '[Logging]';
 
   constructor() {}
 

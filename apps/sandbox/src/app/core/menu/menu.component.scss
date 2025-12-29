@@ -1,0 +1,11 @@
+.selected-nav {
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--primary-color, #3f51b5);
+}
+
+.no-features-msg {
+  padding: 16px;
+  color: #666;
+  font-style: italic;
+  font-size: 0.9rem;
+}

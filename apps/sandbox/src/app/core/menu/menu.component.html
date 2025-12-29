@@ -1,0 +1,15 @@
+<mat-nav-list>
+  <div mat-subheader>Features</div>
+  @for (feature of features; track feature.path) {
+  <a
+    mat-list-item
+    [routerLink]="['/', feature.path]"
+    routerLinkActive="selected-nav"
+  >
+    <mat-icon matListItemIcon>extension</mat-icon>
+    <span matListItemTitle>{{ feature.label }}</span>
+  </a>
+  } @if (features.length === 0) {
+  <div class="no-features-msg">No features generated yet.</div>
+  }
+</mat-nav-list>

@@ -1,0 +1,90 @@
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-signup',
+  standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule
+  ],
+  template: `
+    <div class="signup-container">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Sign Up</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="outline">
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="name" placeholder="Enter your name">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" type="email" placeholder="Enter your email">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput formControlName="password" type="password" placeholder="Enter your password">
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit" [disabled]="signupForm.invalid">
+              Sign Up
+            </button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  `,
+  styles: `
+    .signup-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    mat-card {
+      width: 100%;
+      max-width: 400px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 16px;
+    }
+  `
+})
+export class SignupComponent {
+  private fb = inject(FormBuilder);
+  private authService = inject(AuthService);
+  private router = inject(Router);
+
+  signupForm = this.fb.group({
+    name: ['', [Validators.required]],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(6)]]
+  });
+
+  onSubmit() {
+    if (this.signupForm.valid) {
+      // Mock signup
+      this.authService.login({ email: this.signupForm.value.email! });
+      this.router.navigate(['/']);
+    }
+  }
+}

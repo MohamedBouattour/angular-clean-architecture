@@ -9,6 +9,11 @@
       "factory": "./src/generators/shared/generator",
       "schema": "./src/generators/shared/schema.json",
       "description": "Generate a shared UI component or utility"
+    },
+    "core": {
+      "factory": "./src/generators/core/generator",
+      "schema": "./src/generators/core/schema.json",
+      "description": "Generate a core system asset (Auth, Guard, Interceptor, Service)"
     }
   }
 }

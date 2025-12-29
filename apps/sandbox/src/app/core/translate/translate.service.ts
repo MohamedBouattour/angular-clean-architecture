@@ -1,0 +1,24 @@
+import { Injectable, signal } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class TranslateService {
+  public currentLang = signal('en');
+  private translations: Record<string, any> = {};
+
+  constructor() {}
+
+  setLanguage(lang: string) {
+    this.currentLang.set(lang);
+    // Here you would typically load the translation file for the language
+  }
+
+  get(key: string): string {
+    return this.translations[key] || key;
+  }
+
+  instant(key: string): string {
+    return this.get(key);
+  }
+}
