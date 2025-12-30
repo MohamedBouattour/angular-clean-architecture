@@ -4,30 +4,31 @@ import {
   joinPathFragments,
   Tree,
 } from '@nx/devkit';
-// import { CleanCoreGeneratorSchema } from './schema';
 import { toPascalCase, toCamelCase } from '../../utils/string-utils';
 
-
-
-export async function cleanCoreGenerator(
-  tree: Tree,
-  options: CleanCoreGeneratorSchema
-) {
+export async function coreGenerator(tree: Tree, options: CoreGeneratorSchema) {
   if (options.type === 'all') {
-    const coreTypes = ['navbar', 'menu', 'theme-selector', 'language-selector', 'translate', 'auth'];
+    const coreTypes = [
+      'navbar',
+      'menu',
+      'theme-selector',
+      'language-selector',
+      'translate',
+      'auth',
+    ];
     console.log(`\n🚀 Generating ALL core assets: ${coreTypes.join(', ')}...`);
-    
+
     for (const type of coreTypes) {
       // Use provided name or default to the type name (e.g. 'navbar')
       const name = options.name || type;
-      await cleanCoreGenerator(tree, { ...options, type: type as any, name });
+      await coreGenerator(tree, { ...options, type: type as any, name });
     }
     return;
   }
 
   // Ensure name is present for specific types (default to type name if missing)
   if (!options.name) {
-     options.name = options.type;
+    options.name = options.type;
   }
 
   const targetPath =
@@ -41,9 +42,9 @@ export async function cleanCoreGenerator(
       : joinPathFragments(
           'apps/sandbox/src/app/core',
           options.type,
-          options.name
+          options.name,
         );
-  
+
   const pascalName = toPascalCase(options.name!);
   const camelName = toCamelCase(options.name!);
 
@@ -56,17 +57,29 @@ export async function cleanCoreGenerator(
       pascalName,
       camelName,
       tmpl: '',
-    }
+    },
   );
 
   await formatFiles(tree);
-  
-  console.log(`✓ Generated core ${options.type} "${options.name}" in ${targetPath}`);
+
+  console.log(
+    `✓ Generated core ${options.type} "${options.name}" in ${targetPath}`,
+  );
 }
 
-export default cleanCoreGenerator;
+export default coreGenerator;
 
-export interface CleanCoreGeneratorSchema {
+export interface CoreGeneratorSchema {
   name?: string;
-  type: 'all' | 'auth' | 'guard' | 'interceptor' | 'service' | 'translate' | 'language-selector' | 'theme-selector' | 'menu' | 'navbar';
+  type:
+    | 'all'
+    | 'auth'
+    | 'guard'
+    | 'interceptor'
+    | 'service'
+    | 'translate'
+    | 'language-selector'
+    | 'theme-selector'
+    | 'menu'
+    | 'navbar';
 }

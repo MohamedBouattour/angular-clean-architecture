@@ -6,9 +6,9 @@ import {
 } from '@nx/devkit';
 import { toPascalCase, toCamelCase } from '../../utils/string-utils';
 
-export async function cleanSharedGenerator(
+export async function sharedGenerator(
   tree: Tree,
-  options: CleanSharedGeneratorSchema,
+  options: SharedGeneratorSchema,
 ) {
   if (options.type === 'all') {
     // Generate a standard set of UI components
@@ -25,7 +25,7 @@ export async function cleanSharedGenerator(
     );
 
     for (const name of commonComponents) {
-      await cleanSharedGenerator(tree, { ...options, type: 'ui', name });
+      await sharedGenerator(tree, { ...options, type: 'ui', name });
     }
     return;
   }
@@ -62,9 +62,9 @@ export async function cleanSharedGenerator(
   );
 }
 
-export default cleanSharedGenerator;
+export default sharedGenerator;
 
-export interface CleanSharedGeneratorSchema {
+export interface SharedGeneratorSchema {
   name?: string;
   type: 'all' | 'ui' | 'util';
 }

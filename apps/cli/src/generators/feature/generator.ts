@@ -5,10 +5,8 @@ import {
   joinPathFragments,
 } from '@nx/devkit';
 import inquirer from 'inquirer';
-import { CleanFeatureGeneratorSchema } from './schema';
+import { FeatureGeneratorSchema } from './schema';
 import { toPascalCase, pluralize } from '../../utils/string-utils';
-
-
 
 /**
  * Load or create feature schema for persistence
@@ -24,7 +22,7 @@ function loadFeatureSchema(tree: Tree): any {
   return {
     version: '1.0',
     lastUpdated: new Date().toISOString(),
-    features: {}
+    features: {},
   };
 }
 
@@ -39,12 +37,17 @@ function saveFeatureSchema(tree: Tree, schema: any): void {
 /**
  * Updates app.routes.ts to include the new feature
  */
-function updateAppRoutes(tree: Tree, featureName: string, folderName: string, pascalName: string) {
+function updateAppRoutes(
+  tree: Tree,
+  featureName: string,
+  folderName: string,
+  pascalName: string,
+) {
   const routesPath = 'apps/sandbox/src/app/app.routes.ts';
   if (!tree.exists(routesPath)) return;
 
   let content = tree.read(routesPath)!.toString();
-  
+
   // Check if route already exists
   if (content.includes(`path: '${folderName}'`)) return;
 
@@ -55,55 +58,64 @@ function updateAppRoutes(tree: Tree, featureName: string, folderName: string, pa
   },`;
 
   // Find the appRoutes array
-  const routesArrayRegex = /export const appRoutes: Route\[\] = \[([\s\S]*?)\];/;
+  const routesArrayRegex =
+    /export const appRoutes: Route\[\] = \[([\s\S]*?)\];/;
   const match = content.match(routesArrayRegex);
 
   if (match) {
     const existingRoutes = match[1].trim();
     let updatedRoutes = existingRoutes;
-    
+
     if (existingRoutes && !existingRoutes.endsWith(',')) {
       updatedRoutes += ',';
     }
-    
+
     updatedRoutes += `\n${newRoute}`;
-    
-    content = content.replace(routesArrayRegex, `export const appRoutes: Route[] = [${updatedRoutes}\n];`);
+
+    content = content.replace(
+      routesArrayRegex,
+      `export const appRoutes: Route[] = [${updatedRoutes}\n];`,
+    );
     tree.write(routesPath, content);
   }
 }
 
-export async function cleanFeatureGenerator(
+export async function featureGenerator(
   tree: Tree,
-  options: CleanFeatureGeneratorSchema
+  options: FeatureGeneratorSchema,
 ) {
   // 0. Bulk Generation from Schema
   if (!options.name && !options.blueprint) {
-      const schema = loadFeatureSchema(tree);
-      const featureNames = Object.keys(schema.features || {});
-      
-      if (featureNames.length > 0) {
-        console.log(`\n🚀 Found ${featureNames.length} features in feature-schema.json. Generating...`);
-        
-        for (const name of featureNames) {
-          const feature = schema.features[name];
-          // Convert stored attributes back to string format for recursivity or handle manually
-           const attributesStr = feature.attributes.map((a: any) => `${a.name}:${a.type}`).join(',');
-           
-           console.log(`Generating feature: ${name}`);
-           await cleanFeatureGenerator(tree, { 
-             ...options, 
-             name: feature.name, 
-             attributes: attributesStr 
-           });
-        }
-        return;
+    const schema = loadFeatureSchema(tree);
+    const featureNames = Object.keys(schema.features || {});
+
+    if (featureNames.length > 0) {
+      console.log(
+        `\n🚀 Found ${featureNames.length} features in feature-schema.json. Generating...`,
+      );
+
+      for (const name of featureNames) {
+        const feature = schema.features[name];
+        // Convert stored attributes back to string format for recursivity or handle manually
+        const attributesStr = feature.attributes
+          .map((a: any) => `${a.name}:${a.type}`)
+          .join(',');
+
+        console.log(`Generating feature: ${name}`);
+        await featureGenerator(tree, {
+          ...options,
+          name: feature.name,
+          attributes: attributesStr,
+        });
       }
+      return;
+    }
   }
 
   let featureName = options.name; // Keep original singular name
   let attributes: { name: string; type: string }[] = [];
-  let models: { name: string; attributes: { name: string; type: string }[] }[] = [];
+  let models: { name: string; attributes: { name: string; type: string }[] }[] =
+    [];
 
   // Load existing schema
   const featureSchema = loadFeatureSchema(tree);
@@ -122,27 +134,27 @@ export async function cleanFeatureGenerator(
       }
 
       featureName = blueprint.name;
-      
+
       if (blueprint.models && Array.isArray(blueprint.models)) {
         models = blueprint.models.map((m: any) => ({
           name: toPascalCase(m.name),
-          attributes: m.attributes || []
+          attributes: m.attributes || [],
         }));
       } else {
-        models = [{
-          name: toPascalCase(featureName),
-          attributes: []
-        }];
-      } 
-      
-      console.log(`Loaded feature "${featureName}" from blueprint.`);
+        models = [
+          {
+            name: toPascalCase(featureName),
+            attributes: [],
+          },
+        ];
+      }
 
+      console.log(`Loaded feature "${featureName}" from blueprint.`);
     } catch (e) {
       console.error(`Error reading blueprint: ${e}`);
       throw e;
     }
-  } 
-
+  }
 
   // 3. Interactive/Manual Mode
   if (!featureName) {
@@ -202,7 +214,7 @@ export async function cleanFeatureGenerator(
     if (attributes.length > 0) {
       featureSchema.features[featureName] = {
         name: featureName,
-        attributes: attributes
+        attributes: attributes,
       };
       saveFeatureSchema(tree, featureSchema);
       console.log(`✓ Feature schema saved for future use`);
@@ -211,44 +223,44 @@ export async function cleanFeatureGenerator(
 
   // Build models if not from blueprint
   if (models.length === 0) {
-    models = [{
-      name: toPascalCase(featureName), // Singular PascalCase (e.g., "Order")
-      attributes: attributes
-    }];
+    models = [
+      {
+        name: toPascalCase(featureName), // Singular PascalCase (e.g., "Order")
+        attributes: attributes,
+      },
+    ];
   }
 
   // Generate folder name (pluralized)
   const folderName = pluralize(featureName);
-  const targetPath = joinPathFragments('apps/sandbox/src/app/features', folderName);
-  
+  const targetPath = joinPathFragments(
+    'apps/sandbox/src/app/features',
+    folderName,
+  );
+
   // Use singular PascalCase for class names
   const singularPascalName = toPascalCase(featureName);
-  
+
   // Extract attributes from the primary model
   const primaryAttributes = models.length > 0 ? models[0].attributes : [];
 
   // Generate files from templates
-  generateFiles(
-    tree,
-    joinPathFragments(__dirname, 'files'),
-    targetPath,
-    {
-      ...options,
-      name: folderName, // Pluralized for folder
-      singularName: featureName, // Original singular name
-      pascalName: singularPascalName, // Singular PascalCase for classes
-      models,
-      attributes: primaryAttributes,
-      tmpl: '',
-    }
-  );
+  generateFiles(tree, joinPathFragments(__dirname, 'files'), targetPath, {
+    ...options,
+    name: folderName, // Pluralized for folder
+    singularName: featureName, // Original singular name
+    pascalName: singularPascalName, // Singular PascalCase for classes
+    models,
+    attributes: primaryAttributes,
+    tmpl: '',
+  });
 
   // 4. Update Routes
   updateAppRoutes(tree, featureName, folderName, singularPascalName);
 
   await formatFiles(tree);
-  
+
   console.log(`\n✓ Generated feature "${featureName}" in ${targetPath}`);
 }
 
-export default cleanFeatureGenerator;
+export default featureGenerator;
