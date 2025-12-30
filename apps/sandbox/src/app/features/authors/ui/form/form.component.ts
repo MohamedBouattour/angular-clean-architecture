@@ -33,7 +33,8 @@ import { Author } from '../../domain/model';
     MatCheckboxModule,
   ],
   template: `
-    @let isEditMode = !!data; @let title = isEditMode ? 'Edit' : 'Create';
+    @let isEditMode = !!data;
+    @let title = isEditMode ? 'Edit' : 'Create';
 
     <h2 mat-dialog-title>{{ title }} Author</h2>
 
@@ -43,7 +44,7 @@ import { Author } from '../../domain/model';
           <mat-label>Name</mat-label>
           <input matInput formControlName="name" />
           @if (form.get('name')?.hasError('required')) {
-          <mat-error>This field is required</mat-error>
+            <mat-error>This field is required</mat-error>
           }
         </mat-form-field>
 
@@ -51,7 +52,7 @@ import { Author } from '../../domain/model';
           <mat-label>Bio</mat-label>
           <input matInput formControlName="bio" />
           @if (form.get('bio')?.hasError('required')) {
-          <mat-error>This field is required</mat-error>
+            <mat-error>This field is required</mat-error>
           }
         </mat-form-field>
 
@@ -59,7 +60,7 @@ import { Author } from '../../domain/model';
           <mat-label>BirthDate</mat-label>
           <input matInput formControlName="birthDate" />
           @if (form.get('birthDate')?.hasError('required')) {
-          <mat-error>This field is required</mat-error>
+            <mat-error>This field is required</mat-error>
           }
         </mat-form-field>
       </form>
@@ -85,7 +86,7 @@ import { Author } from '../../domain/model';
       min-width: 400px;
       padding: 1rem 0;
     }
-    
+
     .form-field {
       width: 100%;
     }
@@ -113,7 +114,7 @@ export class AuthorFormComponent {
 
   // Computed signal for form validation state
   readonly isFormInvalid = computed(
-    () => !this.formValid() || !this.formDirty()
+    () => !this.formValid() || !this.formDirty(),
   );
 
   constructor() {

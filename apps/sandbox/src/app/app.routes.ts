@@ -3,10 +3,22 @@ import { Route } from '@angular/router';
 export const appRoutes: Route[] = [
   { path: '', redirectTo: 'products', pathMatch: 'full' },
   {
+    path: 'login',
+    loadComponent: () =>
+      import('./core/auth/login.component').then((m) => m.LoginComponent),
+    data: { hideNav: true },
+  },
+  {
+    path: 'signup',
+    loadComponent: () =>
+      import('./core/auth/signup.component').then((m) => m.SignupComponent),
+    data: { hideNav: true },
+  },
+  {
     path: 'products',
     loadComponent: () =>
       import('./features/products/ui/product.component').then(
-        (m) => m.ProductComponent
+        (m) => m.ProductComponent,
       ),
     data: { label: 'Products' },
   },
@@ -20,7 +32,7 @@ export const appRoutes: Route[] = [
     path: 'authors',
     loadComponent: () =>
       import('./features/authors/ui/author.component').then(
-        (m) => m.AuthorComponent
+        (m) => m.AuthorComponent,
       ),
     data: { label: 'Authors' },
   },
@@ -28,7 +40,7 @@ export const appRoutes: Route[] = [
     path: 'publishers',
     loadComponent: () =>
       import('./features/publishers/ui/publisher.component').then(
-        (m) => m.PublisherComponent
+        (m) => m.PublisherComponent,
       ),
     data: { label: 'Publishers' },
   },

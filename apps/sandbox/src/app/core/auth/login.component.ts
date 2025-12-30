@@ -3,21 +3,19 @@ import {
   inject,
   ChangeDetectionStrategy,
   signal,
-  computed,
 } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { RouterLink } from '@angular/router';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 
 /**
- * Login component using Angular 21 features:
- * - @let template syntax
- * - Signal-based form state tracking
- * - ChangeDetectionStrategy.OnPush for zoneless
+ * Login component - connects to backend API
  */
 @Component({
   selector: 'app-login',
@@ -27,68 +25,78 @@ import { Router } from '@angular/router';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
+    MatProgressSpinnerModule,
+    RouterLink,
   ],
   template: `
-    @let emailErrors = loginForm.get('email')?.errors; @let passwordErrors =
-    loginForm.get('password')?.errors; @let isSubmitDisabled = !formValid() ||
-    isSubmitting();
-
-    <div class="login-container">
-      <mat-card>
+    @let emailErrors = loginForm.get('email')?.errors;
+    @let passwordErrors = loginForm.get('password')?.errors;
+    @let isSubmitDisabled = !formValid() || authService.loading();
+    
+    <div class="auth-container">
+      <mat-card class="auth-card">
         <mat-card-header>
           <mat-card-title>Login</mat-card-title>
+          <mat-card-subtitle>Sign in to your account</mat-card-subtitle>
         </mat-card-header>
+        
         <mat-card-content>
+          @if (authService.error()) {
+            <div class="error-banner">{{ authService.error() }}</div>
+          }
+          
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <mat-form-field appearance="outline">
               <mat-label>Email</mat-label>
-              <input
-                matInput
-                formControlName="email"
-                type="email"
-                placeholder="Enter your email"
-              />
+              <input matInput formControlName="email" type="email" placeholder="Enter your email">
               @if (emailErrors?.['required']) {
-              <mat-error>Email is required</mat-error>
-              } @if (emailErrors?.['email']) {
-              <mat-error>Please enter a valid email</mat-error>
+                <mat-error>Email is required</mat-error>
+              }
+              @if (emailErrors?.['email']) {
+                <mat-error>Please enter a valid email</mat-error>
               }
             </mat-form-field>
 
             <mat-form-field appearance="outline">
               <mat-label>Password</mat-label>
-              <input
-                matInput
-                formControlName="password"
-                type="password"
-                placeholder="Enter your password"
-              />
+              <input matInput formControlName="password" type="password" placeholder="Enter your password">
               @if (passwordErrors?.['required']) {
-              <mat-error>Password is required</mat-error>
+                <mat-error>Password is required</mat-error>
               }
             </mat-form-field>
 
-            <button
-              mat-raised-button
-              color="primary"
-              type="submit"
+            <button 
+              mat-raised-button 
+              color="primary" 
+              type="submit" 
               [disabled]="isSubmitDisabled"
-            >
-              @if (isSubmitting()) { Logging in... } @else { Login }
+              class="submit-btn">
+              @if (authService.loading()) {
+                <mat-spinner diameter="20"></mat-spinner>
+                <span>Logging in...</span>
+              } @else {
+                Login
+              }
             </button>
           </form>
+          
+          <div class="auth-footer">
+            <p>Don't have an account? <a routerLink="/signup">Sign up</a></p>
+            <p class="demo-hint">Demo: admin@example.com / admin123</p>
+          </div>
         </mat-card-content>
       </mat-card>
     </div>
   `,
   styles: `
-    .login-container {
+    .auth-container {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100%;
+      min-height: 80vh;
+      padding: 1rem;
     }
-    mat-card {
+    .auth-card {
       width: 100%;
       max-width: 400px;
     }
@@ -98,16 +106,44 @@ import { Router } from '@angular/router';
       gap: 16px;
       margin-top: 16px;
     }
+    .submit-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 48px;
+    }
+    .error-banner {
+      background-color: #f44336;
+      color: white;
+      padding: 12px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+    .auth-footer {
+      margin-top: 24px;
+      text-align: center;
+
+      a {
+        color: var(--color-primary);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .demo-hint {
+        margin-top: 8px;
+        font-size: 0.85rem;
+        color: var(--color-text-secondary);
+      }
+    }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent {
   private readonly fb = inject(FormBuilder);
-  private readonly authService = inject(AuthService);
+  protected readonly authService = inject(AuthService);
   private readonly router = inject(Router);
 
-  // Signal-based state for zoneless compatibility
-  readonly isSubmitting = signal(false);
   readonly formValid = signal(false);
 
   readonly loginForm = this.fb.group({
@@ -116,7 +152,6 @@ export class LoginComponent {
   });
 
   constructor() {
-    // Track form validity with signals
     this.loginForm.statusChanges.subscribe(() => {
       this.formValid.set(this.loginForm.valid);
     });
@@ -124,9 +159,14 @@ export class LoginComponent {
 
   onSubmit(): void {
     if (this.loginForm.valid) {
-      this.isSubmitting.set(true);
-      this.authService.login({ email: this.loginForm.value.email! });
-      this.router.navigate(['/']);
+      const { email, password } = this.loginForm.value;
+      this.authService
+        .login({ email: email!, password: password! })
+        .subscribe((response) => {
+          if (response) {
+            this.router.navigate(['/']);
+          }
+        });
     }
   }
 }

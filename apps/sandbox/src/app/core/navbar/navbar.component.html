@@ -13,16 +13,42 @@
   <span class="spacer"></span>
 
   <div class="navbar-right">
-    @if (authService.currentUser(); as user) {
-    <div class="user-profile">
-      <div class="user-info">
-        <span class="user-label">Logged in as</span>
-        <span class="user-email">{{ user.email }}</span>
-      </div>
-      <div class="user-avatar" [title]="user.email">
-        {{ user.email.charAt(0).toUpperCase() }}
-      </div>
-    </div>
+    @if (authService.isAuthenticated()) {
+      <!-- Authenticated: Show user info and logout -->
+      @if (authService.currentUser(); as user) {
+        <div class="user-profile">
+          <div class="user-info">
+            <span class="user-label">Welcome</span>
+            <span class="user-email">{{ user.name || user.email }}</span>
+          </div>
+          <div class="user-avatar" [title]="user.email">
+            {{ (user.name || user.email).charAt(0).toUpperCase() }}
+          </div>
+        </div>
+      }
+      <button
+        mat-icon-button
+        (click)="onLogout()"
+        matTooltip="Logout"
+        class="logout-btn"
+      >
+        <mat-icon>logout</mat-icon>
+      </button>
+    } @else {
+      <!-- Not authenticated: Show login/signup buttons -->
+      <a mat-button routerLink="/login" class="auth-btn">
+        <mat-icon>login</mat-icon>
+        <span>Login</span>
+      </a>
+      <a
+        mat-raised-button
+        color="accent"
+        routerLink="/signup"
+        class="auth-btn signup-btn"
+      >
+        <mat-icon>person_add</mat-icon>
+        <span>Sign Up</span>
+      </a>
     }
 
     <div class="divider"></div>

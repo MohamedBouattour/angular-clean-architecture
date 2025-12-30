@@ -4,20 +4,26 @@ import {
   joinPathFragments,
   Tree,
 } from '@nx/devkit';
-// import { CleanSharedGeneratorSchema } from './schema';
 import { toPascalCase, toCamelCase } from '../../utils/string-utils';
-
-
 
 export async function cleanSharedGenerator(
   tree: Tree,
-  options: CleanSharedGeneratorSchema
+  options: CleanSharedGeneratorSchema,
 ) {
   if (options.type === 'all') {
     // Generate a standard set of UI components
-    const commonComponents = ['button', 'card', 'input', 'icon', 'loader', 'confirm-dialog'];
-    console.log(`\n🚀 Generating standard shared UI components: ${commonComponents.join(', ')}...`);
-    
+    const commonComponents = [
+      'button',
+      'card',
+      'input',
+      'icon',
+      'loader',
+      'confirm-dialog',
+    ];
+    console.log(
+      `\n🚀 Generating standard shared UI components: ${commonComponents.join(', ')}...`,
+    );
+
     for (const name of commonComponents) {
       await cleanSharedGenerator(tree, { ...options, type: 'ui', name });
     }
@@ -32,9 +38,9 @@ export async function cleanSharedGenerator(
   const targetPath = joinPathFragments(
     'apps/sandbox/src/app/shared',
     options.type,
-    options.name!
+    options.name!,
   );
-  
+
   const pascalName = toPascalCase(options.name!);
 
   generateFiles(
@@ -46,12 +52,14 @@ export async function cleanSharedGenerator(
       pascalName,
       camelName: toCamelCase(options.name!),
       tmpl: '',
-    }
+    },
   );
 
   await formatFiles(tree);
-  
-  console.log(`✓ Generated shared ${options.type} "${options.name}" in ${targetPath}`);
+
+  console.log(
+    `✓ Generated shared ${options.type} "${options.name}" in ${targetPath}`,
+  );
 }
 
 export default cleanSharedGenerator;

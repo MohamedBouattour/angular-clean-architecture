@@ -2,11 +2,12 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Book } from '../domain/model';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class BookService {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = '/api/books';
+  private readonly apiUrl = `${environment.apiUrl}/features/books`;
 
   getAll(): Observable<Book[]> {
     return this.http.get<Book[]>(this.apiUrl);

@@ -2,11 +2,12 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { <%= pascalName %> } from '../domain/model';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class <%= pascalName %>Service {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = '/api/<%= name %>';
+  private readonly apiUrl = `${environment.apiUrl}/features/<%= name %>`;
 
   getAll(): Observable<<%= pascalName %>[]> {
     return this.http.get<<%= pascalName %>[]>(this.apiUrl);

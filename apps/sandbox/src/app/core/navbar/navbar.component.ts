@@ -4,9 +4,11 @@ import {
   output,
   ChangeDetectionStrategy,
 } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { LanguageSelectorComponent } from '../language-selector/language-selector.component';
 import { ThemeSelectorComponent } from '../theme-selector/theme-selector.component';
 import { AuthService } from '../auth/auth.service';
@@ -14,9 +16,11 @@ import { AuthService } from '../auth/auth.service';
 @Component({
   selector: 'app-navbar',
   imports: [
+    RouterLink,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatTooltipModule,
     LanguageSelectorComponent,
     ThemeSelectorComponent,
   ],
@@ -31,5 +35,9 @@ export class NavbarComponent {
 
   onToggleSidenav(): void {
     this.toggleSidenav.emit();
+  }
+
+  onLogout(): void {
+    this.authService.logout();
   }
 }

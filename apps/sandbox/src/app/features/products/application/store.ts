@@ -40,8 +40,8 @@ export const ProductStore = signalStore(
       if (filter) {
         items = items.filter((item) =>
           Object.values(item).some((val) =>
-            String(val).toLowerCase().includes(filter)
-          )
+            String(val).toLowerCase().includes(filter),
+          ),
         );
       }
 
@@ -68,10 +68,10 @@ export const ProductStore = signalStore(
               next: (items) => patchState(store, { items, loading: false }),
               error: (error: Error) =>
                 patchState(store, { error: error.message, loading: false }),
-            })
-          )
-        )
-      )
+            }),
+          ),
+        ),
+      ),
     ),
 
     create: rxMethod<Omit<Product, 'id' | 'createdAt' | 'updatedAt'>>(
@@ -87,10 +87,10 @@ export const ProductStore = signalStore(
                 })),
               error: (error: Error) =>
                 patchState(store, { error: error.message, loading: false }),
-            })
-          )
-        )
-      )
+            }),
+          ),
+        ),
+      ),
     ),
 
     update: rxMethod<{ id: string; data: Partial<Product> }>(
@@ -102,16 +102,16 @@ export const ProductStore = signalStore(
               next: (updated) =>
                 patchState(store, (state) => ({
                   items: state.items.map((item) =>
-                    item.id === id ? updated : item
+                    item.id === id ? updated : item,
                   ),
                   loading: false,
                 })),
               error: (error: Error) =>
                 patchState(store, { error: error.message, loading: false }),
-            })
-          )
-        )
-      )
+            }),
+          ),
+        ),
+      ),
     ),
 
     delete: rxMethod<string>(
@@ -127,15 +127,15 @@ export const ProductStore = signalStore(
                 })),
               error: (error: Error) =>
                 patchState(store, { error: error.message, loading: false }),
-            })
-          )
-        )
-      )
+            }),
+          ),
+        ),
+      ),
     ),
 
     setFilter: (filter: string) => patchState(store, { filter }),
 
     setSort: (field: keyof Product, direction: 'asc' | 'desc') =>
       patchState(store, { sortField: field, sortDirection: direction }),
-  }))
+  })),
 );

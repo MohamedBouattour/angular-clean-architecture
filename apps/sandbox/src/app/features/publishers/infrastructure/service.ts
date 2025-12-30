@@ -2,11 +2,12 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Publisher } from '../domain/model';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class PublisherService {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = '/api/publishers';
+  private readonly apiUrl = `${environment.apiUrl}/features/publishers`;
 
   getAll(): Observable<Publisher[]> {
     return this.http.get<Publisher[]>(this.apiUrl);
@@ -17,7 +18,7 @@ export class PublisherService {
   }
 
   create(
-    data: Omit<Publisher, 'id' | 'createdAt' | 'updatedAt'>
+    data: Omit<Publisher, 'id' | 'createdAt' | 'updatedAt'>,
   ): Observable<Publisher> {
     return this.http.post<Publisher>(this.apiUrl, data);
   }

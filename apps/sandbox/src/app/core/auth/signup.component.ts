@@ -9,14 +9,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { RouterLink } from '@angular/router';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 
 /**
- * Signup component using Angular 21 features:
- * - @let template syntax
- * - Signal-based state tracking
- * - ChangeDetectionStrategy.OnPush for zoneless
+ * Signup component - connects to backend API
  */
 @Component({
   selector: 'app-signup',
@@ -26,19 +25,27 @@ import { Router } from '@angular/router';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
+    MatProgressSpinnerModule,
+    RouterLink,
   ],
   template: `
-    @let nameErrors = signupForm.get('name')?.errors; @let emailErrors =
-    signupForm.get('email')?.errors; @let passwordErrors =
-    signupForm.get('password')?.errors; @let isSubmitDisabled = !formValid() ||
-    isSubmitting();
+    @let nameErrors = signupForm.get('name')?.errors;
+    @let emailErrors = signupForm.get('email')?.errors;
+    @let passwordErrors = signupForm.get('password')?.errors;
+    @let isSubmitDisabled = !formValid() || authService.loading();
 
-    <div class="signup-container">
-      <mat-card>
+    <div class="auth-container">
+      <mat-card class="auth-card">
         <mat-card-header>
           <mat-card-title>Sign Up</mat-card-title>
+          <mat-card-subtitle>Create a new account</mat-card-subtitle>
         </mat-card-header>
+
         <mat-card-content>
+          @if (authService.error()) {
+            <div class="error-banner">{{ authService.error() }}</div>
+          }
+
           <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
             <mat-form-field appearance="outline">
               <mat-label>Name</mat-label>
@@ -48,7 +55,7 @@ import { Router } from '@angular/router';
                 placeholder="Enter your name"
               />
               @if (nameErrors?.['required']) {
-              <mat-error>Name is required</mat-error>
+                <mat-error>Name is required</mat-error>
               }
             </mat-form-field>
 
@@ -61,9 +68,10 @@ import { Router } from '@angular/router';
                 placeholder="Enter your email"
               />
               @if (emailErrors?.['required']) {
-              <mat-error>Email is required</mat-error>
-              } @if (emailErrors?.['email']) {
-              <mat-error>Please enter a valid email</mat-error>
+                <mat-error>Email is required</mat-error>
+              }
+              @if (emailErrors?.['email']) {
+                <mat-error>Please enter a valid email</mat-error>
               }
             </mat-form-field>
 
@@ -76,9 +84,10 @@ import { Router } from '@angular/router';
                 placeholder="Enter your password"
               />
               @if (passwordErrors?.['required']) {
-              <mat-error>Password is required</mat-error>
-              } @if (passwordErrors?.['minlength']) {
-              <mat-error>Password must be at least 6 characters</mat-error>
+                <mat-error>Password is required</mat-error>
+              }
+              @if (passwordErrors?.['minlength']) {
+                <mat-error>Password must be at least 6 characters</mat-error>
               }
             </mat-form-field>
 
@@ -87,22 +96,33 @@ import { Router } from '@angular/router';
               color="primary"
               type="submit"
               [disabled]="isSubmitDisabled"
+              class="submit-btn"
             >
-              @if (isSubmitting()) { Creating account... } @else { Sign Up }
+              @if (authService.loading()) {
+                <mat-spinner diameter="20"></mat-spinner>
+                <span>Creating account...</span>
+              } @else {
+                Sign Up
+              }
             </button>
           </form>
+
+          <div class="auth-footer">
+            <p>Already have an account? <a routerLink="/login">Login</a></p>
+          </div>
         </mat-card-content>
       </mat-card>
     </div>
   `,
   styles: `
-    .signup-container {
+    .auth-container {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100%;
+      min-height: 80vh;
+      padding: 1rem;
     }
-    mat-card {
+    .auth-card {
       width: 100%;
       max-width: 400px;
     }
@@ -112,16 +132,38 @@ import { Router } from '@angular/router';
       gap: 16px;
       margin-top: 16px;
     }
+    .submit-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 48px;
+    }
+    .error-banner {
+      background-color: #f44336;
+      color: white;
+      padding: 12px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+    .auth-footer {
+      margin-top: 24px;
+      text-align: center;
+
+      a {
+        color: var(--color-primary);
+        text-decoration: none;
+        font-weight: 500;
+      }
+    }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SignupComponent {
   private readonly fb = inject(FormBuilder);
-  private readonly authService = inject(AuthService);
+  protected readonly authService = inject(AuthService);
   private readonly router = inject(Router);
 
-  // Signal-based state for zoneless compatibility
-  readonly isSubmitting = signal(false);
   readonly formValid = signal(false);
 
   readonly signupForm = this.fb.group({
@@ -131,7 +173,6 @@ export class SignupComponent {
   });
 
   constructor() {
-    // Track form validity with signals
     this.signupForm.statusChanges.subscribe(() => {
       this.formValid.set(this.signupForm.valid);
     });
@@ -139,9 +180,14 @@ export class SignupComponent {
 
   onSubmit(): void {
     if (this.signupForm.valid) {
-      this.isSubmitting.set(true);
-      this.authService.login({ email: this.signupForm.value.email! });
-      this.router.navigate(['/']);
+      const { name, email, password } = this.signupForm.value;
+      this.authService
+        .signup({ name: name!, email: email!, password: password! })
+        .subscribe((response) => {
+          if (response) {
+            this.router.navigate(['/']);
+          }
+        });
     }
   }
 }

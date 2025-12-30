@@ -20,11 +20,23 @@ foldersToDelete.forEach(folder => {
   }
 });
 
-// Reset app.routes.ts
+// Reset app.routes.ts with auth routes
 const routesContent = `import { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
   { path: '', redirectTo: 'products', pathMatch: 'full' },
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./core/auth/login.component').then((m) => m.LoginComponent),
+    data: { hideNav: true },
+  },
+  {
+    path: 'signup',
+    loadComponent: () =>
+      import('./core/auth/signup.component').then((m) => m.SignupComponent),
+    data: { hideNav: true },
+  },
 ];
 `;
 

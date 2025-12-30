@@ -40,8 +40,8 @@ export const BookStore = signalStore(
       if (filter) {
         items = items.filter((item) =>
           Object.values(item).some((val) =>
-            String(val).toLowerCase().includes(filter)
-          )
+            String(val).toLowerCase().includes(filter),
+          ),
         );
       }
 
@@ -68,10 +68,10 @@ export const BookStore = signalStore(
               next: (items) => patchState(store, { items, loading: false }),
               error: (error: Error) =>
                 patchState(store, { error: error.message, loading: false }),
-            })
-          )
-        )
-      )
+            }),
+          ),
+        ),
+      ),
     ),
 
     create: rxMethod<Omit<Book, 'id' | 'createdAt' | 'updatedAt'>>(
@@ -87,10 +87,10 @@ export const BookStore = signalStore(
                 })),
               error: (error: Error) =>
                 patchState(store, { error: error.message, loading: false }),
-            })
-          )
-        )
-      )
+            }),
+          ),
+        ),
+      ),
     ),
 
     update: rxMethod<{ id: string; data: Partial<Book> }>(
@@ -102,16 +102,16 @@ export const BookStore = signalStore(
               next: (updated) =>
                 patchState(store, (state) => ({
                   items: state.items.map((item) =>
-                    item.id === id ? updated : item
+                    item.id === id ? updated : item,
                   ),
                   loading: false,
                 })),
               error: (error: Error) =>
                 patchState(store, { error: error.message, loading: false }),
-            })
-          )
-        )
-      )
+            }),
+          ),
+        ),
+      ),
     ),
 
     delete: rxMethod<string>(
@@ -127,15 +127,15 @@ export const BookStore = signalStore(
                 })),
               error: (error: Error) =>
                 patchState(store, { error: error.message, loading: false }),
-            })
-          )
-        )
-      )
+            }),
+          ),
+        ),
+      ),
     ),
 
     setFilter: (filter: string) => patchState(store, { filter }),
 
     setSort: (field: keyof Book, direction: 'asc' | 'desc') =>
       patchState(store, { sortField: field, sortDirection: direction }),
-  }))
+  })),
 );

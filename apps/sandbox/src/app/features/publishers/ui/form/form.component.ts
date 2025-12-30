@@ -33,7 +33,8 @@ import { Publisher } from '../../domain/model';
     MatCheckboxModule,
   ],
   template: `
-    @let isEditMode = !!data; @let title = isEditMode ? 'Edit' : 'Create';
+    @let isEditMode = !!data;
+    @let title = isEditMode ? 'Edit' : 'Create';
 
     <h2 mat-dialog-title>{{ title }} Publisher</h2>
 
@@ -43,7 +44,7 @@ import { Publisher } from '../../domain/model';
           <mat-label>Name</mat-label>
           <input matInput formControlName="name" />
           @if (form.get('name')?.hasError('required')) {
-          <mat-error>This field is required</mat-error>
+            <mat-error>This field is required</mat-error>
           }
         </mat-form-field>
 
@@ -51,7 +52,7 @@ import { Publisher } from '../../domain/model';
           <mat-label>Location</mat-label>
           <input matInput formControlName="location" />
           @if (form.get('location')?.hasError('required')) {
-          <mat-error>This field is required</mat-error>
+            <mat-error>This field is required</mat-error>
           }
         </mat-form-field>
       </form>
@@ -77,7 +78,7 @@ import { Publisher } from '../../domain/model';
       min-width: 400px;
       padding: 1rem 0;
     }
-    
+
     .form-field {
       width: 100%;
     }
@@ -103,7 +104,7 @@ export class PublisherFormComponent {
 
   // Computed signal for form validation state
   readonly isFormInvalid = computed(
-    () => !this.formValid() || !this.formDirty()
+    () => !this.formValid() || !this.formDirty(),
   );
 
   constructor() {

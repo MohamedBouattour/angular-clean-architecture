@@ -33,7 +33,8 @@ import { Book } from '../../domain/model';
     MatCheckboxModule,
   ],
   template: `
-    @let isEditMode = !!data; @let title = isEditMode ? 'Edit' : 'Create';
+    @let isEditMode = !!data;
+    @let title = isEditMode ? 'Edit' : 'Create';
 
     <h2 mat-dialog-title>{{ title }} Book</h2>
 
@@ -43,7 +44,7 @@ import { Book } from '../../domain/model';
           <mat-label>Title</mat-label>
           <input matInput formControlName="title" />
           @if (form.get('title')?.hasError('required')) {
-          <mat-error>This field is required</mat-error>
+            <mat-error>This field is required</mat-error>
           }
         </mat-form-field>
 
@@ -51,7 +52,7 @@ import { Book } from '../../domain/model';
           <mat-label>Author</mat-label>
           <input matInput formControlName="author" />
           @if (form.get('author')?.hasError('required')) {
-          <mat-error>This field is required</mat-error>
+            <mat-error>This field is required</mat-error>
           }
         </mat-form-field>
 
@@ -59,7 +60,7 @@ import { Book } from '../../domain/model';
           <mat-label>Isbn</mat-label>
           <input matInput formControlName="isbn" />
           @if (form.get('isbn')?.hasError('required')) {
-          <mat-error>This field is required</mat-error>
+            <mat-error>This field is required</mat-error>
           }
         </mat-form-field>
 
@@ -67,7 +68,7 @@ import { Book } from '../../domain/model';
           <mat-label>PublishedDate</mat-label>
           <input matInput formControlName="publishedDate" />
           @if (form.get('publishedDate')?.hasError('required')) {
-          <mat-error>This field is required</mat-error>
+            <mat-error>This field is required</mat-error>
           }
         </mat-form-field>
       </form>
@@ -93,7 +94,7 @@ import { Book } from '../../domain/model';
       min-width: 400px;
       padding: 1rem 0;
     }
-    
+
     .form-field {
       width: 100%;
     }
@@ -123,7 +124,7 @@ export class BookFormComponent {
 
   // Computed signal for form validation state
   readonly isFormInvalid = computed(
-    () => !this.formValid() || !this.formDirty()
+    () => !this.formValid() || !this.formDirty(),
   );
 
   constructor() {

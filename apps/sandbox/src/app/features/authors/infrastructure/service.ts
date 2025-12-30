@@ -2,11 +2,12 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Author } from '../domain/model';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class AuthorService {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = '/api/authors';
+  private readonly apiUrl = `${environment.apiUrl}/features/authors`;
 
   getAll(): Observable<Author[]> {
     return this.http.get<Author[]>(this.apiUrl);
@@ -17,7 +18,7 @@ export class AuthorService {
   }
 
   create(
-    data: Omit<Author, 'id' | 'createdAt' | 'updatedAt'>
+    data: Omit<Author, 'id' | 'createdAt' | 'updatedAt'>,
   ): Observable<Author> {
     return this.http.post<Author>(this.apiUrl, data);
   }

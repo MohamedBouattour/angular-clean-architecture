@@ -23,6 +23,24 @@ body {
 // Card styling
 .mat-mdc-card {
   background-color: var(--color-bg-card) !important;
+  color: var(--color-text) !important;
+  
+  .mat-mdc-card-header {
+    .mat-mdc-card-title {
+      color: var(--color-text) !important;
+    }
+    .mat-mdc-card-subtitle {
+      color: var(--color-text-secondary) !important;
+    }
+  }
+  
+  .mat-mdc-card-content {
+    color: var(--color-text) !important;
+  }
+  
+  .mat-mdc-card-actions {
+    color: var(--color-text) !important;
+  }
 }
 
 // Toolbar theming
@@ -253,4 +271,66 @@ body {
 .mat-mdc-snack-bar-container {
   --mdc-snackbar-container-color: var(--color-bg-elevated);
   --mdc-snackbar-supporting-text-color: var(--color-text);
+}
+
+// Outlined text field - dark mode background fix
+.mdc-text-field--outlined {
+  background-color: var(--color-bg-card) !important;
+  
+  .mdc-text-field__input {
+    color: var(--color-text) !important;
+    
+    &::placeholder {
+      color: var(--color-text-disabled) !important;
+    }
+  }
+}
+
+// Form field error messages
+.mat-mdc-form-field-error {
+  color: var(--color-error) !important;
+}
+
+.mat-mdc-form-field-hint {
+  color: var(--color-text-secondary) !important;
+}
+
+// Auth forms specific styling
+.auth-container {
+  .mat-mdc-card {
+    background-color: var(--color-bg-card) !important;
+    border: 1px solid var(--color-border);
+  }
+  
+  .mat-mdc-form-field {
+    width: 100%;
+  }
+  
+  .error-banner {
+    background-color: rgba(244, 67, 54, 0.2) !important;
+    color: var(--color-error) !important;
+    border: 1px solid var(--color-error);
+  }
+  
+  p {
+    color: var(--color-text-secondary);
+  }
+  
+  a {
+    color: var(--color-primary) !important;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Input autofill fix for dark mode
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--color-bg-card) inset !important;
+  -webkit-text-fill-color: var(--color-text) !important;
+  caret-color: var(--color-text) !important;
 }

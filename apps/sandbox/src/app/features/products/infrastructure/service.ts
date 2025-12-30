@@ -2,11 +2,12 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from '../domain/model';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class ProductService {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = '/api/products';
+  private readonly apiUrl = `${environment.apiUrl}/features/products`;
 
   getAll(): Observable<Product[]> {
     return this.http.get<Product[]>(this.apiUrl);
@@ -17,7 +18,7 @@ export class ProductService {
   }
 
   create(
-    data: Omit<Product, 'id' | 'createdAt' | 'updatedAt'>
+    data: Omit<Product, 'id' | 'createdAt' | 'updatedAt'>,
   ): Observable<Product> {
     return this.http.post<Product>(this.apiUrl, data);
   }
