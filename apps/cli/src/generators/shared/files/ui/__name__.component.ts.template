@@ -10,7 +10,6 @@ export interface ConfirmDialogData {
 
 @Component({
   selector: 'app-<%= name %>',
-  standalone: true,
   imports: [MatDialogModule, MatButtonModule],
   template: `
     <h2 mat-dialog-title>{{ data.title }}</h2>
@@ -47,7 +46,6 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-<%= name %>',
-  standalone: true,
   imports: [CommonModule],
   template: `
     <p><%= name %> works!</p>

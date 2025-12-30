@@ -1,9 +1,4 @@
-import {
-  Component,
-  inject,
-  OnInit,
-  ChangeDetectionStrategy,
-} from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DatePipe, DecimalPipe } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
@@ -21,9 +16,17 @@ import { PublisherFormComponent } from './form/form.component';
 import { Publisher } from '../domain/model';
 import { ConfirmDialogComponent } from '../../../shared/ui/confirm-dialog/confirm-dialog.component';
 
+/**
+ * Publisher feature component - CRUD operations with Angular Material
+ *
+ * Angular 21 Features Used:
+ * - @let template syntax for local variables
+ * - Signals via NgRx Signal Store
+ * - ChangeDetectionStrategy.OnPush for zoneless compatibility
+ * - inject() function for dependency injection
+ */
 @Component({
   selector: 'app-publisher-feature',
-  standalone: true,
   imports: [
     FormsModule,
     DatePipe,
@@ -43,19 +46,23 @@ import { ConfirmDialogComponent } from '../../../shared/ui/confirm-dialog/confir
   styleUrls: ['./publisher.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PublisherComponent implements OnInit {
+export class PublisherComponent {
+  // Dependency injection using inject() - Angular 14+ pattern
   protected readonly store = inject(PublisherStore);
   private readonly dialog = inject(MatDialog);
   private readonly snackBar = inject(MatSnackBar);
 
+  // Table columns configuration
   protected readonly displayedColumns: string[] = [
     'name',
     'location',
     'actions',
   ];
 
-  ngOnInit(): void {
-    this.store.loadAll();
+  // Load data on component init using constructor for zoneless compatibility
+  constructor() {
+    // Defer loading to allow store initialization
+    queueMicrotask(() => this.store.loadAll());
   }
 
   onFilterChange(value: string): void {
@@ -69,15 +76,15 @@ export class PublisherComponent implements OnInit {
   openCreateDialog(): void {
     const dialogRef = this.dialog.open(PublisherFormComponent, {
       width: '500px',
+      maxWidth: '90vw',
       data: null,
+      panelClass: 'themed-dialog',
     });
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.store.create(result);
-        this.snackBar.open('Publisher created successfully', 'Close', {
-          duration: 3000,
-        });
+        this.showNotification('Publisher created successfully');
       }
     });
   }
@@ -85,15 +92,15 @@ export class PublisherComponent implements OnInit {
   openEditDialog(item: Publisher): void {
     const dialogRef = this.dialog.open(PublisherFormComponent, {
       width: '500px',
+      maxWidth: '90vw',
       data: item,
+      panelClass: 'themed-dialog',
     });
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.store.update({ id: item.id, data: result });
-        this.snackBar.open('Publisher updated successfully', 'Close', {
-          duration: 3000,
-        });
+        this.showNotification('Publisher updated successfully');
       }
     });
   }
@@ -101,19 +108,28 @@ export class PublisherComponent implements OnInit {
   confirmDelete(item: Publisher): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '400px',
+      maxWidth: '90vw',
       data: {
         title: 'Delete publisher',
         message: `Are you sure you want to delete this publisher?`,
       },
+      panelClass: 'themed-dialog',
     });
 
     dialogRef.afterClosed().subscribe((confirmed) => {
       if (confirmed) {
         this.store.delete(item.id);
-        this.snackBar.open('Publisher deleted successfully', 'Close', {
-          duration: 3000,
-        });
+        this.showNotification('Publisher deleted successfully');
       }
+    });
+  }
+
+  // Helper method for snackbar notifications
+  private showNotification(message: string): void {
+    this.snackBar.open(message, 'Close', {
+      duration: 3000,
+      horizontalPosition: 'end',
+      verticalPosition: 'bottom',
     });
   }
 }

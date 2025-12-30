@@ -1,4 +1,10 @@
-import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  inject,
+  ChangeDetectionStrategy,
+  signal,
+  computed,
+} from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -7,9 +13,14 @@ import { MatCardModule } from '@angular/material/card';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 
+/**
+ * Login component using Angular 21 features:
+ * - @let template syntax
+ * - Signal-based form state tracking
+ * - ChangeDetectionStrategy.OnPush for zoneless
+ */
 @Component({
   selector: 'app-login',
-  standalone: true,
   imports: [
     ReactiveFormsModule,
     MatFormFieldModule,
@@ -18,6 +29,10 @@ import { Router } from '@angular/router';
     MatCardModule,
   ],
   template: `
+    @let emailErrors = loginForm.get('email')?.errors; @let passwordErrors =
+    loginForm.get('password')?.errors; @let isSubmitDisabled = !formValid() ||
+    isSubmitting();
+
     <div class="login-container">
       <mat-card>
         <mat-card-header>
@@ -33,9 +48,9 @@ import { Router } from '@angular/router';
                 type="email"
                 placeholder="Enter your email"
               />
-              @if (loginForm.get('email')?.hasError('required')) {
+              @if (emailErrors?.['required']) {
               <mat-error>Email is required</mat-error>
-              } @if (loginForm.get('email')?.hasError('email')) {
+              } @if (emailErrors?.['email']) {
               <mat-error>Please enter a valid email</mat-error>
               }
             </mat-form-field>
@@ -48,7 +63,7 @@ import { Router } from '@angular/router';
                 type="password"
                 placeholder="Enter your password"
               />
-              @if (loginForm.get('password')?.hasError('required')) {
+              @if (passwordErrors?.['required']) {
               <mat-error>Password is required</mat-error>
               }
             </mat-form-field>
@@ -57,9 +72,9 @@ import { Router } from '@angular/router';
               mat-raised-button
               color="primary"
               type="submit"
-              [disabled]="loginForm.invalid"
+              [disabled]="isSubmitDisabled"
             >
-              Login
+              @if (isSubmitting()) { Logging in... } @else { Login }
             </button>
           </form>
         </mat-card-content>
@@ -91,13 +106,25 @@ export class LoginComponent {
   private readonly authService = inject(AuthService);
   private readonly router = inject(Router);
 
+  // Signal-based state for zoneless compatibility
+  readonly isSubmitting = signal(false);
+  readonly formValid = signal(false);
+
   readonly loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required]],
   });
 
+  constructor() {
+    // Track form validity with signals
+    this.loginForm.statusChanges.subscribe(() => {
+      this.formValid.set(this.loginForm.valid);
+    });
+  }
+
   onSubmit(): void {
     if (this.loginForm.valid) {
+      this.isSubmitting.set(true);
       this.authService.login({ email: this.loginForm.value.email! });
       this.router.navigate(['/']);
     }

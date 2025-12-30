@@ -13,7 +13,6 @@ export type Theme = 'light' | 'dark';
 
 @Component({
   selector: 'app-theme-selector',
-  standalone: true,
   imports: [MatIconModule, MatButtonModule, MatTooltipModule],
   template: `
     <button

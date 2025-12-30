@@ -1,9 +1,4 @@
-import {
-  Component,
-  inject,
-  OnInit,
-  ChangeDetectionStrategy,
-} from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DatePipe, DecimalPipe } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
@@ -21,9 +16,17 @@ import { BookFormComponent } from './form/form.component';
 import { Book } from '../domain/model';
 import { ConfirmDialogComponent } from '../../../shared/ui/confirm-dialog/confirm-dialog.component';
 
+/**
+ * Book feature component - CRUD operations with Angular Material
+ *
+ * Angular 21 Features Used:
+ * - @let template syntax for local variables
+ * - Signals via NgRx Signal Store
+ * - ChangeDetectionStrategy.OnPush for zoneless compatibility
+ * - inject() function for dependency injection
+ */
 @Component({
   selector: 'app-book-feature',
-  standalone: true,
   imports: [
     FormsModule,
     DatePipe,
@@ -43,11 +46,13 @@ import { ConfirmDialogComponent } from '../../../shared/ui/confirm-dialog/confir
   styleUrls: ['./book.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BookComponent implements OnInit {
+export class BookComponent {
+  // Dependency injection using inject() - Angular 14+ pattern
   protected readonly store = inject(BookStore);
   private readonly dialog = inject(MatDialog);
   private readonly snackBar = inject(MatSnackBar);
 
+  // Table columns configuration
   protected readonly displayedColumns: string[] = [
     'title',
     'author',
@@ -56,8 +61,10 @@ export class BookComponent implements OnInit {
     'actions',
   ];
 
-  ngOnInit(): void {
-    this.store.loadAll();
+  // Load data on component init using constructor for zoneless compatibility
+  constructor() {
+    // Defer loading to allow store initialization
+    queueMicrotask(() => this.store.loadAll());
   }
 
   onFilterChange(value: string): void {
@@ -71,15 +78,15 @@ export class BookComponent implements OnInit {
   openCreateDialog(): void {
     const dialogRef = this.dialog.open(BookFormComponent, {
       width: '500px',
+      maxWidth: '90vw',
       data: null,
+      panelClass: 'themed-dialog',
     });
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.store.create(result);
-        this.snackBar.open('Book created successfully', 'Close', {
-          duration: 3000,
-        });
+        this.showNotification('Book created successfully');
       }
     });
   }
@@ -87,15 +94,15 @@ export class BookComponent implements OnInit {
   openEditDialog(item: Book): void {
     const dialogRef = this.dialog.open(BookFormComponent, {
       width: '500px',
+      maxWidth: '90vw',
       data: item,
+      panelClass: 'themed-dialog',
     });
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.store.update({ id: item.id, data: result });
-        this.snackBar.open('Book updated successfully', 'Close', {
-          duration: 3000,
-        });
+        this.showNotification('Book updated successfully');
       }
     });
   }
@@ -103,19 +110,28 @@ export class BookComponent implements OnInit {
   confirmDelete(item: Book): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '400px',
+      maxWidth: '90vw',
       data: {
         title: 'Delete book',
         message: `Are you sure you want to delete this book?`,
       },
+      panelClass: 'themed-dialog',
     });
 
     dialogRef.afterClosed().subscribe((confirmed) => {
       if (confirmed) {
         this.store.delete(item.id);
-        this.snackBar.open('Book deleted successfully', 'Close', {
-          duration: 3000,
-        });
+        this.showNotification('Book deleted successfully');
       }
+    });
+  }
+
+  // Helper method for snackbar notifications
+  private showNotification(message: string): void {
+    this.snackBar.open(message, 'Close', {
+      duration: 3000,
+      horizontalPosition: 'end',
+      verticalPosition: 'bottom',
     });
   }
 }

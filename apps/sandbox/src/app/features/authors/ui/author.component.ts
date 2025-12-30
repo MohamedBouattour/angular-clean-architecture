@@ -1,9 +1,4 @@
-import {
-  Component,
-  inject,
-  OnInit,
-  ChangeDetectionStrategy,
-} from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DatePipe, DecimalPipe } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
@@ -21,9 +16,17 @@ import { AuthorFormComponent } from './form/form.component';
 import { Author } from '../domain/model';
 import { ConfirmDialogComponent } from '../../../shared/ui/confirm-dialog/confirm-dialog.component';
 
+/**
+ * Author feature component - CRUD operations with Angular Material
+ *
+ * Angular 21 Features Used:
+ * - @let template syntax for local variables
+ * - Signals via NgRx Signal Store
+ * - ChangeDetectionStrategy.OnPush for zoneless compatibility
+ * - inject() function for dependency injection
+ */
 @Component({
   selector: 'app-author-feature',
-  standalone: true,
   imports: [
     FormsModule,
     DatePipe,
@@ -43,11 +46,13 @@ import { ConfirmDialogComponent } from '../../../shared/ui/confirm-dialog/confir
   styleUrls: ['./author.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AuthorComponent implements OnInit {
+export class AuthorComponent {
+  // Dependency injection using inject() - Angular 14+ pattern
   protected readonly store = inject(AuthorStore);
   private readonly dialog = inject(MatDialog);
   private readonly snackBar = inject(MatSnackBar);
 
+  // Table columns configuration
   protected readonly displayedColumns: string[] = [
     'name',
     'bio',
@@ -55,8 +60,10 @@ export class AuthorComponent implements OnInit {
     'actions',
   ];
 
-  ngOnInit(): void {
-    this.store.loadAll();
+  // Load data on component init using constructor for zoneless compatibility
+  constructor() {
+    // Defer loading to allow store initialization
+    queueMicrotask(() => this.store.loadAll());
   }
 
   onFilterChange(value: string): void {
@@ -70,15 +77,15 @@ export class AuthorComponent implements OnInit {
   openCreateDialog(): void {
     const dialogRef = this.dialog.open(AuthorFormComponent, {
       width: '500px',
+      maxWidth: '90vw',
       data: null,
+      panelClass: 'themed-dialog',
     });
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.store.create(result);
-        this.snackBar.open('Author created successfully', 'Close', {
-          duration: 3000,
-        });
+        this.showNotification('Author created successfully');
       }
     });
   }
@@ -86,15 +93,15 @@ export class AuthorComponent implements OnInit {
   openEditDialog(item: Author): void {
     const dialogRef = this.dialog.open(AuthorFormComponent, {
       width: '500px',
+      maxWidth: '90vw',
       data: item,
+      panelClass: 'themed-dialog',
     });
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.store.update({ id: item.id, data: result });
-        this.snackBar.open('Author updated successfully', 'Close', {
-          duration: 3000,
-        });
+        this.showNotification('Author updated successfully');
       }
     });
   }
@@ -102,19 +109,28 @@ export class AuthorComponent implements OnInit {
   confirmDelete(item: Author): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '400px',
+      maxWidth: '90vw',
       data: {
         title: 'Delete author',
         message: `Are you sure you want to delete this author?`,
       },
+      panelClass: 'themed-dialog',
     });
 
     dialogRef.afterClosed().subscribe((confirmed) => {
       if (confirmed) {
         this.store.delete(item.id);
-        this.snackBar.open('Author deleted successfully', 'Close', {
-          duration: 3000,
-        });
+        this.showNotification('Author deleted successfully');
       }
+    });
+  }
+
+  // Helper method for snackbar notifications
+  private showNotification(message: string): void {
+    this.snackBar.open(message, 'Close', {
+      duration: 3000,
+      horizontalPosition: 'end',
+      verticalPosition: 'bottom',
     });
   }
 }

@@ -7,7 +7,6 @@ import { TranslateService } from '../translate/translate.service';
 
 @Component({
   selector: 'app-language-selector',
-  standalone: true,
   imports: [CommonModule, MatButtonModule, MatMenuModule, MatIconModule],
   template: `
     <button mat-button [matMenuTriggerFor]="menu" class="lang-button">

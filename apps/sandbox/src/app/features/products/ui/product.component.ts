@@ -1,9 +1,4 @@
-import {
-  Component,
-  inject,
-  OnInit,
-  ChangeDetectionStrategy,
-} from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DatePipe, DecimalPipe } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
@@ -21,9 +16,17 @@ import { ProductFormComponent } from './form/form.component';
 import { Product } from '../domain/model';
 import { ConfirmDialogComponent } from '../../../shared/ui/confirm-dialog/confirm-dialog.component';
 
+/**
+ * Product feature component - CRUD operations with Angular Material
+ *
+ * Angular 21 Features Used:
+ * - @let template syntax for local variables
+ * - Signals via NgRx Signal Store
+ * - ChangeDetectionStrategy.OnPush for zoneless compatibility
+ * - inject() function for dependency injection
+ */
 @Component({
   selector: 'app-product-feature',
-  standalone: true,
   imports: [
     FormsModule,
     DatePipe,
@@ -43,20 +46,24 @@ import { ConfirmDialogComponent } from '../../../shared/ui/confirm-dialog/confir
   styleUrls: ['./product.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent {
+  // Dependency injection using inject() - Angular 14+ pattern
   protected readonly store = inject(ProductStore);
   private readonly dialog = inject(MatDialog);
   private readonly snackBar = inject(MatSnackBar);
 
+  // Table columns configuration
   protected readonly displayedColumns: string[] = [
     'name',
     'price',
-    'inStock',
+    'description',
     'actions',
   ];
 
-  ngOnInit(): void {
-    this.store.loadAll();
+  // Load data on component init using constructor for zoneless compatibility
+  constructor() {
+    // Defer loading to allow store initialization
+    queueMicrotask(() => this.store.loadAll());
   }
 
   onFilterChange(value: string): void {
@@ -70,15 +77,15 @@ export class ProductComponent implements OnInit {
   openCreateDialog(): void {
     const dialogRef = this.dialog.open(ProductFormComponent, {
       width: '500px',
+      maxWidth: '90vw',
       data: null,
+      panelClass: 'themed-dialog',
     });
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.store.create(result);
-        this.snackBar.open('Product created successfully', 'Close', {
-          duration: 3000,
-        });
+        this.showNotification('Product created successfully');
       }
     });
   }
@@ -86,15 +93,15 @@ export class ProductComponent implements OnInit {
   openEditDialog(item: Product): void {
     const dialogRef = this.dialog.open(ProductFormComponent, {
       width: '500px',
+      maxWidth: '90vw',
       data: item,
+      panelClass: 'themed-dialog',
     });
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.store.update({ id: item.id, data: result });
-        this.snackBar.open('Product updated successfully', 'Close', {
-          duration: 3000,
-        });
+        this.showNotification('Product updated successfully');
       }
     });
   }
@@ -102,19 +109,28 @@ export class ProductComponent implements OnInit {
   confirmDelete(item: Product): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '400px',
+      maxWidth: '90vw',
       data: {
         title: 'Delete product',
         message: `Are you sure you want to delete this product?`,
       },
+      panelClass: 'themed-dialog',
     });
 
     dialogRef.afterClosed().subscribe((confirmed) => {
       if (confirmed) {
         this.store.delete(item.id);
-        this.snackBar.open('Product deleted successfully', 'Close', {
-          duration: 3000,
-        });
+        this.showNotification('Product deleted successfully');
       }
+    });
+  }
+
+  // Helper method for snackbar notifications
+  private showNotification(message: string): void {
+    this.snackBar.open(message, 'Close', {
+      duration: 3000,
+      horizontalPosition: 'end',
+      verticalPosition: 'bottom',
     });
   }
 }

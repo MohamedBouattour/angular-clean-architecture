@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DatePipe, DecimalPipe } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
@@ -16,9 +16,17 @@ import { <%= pascalName %>FormComponent } from './form/form.component';
 import { <%= pascalName %> } from '../domain/model';
 import { ConfirmDialogComponent } from '../../../shared/ui/confirm-dialog/confirm-dialog.component';
 
+/**
+ * <%= pascalName %> feature component - CRUD operations with Angular Material
+ * 
+ * Angular 21 Features Used:
+ * - @let template syntax for local variables
+ * - Signals via NgRx Signal Store
+ * - ChangeDetectionStrategy.OnPush for zoneless compatibility
+ * - inject() function for dependency injection
+ */
 @Component({
   selector: 'app-<%= singularName %>-feature',
-  standalone: true,
   imports: [
     FormsModule,
     DatePipe,
@@ -38,15 +46,19 @@ import { ConfirmDialogComponent } from '../../../shared/ui/confirm-dialog/confir
   styleUrls: ['./<%= singularName %>.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class <%= pascalName %>Component implements OnInit {
+export class <%= pascalName %>Component {
+  // Dependency injection using inject() - Angular 14+ pattern
   protected readonly store = inject(<%= pascalName %>Store);
   private readonly dialog = inject(MatDialog);
   private readonly snackBar = inject(MatSnackBar);
   
+  // Table columns configuration
   protected readonly displayedColumns: string[] = [<% attributes.forEach(function(attr, index) { %>'<%= attr.name %>', <% }); %>'actions'];
   
-  ngOnInit(): void {
-    this.store.loadAll();
+  // Load data on component init using constructor for zoneless compatibility
+  constructor() {
+    // Defer loading to allow store initialization
+    queueMicrotask(() => this.store.loadAll());
   }
   
   onFilterChange(value: string): void {
@@ -60,15 +72,15 @@ export class <%= pascalName %>Component implements OnInit {
   openCreateDialog(): void {
     const dialogRef = this.dialog.open(<%= pascalName %>FormComponent, {
       width: '500px',
-      data: null
+      maxWidth: '90vw',
+      data: null,
+      panelClass: 'themed-dialog'
     });
     
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.store.create(result);
-        this.snackBar.open('<%= pascalName %> created successfully', 'Close', {
-          duration: 3000
-        });
+        this.showNotification('<%= pascalName %> created successfully');
       }
     });
   }
@@ -76,15 +88,15 @@ export class <%= pascalName %>Component implements OnInit {
   openEditDialog(item: <%= pascalName %>): void {
     const dialogRef = this.dialog.open(<%= pascalName %>FormComponent, {
       width: '500px',
-      data: item
+      maxWidth: '90vw',
+      data: item,
+      panelClass: 'themed-dialog'
     });
     
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.store.update({ id: item.id, data: result });
-        this.snackBar.open('<%= pascalName %> updated successfully', 'Close', {
-          duration: 3000
-        });
+        this.showNotification('<%= pascalName %> updated successfully');
       }
     });
   }
@@ -92,19 +104,28 @@ export class <%= pascalName %>Component implements OnInit {
   confirmDelete(item: <%= pascalName %>): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '400px',
+      maxWidth: '90vw',
       data: {
         title: 'Delete <%= singularName %>',
         message: `Are you sure you want to delete this <%= singularName %>?`
-      }
+      },
+      panelClass: 'themed-dialog'
     });
 
     dialogRef.afterClosed().subscribe((confirmed) => {
       if (confirmed) {
         this.store.delete(item.id);
-        this.snackBar.open('<%= pascalName %> deleted successfully', 'Close', {
-          duration: 3000
-        });
+        this.showNotification('<%= pascalName %> deleted successfully');
       }
+    });
+  }
+  
+  // Helper method for snackbar notifications
+  private showNotification(message: string): void {
+    this.snackBar.open(message, 'Close', {
+      duration: 3000,
+      horizontalPosition: 'end',
+      verticalPosition: 'bottom'
     });
   }
 }

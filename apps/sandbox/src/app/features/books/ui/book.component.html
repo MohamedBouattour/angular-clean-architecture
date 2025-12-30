@@ -1,4 +1,8 @@
 <div class="book-container">
+  <!-- Use @let for computed template values -->
+  @let isLoading = store.loading(); @let hasError = store.error(); @let items =
+  store.filteredAndSortedItems(); @let isEmpty = items.length === 0;
+
   <!-- Header -->
   <div class="header">
     <h1>Book Management</h1>
@@ -6,7 +10,7 @@
       mat-raised-button
       color="primary"
       (click)="openCreateDialog()"
-      [disabled]="store.loading()"
+      [disabled]="isLoading"
     >
       <mat-icon>add</mat-icon>
       Create Book
@@ -26,28 +30,24 @@
   </mat-form-field>
 
   <!-- Loading Spinner -->
-  @if (store.loading()) {
+  @if (isLoading) {
   <div class="loading-container">
     <mat-spinner diameter="50"></mat-spinner>
   </div>
   }
 
   <!-- Error Message -->
-  @if (store.error()) {
+  @if (hasError) {
   <div class="error-message">
     <mat-icon>error</mat-icon>
-    <span>{{ store.error() }}</span>
+    <span>{{ hasError }}</span>
   </div>
   }
 
   <!-- Data Table -->
-  @if (!store.loading() && !store.error()) {
+  @if (!isLoading && !hasError) {
   <div class="table-container">
-    <table
-      mat-table
-      [dataSource]="store.filteredAndSortedItems()"
-      class="mat-elevation-z2"
-    >
+    <table mat-table [dataSource]="items" class="mat-elevation-z2">
       <!-- Title Column -->
       <ng-container matColumnDef="title">
         <th mat-header-cell *matHeaderCellDef>Title</th>
@@ -107,7 +107,7 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 
       <!-- No Data Row -->
-      @if (store.filteredAndSortedItems().length === 0) {
+      @if (isEmpty) {
       <tr class="mat-row no-data-row">
         <td class="mat-cell" [attr.colspan]="displayedColumns.length">
           <div class="no-data">

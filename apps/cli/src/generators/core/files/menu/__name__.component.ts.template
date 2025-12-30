@@ -5,7 +5,6 @@ import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-menu',
-  standalone: true,
   imports: [RouterModule, MatListModule, MatIconModule],
   templateUrl: './<%= name %>.component.html',
   styleUrls: ['./<%= name %>.component.scss'],

@@ -1,7 +1,7 @@
-@import './_theme';
+@use './_theme' as theme;
 
 .product-container {
-  padding: $spacing-lg;
+  padding: theme.$spacing-lg;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -10,8 +10,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: $spacing-xl;
-  padding-bottom: $spacing-sm;
+  margin-bottom: theme.$spacing-xl;
+  padding-bottom: theme.$spacing-sm;
   border-bottom: 1px solid var(--color-border);
 
   h1 {
@@ -45,71 +45,71 @@
     }
 
     mat-icon {
-      margin-right: $spacing-sm;
+      margin-right: theme.$spacing-sm;
     }
   }
 }
 
 .filter-field {
   width: 100%;
-  margin-bottom: $spacing-md;
+  margin-bottom: theme.$spacing-md;
 }
 
 .loading-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: $spacing-xl;
+  padding: theme.$spacing-xl;
 }
 
 .error-message {
   display: flex;
   align-items: center;
-  gap: $spacing-sm;
-  padding: $spacing-md;
-  background-color: $error-background;
-  color: $error-color;
-  border-radius: $border-radius;
-  margin-bottom: $spacing-md;
+  gap: theme.$spacing-sm;
+  padding: theme.$spacing-md;
+  background-color: theme.$error-background;
+  color: theme.$error-color;
+  border-radius: theme.$border-radius;
+  margin-bottom: theme.$spacing-md;
 
   mat-icon {
-    color: $error-color;
+    color: theme.$error-color;
   }
 }
 
 .table-container {
   overflow-x: auto;
-  border-radius: $border-radius;
+  border-radius: theme.$border-radius;
 
   table {
     width: 100%;
-    background-color: $card-background;
+    background-color: theme.$card-background;
 
     th {
-      background-color: $table-header-background;
-      color: $text-primary;
+      background-color: theme.$table-header-background;
+      color: theme.$text-primary;
       font-weight: 600;
-      padding: $spacing-md;
+      padding: theme.$spacing-md;
     }
 
     td {
-      padding: $spacing-md;
-      color: $text-secondary;
+      padding: theme.$spacing-md;
+      color: theme.$text-secondary;
 
       mat-icon {
         &.active {
-          color: $success-color;
+          color: theme.$success-color;
         }
 
         &:not(.active) {
-          color: $text-disabled;
+          color: theme.$text-disabled;
         }
       }
     }
 
     tr {
       &:hover {
-        background-color: $table-row-hover;
+        background-color: theme.$table-row-hover;
       }
     }
   }
@@ -123,8 +123,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: $spacing-sm;
-    color: $text-disabled;
+    gap: theme.$spacing-sm;
+    color: theme.$text-disabled;
 
     mat-icon {
       font-size: 48px;
@@ -142,13 +142,13 @@
 // Responsive
 @media (max-width: 768px) {
   .product-container {
-    padding: $spacing-md;
+    padding: theme.$spacing-md;
   }
 
   .header {
     flex-direction: column;
     align-items: flex-start;
-    gap: $spacing-md;
+    gap: theme.$spacing-md;
 
     button {
       width: 100%;
@@ -159,7 +159,7 @@
     table {
       th,
       td {
-        padding: $spacing-sm;
+        padding: theme.$spacing-sm;
         font-size: 0.875rem;
       }
     }

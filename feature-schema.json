@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2025-12-29T17:55:12.076Z",
+  "lastUpdated": "2025-12-30T00:55:18.108Z",
   "features": {
     "product": {
       "name": "product",
@@ -14,8 +14,8 @@
           "type": "number"
         },
         {
-          "name": "inStock",
-          "type": "boolean"
+          "name": "description",
+          "type": "string"
         }
       ]
     },

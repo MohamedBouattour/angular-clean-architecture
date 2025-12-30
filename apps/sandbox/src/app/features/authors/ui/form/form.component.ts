@@ -1,8 +1,9 @@
 import {
   Component,
   inject,
-  OnInit,
   ChangeDetectionStrategy,
+  signal,
+  computed,
 } from '@angular/core';
 import {
   FormBuilder,
@@ -23,7 +24,6 @@ import { Author } from '../../domain/model';
 
 @Component({
   selector: 'app-author-form',
-  standalone: true,
   imports: [
     ReactiveFormsModule,
     MatDialogModule,
@@ -33,11 +33,13 @@ import { Author } from '../../domain/model';
     MatCheckboxModule,
   ],
   template: `
-    <h2 mat-dialog-title>{{ data ? 'Edit' : 'Create' }} Author</h2>
+    @let isEditMode = !!data; @let title = isEditMode ? 'Edit' : 'Create';
+
+    <h2 mat-dialog-title>{{ title }} Author</h2>
 
     <mat-dialog-content>
       <form [formGroup]="form" class="form-container">
-        <mat-form-field class="form-field">
+        <mat-form-field class="form-field" appearance="outline">
           <mat-label>Name</mat-label>
           <input matInput formControlName="name" />
           @if (form.get('name')?.hasError('required')) {
@@ -45,7 +47,7 @@ import { Author } from '../../domain/model';
           }
         </mat-form-field>
 
-        <mat-form-field class="form-field">
+        <mat-form-field class="form-field" appearance="outline">
           <mat-label>Bio</mat-label>
           <input matInput formControlName="bio" />
           @if (form.get('bio')?.hasError('required')) {
@@ -53,7 +55,7 @@ import { Author } from '../../domain/model';
           }
         </mat-form-field>
 
-        <mat-form-field class="form-field">
+        <mat-form-field class="form-field" appearance="outline">
           <mat-label>BirthDate</mat-label>
           <input matInput formControlName="birthDate" />
           @if (form.get('birthDate')?.hasError('required')) {
@@ -69,9 +71,9 @@ import { Author } from '../../domain/model';
         mat-raised-button
         color="primary"
         (click)="onSave()"
-        [disabled]="form.invalid || form.pristine"
+        [disabled]="isFormInvalid()"
       >
-        {{ data ? 'Update' : 'Create' }}
+        {{ title }}
       </button>
     </mat-dialog-actions>
   `,
@@ -90,23 +92,40 @@ import { Author } from '../../domain/model';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AuthorFormComponent implements OnInit {
+export class AuthorFormComponent {
   private readonly dialogRef = inject(MatDialogRef<AuthorFormComponent>);
   protected readonly data = inject<Partial<Author> | null>(MAT_DIALOG_DATA, {
     optional: true,
   });
   private readonly fb = inject(FormBuilder);
 
-  form!: FormGroup;
+  // Signal-based form state tracking
+  private readonly formDirty = signal(false);
+  private readonly formValid = signal(false);
 
-  ngOnInit(): void {
-    this.form = this.fb.group({
-      name: [this.data?.name ?? '', Validators.required],
+  readonly form = this.fb.group({
+    name: [this.data?.name ?? '', Validators.required],
 
-      bio: [this.data?.bio ?? '', Validators.required],
+    bio: [this.data?.bio ?? '', Validators.required],
 
-      birthDate: [this.data?.birthDate ?? '', Validators.required],
+    birthDate: [this.data?.birthDate ?? '', Validators.required],
+  });
+
+  // Computed signal for form validation state
+  readonly isFormInvalid = computed(
+    () => !this.formValid() || !this.formDirty()
+  );
+
+  constructor() {
+    // Track form state changes with signals for zoneless compatibility
+    this.form.statusChanges.subscribe(() => {
+      this.formValid.set(this.form.valid);
     });
+    this.form.valueChanges.subscribe(() => {
+      this.formDirty.set(this.form.dirty);
+    });
+    // Initial state
+    this.formValid.set(this.form.valid);
   }
 
   onCancel(): void {

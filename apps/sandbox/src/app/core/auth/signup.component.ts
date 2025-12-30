@@ -1,4 +1,9 @@
-import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  inject,
+  ChangeDetectionStrategy,
+  signal,
+} from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -7,9 +12,14 @@ import { MatCardModule } from '@angular/material/card';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 
+/**
+ * Signup component using Angular 21 features:
+ * - @let template syntax
+ * - Signal-based state tracking
+ * - ChangeDetectionStrategy.OnPush for zoneless
+ */
 @Component({
   selector: 'app-signup',
-  standalone: true,
   imports: [
     ReactiveFormsModule,
     MatFormFieldModule,
@@ -18,6 +28,11 @@ import { Router } from '@angular/router';
     MatCardModule,
   ],
   template: `
+    @let nameErrors = signupForm.get('name')?.errors; @let emailErrors =
+    signupForm.get('email')?.errors; @let passwordErrors =
+    signupForm.get('password')?.errors; @let isSubmitDisabled = !formValid() ||
+    isSubmitting();
+
     <div class="signup-container">
       <mat-card>
         <mat-card-header>
@@ -32,7 +47,7 @@ import { Router } from '@angular/router';
                 formControlName="name"
                 placeholder="Enter your name"
               />
-              @if (signupForm.get('name')?.hasError('required')) {
+              @if (nameErrors?.['required']) {
               <mat-error>Name is required</mat-error>
               }
             </mat-form-field>
@@ -45,9 +60,9 @@ import { Router } from '@angular/router';
                 type="email"
                 placeholder="Enter your email"
               />
-              @if (signupForm.get('email')?.hasError('required')) {
+              @if (emailErrors?.['required']) {
               <mat-error>Email is required</mat-error>
-              } @if (signupForm.get('email')?.hasError('email')) {
+              } @if (emailErrors?.['email']) {
               <mat-error>Please enter a valid email</mat-error>
               }
             </mat-form-field>
@@ -60,9 +75,9 @@ import { Router } from '@angular/router';
                 type="password"
                 placeholder="Enter your password"
               />
-              @if (signupForm.get('password')?.hasError('required')) {
+              @if (passwordErrors?.['required']) {
               <mat-error>Password is required</mat-error>
-              } @if (signupForm.get('password')?.hasError('minlength')) {
+              } @if (passwordErrors?.['minlength']) {
               <mat-error>Password must be at least 6 characters</mat-error>
               }
             </mat-form-field>
@@ -71,9 +86,9 @@ import { Router } from '@angular/router';
               mat-raised-button
               color="primary"
               type="submit"
-              [disabled]="signupForm.invalid"
+              [disabled]="isSubmitDisabled"
             >
-              Sign Up
+              @if (isSubmitting()) { Creating account... } @else { Sign Up }
             </button>
           </form>
         </mat-card-content>
@@ -105,14 +120,26 @@ export class SignupComponent {
   private readonly authService = inject(AuthService);
   private readonly router = inject(Router);
 
+  // Signal-based state for zoneless compatibility
+  readonly isSubmitting = signal(false);
+  readonly formValid = signal(false);
+
   readonly signupForm = this.fb.group({
     name: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
   });
 
+  constructor() {
+    // Track form validity with signals
+    this.signupForm.statusChanges.subscribe(() => {
+      this.formValid.set(this.signupForm.valid);
+    });
+  }
+
   onSubmit(): void {
     if (this.signupForm.valid) {
+      this.isSubmitting.set(true);
       this.authService.login({ email: this.signupForm.value.email! });
       this.router.navigate(['/']);
     }

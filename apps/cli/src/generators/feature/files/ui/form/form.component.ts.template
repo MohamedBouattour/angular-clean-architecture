@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy, signal, computed } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -9,7 +9,6 @@ import { <%= pascalName %> } from '../../domain/model';
 
 @Component({
   selector: 'app-<%= singularName %>-form',
-  standalone: true,
   imports: [
     ReactiveFormsModule,
     MatDialogModule,
@@ -19,7 +18,10 @@ import { <%= pascalName %> } from '../../domain/model';
     MatCheckboxModule
   ],
   template: `
-    <h2 mat-dialog-title>{{ data ? 'Edit' : 'Create' }} <%= pascalName %></h2>
+    @let isEditMode = !!data;
+    @let title = isEditMode ? 'Edit' : 'Create';
+    
+    <h2 mat-dialog-title>{{ title }} <%= pascalName %></h2>
     
     <mat-dialog-content>
       <form [formGroup]="form" class="form-container">
@@ -29,7 +31,7 @@ import { <%= pascalName %> } from '../../domain/model';
           <%= attr.name.charAt(0).toUpperCase() + attr.name.slice(1) %>
         </mat-checkbox>
         <% } else if (attr.type === 'number') { %>
-        <mat-form-field class="form-field">
+        <mat-form-field class="form-field" appearance="outline">
           <mat-label><%= attr.name.charAt(0).toUpperCase() + attr.name.slice(1) %></mat-label>
           <input matInput type="number" formControlName="<%= attr.name %>" />
           @if (form.get('<%= attr.name %>')?.hasError('required')) {
@@ -37,7 +39,7 @@ import { <%= pascalName %> } from '../../domain/model';
           }
         </mat-form-field>
         <% } else { %>
-        <mat-form-field class="form-field">
+        <mat-form-field class="form-field" appearance="outline">
           <mat-label><%= attr.name.charAt(0).toUpperCase() + attr.name.slice(1) %></mat-label>
           <input matInput formControlName="<%= attr.name %>" />
           @if (form.get('<%= attr.name %>')?.hasError('required')) {
@@ -55,8 +57,8 @@ import { <%= pascalName %> } from '../../domain/model';
         mat-raised-button 
         color="primary" 
         (click)="onSave()"
-        [disabled]="form.invalid || form.pristine">
-        {{ data ? 'Update' : 'Create' }}
+        [disabled]="isFormInvalid()">
+        {{ title }}
       </button>
     </mat-dialog-actions>
   `,
@@ -75,22 +77,37 @@ import { <%= pascalName %> } from '../../domain/model';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class <%= pascalName %>FormComponent implements OnInit {
+export class <%= pascalName %>FormComponent {
   private readonly dialogRef = inject(MatDialogRef<<%= pascalName %>FormComponent>);
   protected readonly data = inject<Partial<<%= pascalName %>> | null>(MAT_DIALOG_DATA, { optional: true });
   private readonly fb = inject(FormBuilder);
   
-  form!: FormGroup;
+  // Signal-based form state tracking
+  private readonly formDirty = signal(false);
+  private readonly formValid = signal(false);
   
-  ngOnInit(): void {
-    this.form = this.fb.group({
-      <% attributes.forEach(function(attr, index) { %>
-      <%= attr.name %>: [
-        this.data?.<%= attr.name %> ?? <% if (attr.type === 'boolean') { %>false<% } else if (attr.type === 'number') { %>0<% } else { %>''<% } %>,
-        <% if (attr.type === 'number') { %>[Validators.required, Validators.min(0)]<% } else { %>Validators.required<% } %>
-      ]<% if (index < attributes.length - 1) { %>,<% } %>
-      <% }); %>
+  readonly form = this.fb.group({
+    <% attributes.forEach(function(attr, index) { %>
+    <%= attr.name %>: [
+      this.data?.<%= attr.name %> ?? <% if (attr.type === 'boolean') { %>false<% } else if (attr.type === 'number') { %>0<% } else { %>''<% } %>,
+      <% if (attr.type === 'number') { %>[Validators.required, Validators.min(0)]<% } else { %>Validators.required<% } %>
+    ]<% if (index < attributes.length - 1) { %>,<% } %>
+    <% }); %>
+  });
+  
+  // Computed signal for form validation state
+  readonly isFormInvalid = computed(() => !this.formValid() || !this.formDirty());
+  
+  constructor() {
+    // Track form state changes with signals for zoneless compatibility
+    this.form.statusChanges.subscribe(() => {
+      this.formValid.set(this.form.valid);
     });
+    this.form.valueChanges.subscribe(() => {
+      this.formDirty.set(this.form.dirty);
+    });
+    // Initial state
+    this.formValid.set(this.form.valid);
   }
   
   onCancel(): void {

@@ -5,6 +5,11 @@
   "scripts": {
     "generate:feature": "nx g cli:feature",
     "generate:feature:interactive": "nx g cli:feature --interactive",
+    "generate:core": "nx g cli:core --type=all",
+    "generate:shared": "nx g cli:shared --type=all",
+    "sandbox:clean": "node scripts/clean-sandbox.js",
+    "sandbox:regenerate": "npm run sandbox:clean && npm run generate:core && npm run generate:shared && npm run generate:feature",
+    "sandbox:reset": "npm run sandbox:regenerate && npm run sandbox:build",
     "cli:build": "nx build cli",
     "cli:publish": "node scripts/publish-cli.js",
     "cli:test": "nx test cli",

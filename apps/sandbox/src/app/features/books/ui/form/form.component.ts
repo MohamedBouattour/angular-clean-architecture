@@ -1,8 +1,9 @@
 import {
   Component,
   inject,
-  OnInit,
   ChangeDetectionStrategy,
+  signal,
+  computed,
 } from '@angular/core';
 import {
   FormBuilder,
@@ -23,7 +24,6 @@ import { Book } from '../../domain/model';
 
 @Component({
   selector: 'app-book-form',
-  standalone: true,
   imports: [
     ReactiveFormsModule,
     MatDialogModule,
@@ -33,11 +33,13 @@ import { Book } from '../../domain/model';
     MatCheckboxModule,
   ],
   template: `
-    <h2 mat-dialog-title>{{ data ? 'Edit' : 'Create' }} Book</h2>
+    @let isEditMode = !!data; @let title = isEditMode ? 'Edit' : 'Create';
+
+    <h2 mat-dialog-title>{{ title }} Book</h2>
 
     <mat-dialog-content>
       <form [formGroup]="form" class="form-container">
-        <mat-form-field class="form-field">
+        <mat-form-field class="form-field" appearance="outline">
           <mat-label>Title</mat-label>
           <input matInput formControlName="title" />
           @if (form.get('title')?.hasError('required')) {
@@ -45,7 +47,7 @@ import { Book } from '../../domain/model';
           }
         </mat-form-field>
 
-        <mat-form-field class="form-field">
+        <mat-form-field class="form-field" appearance="outline">
           <mat-label>Author</mat-label>
           <input matInput formControlName="author" />
           @if (form.get('author')?.hasError('required')) {
@@ -53,7 +55,7 @@ import { Book } from '../../domain/model';
           }
         </mat-form-field>
 
-        <mat-form-field class="form-field">
+        <mat-form-field class="form-field" appearance="outline">
           <mat-label>Isbn</mat-label>
           <input matInput formControlName="isbn" />
           @if (form.get('isbn')?.hasError('required')) {
@@ -61,7 +63,7 @@ import { Book } from '../../domain/model';
           }
         </mat-form-field>
 
-        <mat-form-field class="form-field">
+        <mat-form-field class="form-field" appearance="outline">
           <mat-label>PublishedDate</mat-label>
           <input matInput formControlName="publishedDate" />
           @if (form.get('publishedDate')?.hasError('required')) {
@@ -77,9 +79,9 @@ import { Book } from '../../domain/model';
         mat-raised-button
         color="primary"
         (click)="onSave()"
-        [disabled]="form.invalid || form.pristine"
+        [disabled]="isFormInvalid()"
       >
-        {{ data ? 'Update' : 'Create' }}
+        {{ title }}
       </button>
     </mat-dialog-actions>
   `,
@@ -98,25 +100,42 @@ import { Book } from '../../domain/model';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BookFormComponent implements OnInit {
+export class BookFormComponent {
   private readonly dialogRef = inject(MatDialogRef<BookFormComponent>);
   protected readonly data = inject<Partial<Book> | null>(MAT_DIALOG_DATA, {
     optional: true,
   });
   private readonly fb = inject(FormBuilder);
 
-  form!: FormGroup;
+  // Signal-based form state tracking
+  private readonly formDirty = signal(false);
+  private readonly formValid = signal(false);
 
-  ngOnInit(): void {
-    this.form = this.fb.group({
-      title: [this.data?.title ?? '', Validators.required],
+  readonly form = this.fb.group({
+    title: [this.data?.title ?? '', Validators.required],
 
-      author: [this.data?.author ?? '', Validators.required],
+    author: [this.data?.author ?? '', Validators.required],
 
-      isbn: [this.data?.isbn ?? '', Validators.required],
+    isbn: [this.data?.isbn ?? '', Validators.required],
 
-      publishedDate: [this.data?.publishedDate ?? '', Validators.required],
+    publishedDate: [this.data?.publishedDate ?? '', Validators.required],
+  });
+
+  // Computed signal for form validation state
+  readonly isFormInvalid = computed(
+    () => !this.formValid() || !this.formDirty()
+  );
+
+  constructor() {
+    // Track form state changes with signals for zoneless compatibility
+    this.form.statusChanges.subscribe(() => {
+      this.formValid.set(this.form.valid);
     });
+    this.form.valueChanges.subscribe(() => {
+      this.formDirty.set(this.form.dirty);
+    });
+    // Initial state
+    this.formValid.set(this.form.valid);
   }
 
   onCancel(): void {

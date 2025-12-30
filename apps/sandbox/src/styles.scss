@@ -47,6 +47,18 @@ body {
   --mdc-dialog-container-color: var(--color-bg-card);
 }
 
+.mat-mdc-dialog-surface {
+  background-color: var(--color-bg-card) !important;
+}
+
+.mat-mdc-dialog-title {
+  color: var(--color-text) !important;
+}
+
+.mat-mdc-dialog-content {
+  color: var(--color-text-secondary) !important;
+}
+
 // Table theming
 .mat-mdc-table {
   background-color: var(--color-bg-card) !important;
@@ -58,4 +70,187 @@ body {
 
 .mat-mdc-cell {
   color: var(--color-text-secondary) !important;
+}
+
+// Form field theming for dark mode
+.mat-mdc-form-field {
+  --mdc-filled-text-field-container-color: var(--color-bg-elevated);
+  --mdc-filled-text-field-label-text-color: var(--color-text-secondary);
+  --mdc-filled-text-field-input-text-color: var(--color-text);
+  --mdc-filled-text-field-caret-color: var(--color-primary);
+  --mdc-filled-text-field-focus-label-text-color: var(--color-primary);
+  --mdc-filled-text-field-hover-label-text-color: var(--color-text);
+  --mdc-filled-text-field-disabled-label-text-color: var(--color-text-disabled);
+  
+  --mdc-outlined-text-field-outline-color: var(--color-border);
+  --mdc-outlined-text-field-hover-outline-color: var(--color-text-secondary);
+  --mdc-outlined-text-field-focus-outline-color: var(--color-primary);
+  --mdc-outlined-text-field-label-text-color: var(--color-text-secondary);
+  --mdc-outlined-text-field-input-text-color: var(--color-text);
+  --mdc-outlined-text-field-caret-color: var(--color-primary);
+  --mdc-outlined-text-field-focus-label-text-color: var(--color-primary);
+  --mdc-outlined-text-field-hover-label-text-color: var(--color-text);
+  --mdc-outlined-text-field-disabled-label-text-color: var(--color-text-disabled);
+  --mdc-outlined-text-field-disabled-outline-color: var(--color-border);
+  
+  // Mat form field specific overrides
+  --mat-form-field-container-text-color: var(--color-text);
+  --mat-form-field-state-layer-color: transparent;
+}
+
+// Floating label colors - explicit overrides
+.mat-mdc-floating-label {
+  color: var(--color-text-secondary) !important;
+}
+
+.mdc-floating-label {
+  color: var(--color-text-secondary) !important;
+}
+
+.mdc-floating-label--float-above {
+  color: var(--color-text-secondary) !important;
+}
+
+// Focused label
+.mat-mdc-form-field.mat-focused .mat-mdc-floating-label,
+.mat-mdc-form-field.mat-focused .mdc-floating-label {
+  color: var(--color-primary) !important;
+}
+
+// Mat label inside form field
+.mat-mdc-form-field .mdc-text-field__input {
+  color: var(--color-text) !important;
+}
+
+// Notched outline label
+.mdc-notched-outline__notch {
+  border-color: var(--color-border) !important;
+}
+
+.mat-mdc-text-field-wrapper {
+  background-color: var(--color-bg-elevated) !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: var(--color-bg-elevated) !important;
+}
+
+// Outlined text field specific
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+  border-color: var(--color-border) !important;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__leading,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__notch,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__trailing {
+  border-color: var(--color-text-secondary) !important;
+}
+
+.mat-mdc-form-field-focus-overlay {
+  background-color: transparent !important;
+}
+
+// Input text color
+.mat-mdc-input-element {
+  color: var(--color-text) !important;
+  caret-color: var(--color-primary) !important;
+}
+
+// Select/dropdown theming
+.mat-mdc-select {
+  --mat-select-trigger-text-color: var(--color-text);
+  --mat-select-enabled-arrow-color: var(--color-text-secondary);
+  --mat-select-focused-arrow-color: var(--color-primary);
+}
+
+.mat-mdc-select-panel {
+  background-color: var(--color-bg-card) !important;
+}
+
+.mat-mdc-option {
+  --mat-option-label-text-color: var(--color-text);
+  
+  &:hover:not(.mdc-list-item--disabled) {
+    background-color: var(--color-bg-elevated) !important;
+  }
+  
+  &.mdc-list-item--selected:not(.mdc-list-item--disabled) {
+    background-color: rgba(var(--color-primary), 0.12) !important;
+  }
+}
+
+// Menu theming
+.mat-mdc-menu-panel {
+  background-color: var(--color-bg-card) !important;
+}
+
+.mat-mdc-menu-item {
+  color: var(--color-text) !important;
+  
+  &:hover:not([disabled]) {
+    background-color: var(--color-bg-elevated) !important;
+  }
+}
+
+// Checkbox theming
+.mat-mdc-checkbox {
+  --mdc-checkbox-unselected-icon-color: var(--color-text-secondary);
+  --mdc-checkbox-selected-checkmark-color: white;
+  
+  .mdc-label {
+    color: var(--color-text) !important;
+  }
+}
+
+// Button theming
+.mat-mdc-button.mat-unthemed {
+  color: var(--color-text) !important;
+}
+
+// Raised button theming
+.mat-mdc-raised-button {
+  &.mat-primary {
+    --mdc-protected-button-container-color: var(--color-primary);
+    --mdc-protected-button-label-text-color: white;
+  }
+  
+  &:not(.mat-primary):not(.mat-accent):not(.mat-warn) {
+    --mdc-protected-button-container-color: var(--color-bg-elevated);
+    --mdc-protected-button-label-text-color: var(--color-text);
+  }
+}
+
+// Flat button theming
+.mat-mdc-unelevated-button {
+  &.mat-primary {
+    --mdc-filled-button-container-color: var(--color-primary);
+    --mdc-filled-button-label-text-color: white;
+  }
+}
+
+// Dialog action buttons
+.mat-mdc-dialog-actions {
+  .mat-mdc-button {
+    color: var(--color-text) !important;
+  }
+  
+  .mat-mdc-raised-button.mat-primary,
+  .mat-mdc-unelevated-button.mat-primary {
+    background-color: var(--color-primary) !important;
+    color: white !important;
+  }
+  
+  .mat-mdc-raised-button:disabled,
+  .mat-mdc-unelevated-button:disabled {
+    background-color: var(--color-bg-elevated) !important;
+    color: var(--color-text-disabled) !important;
+  }
+}
+
+// Snackbar theming
+.mat-mdc-snack-bar-container {
+  --mdc-snackbar-container-color: var(--color-bg-elevated);
+  --mdc-snackbar-supporting-text-color: var(--color-text);
 }

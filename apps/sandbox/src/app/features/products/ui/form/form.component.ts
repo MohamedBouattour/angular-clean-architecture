@@ -1,8 +1,9 @@
 import {
   Component,
   inject,
-  OnInit,
   ChangeDetectionStrategy,
+  signal,
+  computed,
 } from '@angular/core';
 import {
   FormBuilder,
@@ -23,7 +24,6 @@ import { Product } from '../../domain/model';
 
 @Component({
   selector: 'app-product-form',
-  standalone: true,
   imports: [
     ReactiveFormsModule,
     MatDialogModule,
@@ -33,11 +33,13 @@ import { Product } from '../../domain/model';
     MatCheckboxModule,
   ],
   template: `
-    <h2 mat-dialog-title>{{ data ? 'Edit' : 'Create' }} Product</h2>
+    @let isEditMode = !!data; @let title = isEditMode ? 'Edit' : 'Create';
+
+    <h2 mat-dialog-title>{{ title }} Product</h2>
 
     <mat-dialog-content>
       <form [formGroup]="form" class="form-container">
-        <mat-form-field class="form-field">
+        <mat-form-field class="form-field" appearance="outline">
           <mat-label>Name</mat-label>
           <input matInput formControlName="name" />
           @if (form.get('name')?.hasError('required')) {
@@ -45,7 +47,7 @@ import { Product } from '../../domain/model';
           }
         </mat-form-field>
 
-        <mat-form-field class="form-field">
+        <mat-form-field class="form-field" appearance="outline">
           <mat-label>Price</mat-label>
           <input matInput type="number" formControlName="price" />
           @if (form.get('price')?.hasError('required')) {
@@ -53,9 +55,13 @@ import { Product } from '../../domain/model';
           }
         </mat-form-field>
 
-        <mat-checkbox formControlName="inStock" class="form-field">
-          InStock
-        </mat-checkbox>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Description</mat-label>
+          <input matInput formControlName="description" />
+          @if (form.get('description')?.hasError('required')) {
+          <mat-error>This field is required</mat-error>
+          }
+        </mat-form-field>
       </form>
     </mat-dialog-content>
 
@@ -65,9 +71,9 @@ import { Product } from '../../domain/model';
         mat-raised-button
         color="primary"
         (click)="onSave()"
-        [disabled]="form.invalid || form.pristine"
+        [disabled]="isFormInvalid()"
       >
-        {{ data ? 'Update' : 'Create' }}
+        {{ title }}
       </button>
     </mat-dialog-actions>
   `,
@@ -86,23 +92,40 @@ import { Product } from '../../domain/model';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProductFormComponent implements OnInit {
+export class ProductFormComponent {
   private readonly dialogRef = inject(MatDialogRef<ProductFormComponent>);
   protected readonly data = inject<Partial<Product> | null>(MAT_DIALOG_DATA, {
     optional: true,
   });
   private readonly fb = inject(FormBuilder);
 
-  form!: FormGroup;
+  // Signal-based form state tracking
+  private readonly formDirty = signal(false);
+  private readonly formValid = signal(false);
 
-  ngOnInit(): void {
-    this.form = this.fb.group({
-      name: [this.data?.name ?? '', Validators.required],
+  readonly form = this.fb.group({
+    name: [this.data?.name ?? '', Validators.required],
 
-      price: [this.data?.price ?? 0, [Validators.required, Validators.min(0)]],
+    price: [this.data?.price ?? 0, [Validators.required, Validators.min(0)]],
 
-      inStock: [this.data?.inStock ?? false, Validators.required],
+    description: [this.data?.description ?? '', Validators.required],
+  });
+
+  // Computed signal for form validation state
+  readonly isFormInvalid = computed(
+    () => !this.formValid() || !this.formDirty()
+  );
+
+  constructor() {
+    // Track form state changes with signals for zoneless compatibility
+    this.form.statusChanges.subscribe(() => {
+      this.formValid.set(this.form.valid);
     });
+    this.form.valueChanges.subscribe(() => {
+      this.formDirty.set(this.form.dirty);
+    });
+    // Initial state
+    this.formValid.set(this.form.valid);
   }
 
   onCancel(): void {

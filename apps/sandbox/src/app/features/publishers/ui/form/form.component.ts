@@ -1,8 +1,9 @@
 import {
   Component,
   inject,
-  OnInit,
   ChangeDetectionStrategy,
+  signal,
+  computed,
 } from '@angular/core';
 import {
   FormBuilder,
@@ -23,7 +24,6 @@ import { Publisher } from '../../domain/model';
 
 @Component({
   selector: 'app-publisher-form',
-  standalone: true,
   imports: [
     ReactiveFormsModule,
     MatDialogModule,
@@ -33,11 +33,13 @@ import { Publisher } from '../../domain/model';
     MatCheckboxModule,
   ],
   template: `
-    <h2 mat-dialog-title>{{ data ? 'Edit' : 'Create' }} Publisher</h2>
+    @let isEditMode = !!data; @let title = isEditMode ? 'Edit' : 'Create';
+
+    <h2 mat-dialog-title>{{ title }} Publisher</h2>
 
     <mat-dialog-content>
       <form [formGroup]="form" class="form-container">
-        <mat-form-field class="form-field">
+        <mat-form-field class="form-field" appearance="outline">
           <mat-label>Name</mat-label>
           <input matInput formControlName="name" />
           @if (form.get('name')?.hasError('required')) {
@@ -45,7 +47,7 @@ import { Publisher } from '../../domain/model';
           }
         </mat-form-field>
 
-        <mat-form-field class="form-field">
+        <mat-form-field class="form-field" appearance="outline">
           <mat-label>Location</mat-label>
           <input matInput formControlName="location" />
           @if (form.get('location')?.hasError('required')) {
@@ -61,9 +63,9 @@ import { Publisher } from '../../domain/model';
         mat-raised-button
         color="primary"
         (click)="onSave()"
-        [disabled]="form.invalid || form.pristine"
+        [disabled]="isFormInvalid()"
       >
-        {{ data ? 'Update' : 'Create' }}
+        {{ title }}
       </button>
     </mat-dialog-actions>
   `,
@@ -82,21 +84,38 @@ import { Publisher } from '../../domain/model';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PublisherFormComponent implements OnInit {
+export class PublisherFormComponent {
   private readonly dialogRef = inject(MatDialogRef<PublisherFormComponent>);
   protected readonly data = inject<Partial<Publisher> | null>(MAT_DIALOG_DATA, {
     optional: true,
   });
   private readonly fb = inject(FormBuilder);
 
-  form!: FormGroup;
+  // Signal-based form state tracking
+  private readonly formDirty = signal(false);
+  private readonly formValid = signal(false);
 
-  ngOnInit(): void {
-    this.form = this.fb.group({
-      name: [this.data?.name ?? '', Validators.required],
+  readonly form = this.fb.group({
+    name: [this.data?.name ?? '', Validators.required],
 
-      location: [this.data?.location ?? '', Validators.required],
+    location: [this.data?.location ?? '', Validators.required],
+  });
+
+  // Computed signal for form validation state
+  readonly isFormInvalid = computed(
+    () => !this.formValid() || !this.formDirty()
+  );
+
+  constructor() {
+    // Track form state changes with signals for zoneless compatibility
+    this.form.statusChanges.subscribe(() => {
+      this.formValid.set(this.form.valid);
     });
+    this.form.valueChanges.subscribe(() => {
+      this.formDirty.set(this.form.dirty);
+    });
+    // Initial state
+    this.formValid.set(this.form.valid);
   }
 
   onCancel(): void {

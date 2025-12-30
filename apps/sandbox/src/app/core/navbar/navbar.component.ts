@@ -13,7 +13,6 @@ import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-navbar',
-  standalone: true,
   imports: [
     MatToolbarModule,
     MatIconModule,
