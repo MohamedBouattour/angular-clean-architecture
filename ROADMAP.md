@@ -5,6 +5,7 @@ This document outlines the current features and planned enhancements for the Ang
 ## ✅ Current Features (v0.1.0)
 
 ### CLI Generator
+
 - ✅ Generate complete Clean Architecture features with 4 layers (Domain, Infrastructure, Application, UI)
 - ✅ PascalCase naming conventions for classes and interfaces
 - ✅ NgRx SignalStore integration for state management
@@ -16,6 +17,7 @@ This document outlines the current features and planned enhancements for the Ang
 - ✅ Interactive mode with prompts (default)
 
 ### Core Generator
+
 - ✅ Auth service generation with login/logout/register
 - ✅ Route guards (canActivate patterns)
 - ✅ HTTP interceptors (JWT, error handling)
@@ -25,10 +27,12 @@ This document outlines the current features and planned enhancements for the Ang
 - ✅ Navigation components (navbar, menu)
 
 ### Shared Generator
+
 - ✅ Reusable UI components
 - ✅ Utility functions
 
 ### Project Structure
+
 - ✅ Nx monorepo with optimized caching
 - ✅ CLI package for code generation
 - ✅ Sandbox app for testing generated features
@@ -36,6 +40,7 @@ This document outlines the current features and planned enhancements for the Ang
 - ✅ Jest testing setup
 
 ### Documentation
+
 - ✅ Comprehensive README with quick start guide
 - ✅ Architecture documentation
 - ✅ CLI usage examples
@@ -45,18 +50,31 @@ This document outlines the current features and planned enhancements for the Ang
 
 ## 🚧 Planned Enhancements
 
-### v0.2.0 - Enhanced Templates (Q1 2026)
+### v0.2.0 - Core Experience & MCP Integration (Q1 2026)
 
-**Goal**: Provide more comprehensive and production-ready generated code
+**Goal**: Elevate developer experience with AI integration and polished UI components
 
-#### State Management Enhancements
-- [ ] Add `withEntities` integration for entity collections in stores
-- [ ] Add `withCallState` custom feature for loading/error states
-- [ ] Generate CRUD effects/methods in stores
-- [ ] Add selectors for common data access patterns
-- [ ] Include store unit test templates
+#### 🤖 AI & MCP Integration (Top Priority)
+
+- [ ] **MCP Server Implementation**: Create a Model Context Protocol server to expose the CLI tools to LLMs
+- [ ] **Context Awareness**: Provide architectural context to AI agents for better code generation
+- [ ] **Smart Prompts**: AI-optimized prompts for feature generation
+- [ ] **Cursor/Windsurf Integration**: Seamless integration with AI code editors
+
+#### 🎨 UI & Styling Improvements
+
+- [ ] **CSS Refactoring**: Clean and optimize global styles and component-specific styles
+- [ ] **Dark Theme Polish**: Improvements to dark mode consistency across all components
+- [ ] **Theme Variables**: Better CSS variable utilization for easier theming
+
+#### 📦 Shared Library Enhancements
+
+- [ ] **Component Polish**: Improve aesthetics and usability of existing shared components
+- [ ] **New Components**: Add frequently used components (Modal, Toast, Dropdown)
+- [ ] **Documentation**: Better documentation for usage of shared components
 
 #### Service Layer Improvements
+
 - [ ] Add error handling patterns in services
 - [ ] Include retry logic for failed requests
 - [ ] Add request/response interceptor examples
@@ -64,6 +82,7 @@ This document outlines the current features and planned enhancements for the Ang
 - [ ] Include service unit test templates
 
 #### Component Enhancements
+
 - [ ] Add form handling templates (reactive forms)
 - [ ] Include common UI patterns (list, detail, create/edit)
 - [ ] Add loading/error state UI templates
@@ -71,6 +90,7 @@ This document outlines the current features and planned enhancements for the Ang
 - [ ] Add accessibility features (ARIA labels, keyboard navigation)
 
 #### Developer Experience
+
 - [ ] Add `--dry-run` flag to preview generated files
 - [ ] Add `--path` option to customize output directory
 - [ ] Interactive prompts for advanced configuration
@@ -84,6 +104,7 @@ This document outlines the current features and planned enhancements for the Ang
 **Goal**: Support complex application patterns and workflows
 
 #### Multi-Layer Generators
+
 - [ ] Generate sub-features within existing features
 - [ ] Create shared modules/services generator
 - [ ] Generate routing configuration for features
@@ -91,6 +112,7 @@ This document outlines the current features and planned enhancements for the Ang
 - [ ] Create core services generator (auth, logging, etc.)
 
 #### State Management Advanced Patterns
+
 - [ ] Add entity adapter patterns
 - [ ] Include optimistic update patterns
 - [ ] Generate WebSocket integration templates
@@ -98,6 +120,7 @@ This document outlines the current features and planned enhancements for the Ang
 - [ ] Include undo/redo functionality templates
 
 #### Testing & Quality
+
 - [ ] Generate E2E test templates (Playwright/Cypress)
 - [ ] Add integration test examples
 - [ ] Include performance test templates
@@ -105,6 +128,7 @@ This document outlines the current features and planned enhancements for the Ang
 - [ ] Add visual regression test setup
 
 #### API Integration
+
 - [ ] OpenAPI/Swagger schema integration
 - [ ] Auto-generate models from API specs
 - [ ] Create API client generator from schema
@@ -118,6 +142,7 @@ This document outlines the current features and planned enhancements for the Ang
 **Goal**: Improve developer productivity and code quality
 
 #### CLI Improvements
+
 - [ ] Add `update` command to modify existing features
 - [ ] Add `remove` command to delete features safely
 - [ ] Add `list` command to show all generated features
@@ -125,6 +150,7 @@ This document outlines the current features and planned enhancements for the Ang
 - [ ] Add `refactor` command for common refactoring tasks
 
 #### Code Quality Tools
+
 - [ ] Architecture linting rules (enforce layer dependencies)
 - [ ] Custom ESLint rules for clean architecture
 - [ ] Automated code review suggestions
@@ -132,6 +158,7 @@ This document outlines the current features and planned enhancements for the Ang
 - [ ] Dead code detection
 
 #### Documentation Generation
+
 - [ ] Auto-generate API documentation from code
 - [ ] Create architecture diagrams from project structure
 - [ ] Generate feature documentation templates
@@ -139,6 +166,7 @@ This document outlines the current features and planned enhancements for the Ang
 - [ ] Create interactive component playground
 
 #### IDE Integration
+
 - [ ] VS Code extension for quick generation
 - [ ] Code snippets for common patterns
 - [ ] File template previews
@@ -152,6 +180,7 @@ This document outlines the current features and planned enhancements for the Ang
 **Goal**: Integrate with popular libraries and tools
 
 #### UI Library Support
+
 - [ ] Angular Material templates
 - [ ] PrimeNG templates
 - [ ] Tailwind CSS integration
@@ -159,6 +188,7 @@ This document outlines the current features and planned enhancements for the Ang
 - [ ] Component library generator
 
 #### Backend Integration
+
 - [ ] NestJS backend generator (matching architecture)
 - [ ] Firebase integration templates
 - [ ] Supabase integration templates
@@ -166,6 +196,7 @@ This document outlines the current features and planned enhancements for the Ang
 - [ ] API gateway patterns
 
 #### DevOps & Deployment
+
 - [ ] Docker configuration generator
 - [ ] CI/CD pipeline templates (GitHub Actions, GitLab CI)
 - [ ] Environment configuration management
@@ -173,6 +204,7 @@ This document outlines the current features and planned enhancements for the Ang
 - [ ] Deployment scripts (Vercel, Netlify, AWS)
 
 #### Monitoring & Analytics
+
 - [ ] Error tracking integration (Sentry)
 - [ ] Analytics integration (Google Analytics, Mixpanel)
 - [ ] Performance monitoring setup
@@ -186,6 +218,7 @@ This document outlines the current features and planned enhancements for the Ang
 **Goal**: Enterprise-ready generator with comprehensive features
 
 #### Enterprise Features
+
 - [ ] Multi-tenancy support templates
 - [ ] Role-based access control (RBAC) patterns
 - [ ] Internationalization (i18n) setup
@@ -193,6 +226,7 @@ This document outlines the current features and planned enhancements for the Ang
 - [ ] Audit logging patterns
 
 #### Performance Optimization
+
 - [ ] Code splitting strategies
 - [ ] Image optimization patterns
 - [ ] Caching strategies
@@ -200,6 +234,7 @@ This document outlines the current features and planned enhancements for the Ang
 - [ ] Web Worker integration for heavy computations
 
 #### Security
+
 - [ ] Security best practices in templates
 - [ ] XSS/CSRF protection patterns
 - [ ] Content Security Policy setup
@@ -207,6 +242,7 @@ This document outlines the current features and planned enhancements for the Ang
 - [ ] Authorization patterns
 
 #### Migration Tools
+
 - [ ] Migrate existing Angular apps to clean architecture
 - [ ] Version upgrade automation
 - [ ] Breaking change detection and fixes
@@ -218,6 +254,7 @@ This document outlines the current features and planned enhancements for the Ang
 ## 🌟 Future Considerations (Beyond v1.0)
 
 ### Community & Ecosystem
+
 - [ ] Plugin system for custom generators
 - [ ] Community template marketplace
 - [ ] Starter project templates
@@ -225,6 +262,7 @@ This document outlines the current features and planned enhancements for the Ang
 - [ ] Video tutorials and courses
 
 ### Advanced Patterns
+
 - [ ] Micro-frontend architecture support
 - [ ] Event-driven architecture templates
 - [ ] CQRS pattern implementation
@@ -232,6 +270,7 @@ This document outlines the current features and planned enhancements for the Ang
 - [ ] Real-time collaboration features
 
 ### AI & Automation
+
 - [ ] AI-powered code generation
 - [ ] Automatic bug detection and fixes
 - [ ] Smart refactoring suggestions
@@ -252,6 +291,7 @@ We welcome community input on the roadmap! If you have suggestions:
 ### Priority Criteria
 
 Features are prioritized based on:
+
 - **Impact**: How many users will benefit?
 - **Effort**: How complex is the implementation?
 - **Alignment**: Does it fit the clean architecture philosophy?
@@ -262,6 +302,7 @@ Features are prioritized based on:
 ## 📊 Metrics & Success Criteria
 
 We track success through:
+
 - ✅ Number of features generated per week
 - ✅ Code quality metrics (test coverage, linting)
 - ✅ Developer satisfaction surveys

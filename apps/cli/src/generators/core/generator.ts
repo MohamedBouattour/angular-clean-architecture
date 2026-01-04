@@ -7,6 +7,11 @@ import {
 import { toPascalCase, toCamelCase } from '../../utils/string-utils';
 
 export async function coreGenerator(tree: Tree, options: CoreGeneratorSchema) {
+  // Default to 'all' if no type specified
+  if (!options.type) {
+    options.type = 'all';
+  }
+
   if (options.type === 'all') {
     const coreTypes = [
       'navbar',

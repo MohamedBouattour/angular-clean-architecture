@@ -12,14 +12,7 @@ export async function sharedGenerator(
 ) {
   if (options.type === 'all') {
     // Generate a standard set of UI components
-    const commonComponents = [
-      'button',
-      'card',
-      'input',
-      'icon',
-      'loader',
-      'confirm-dialog',
-    ];
+    const commonComponents = ['confirm-dialog'];
     console.log(
       `\n🚀 Generating standard shared UI components: ${commonComponents.join(', ')}...`,
     );

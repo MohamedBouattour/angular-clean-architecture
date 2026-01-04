@@ -1,324 +1,425 @@
-# Angular Clean Architecture Monorepo
+# Angular Clean Architecture CLI
 
-> A modern Nx monorepo featuring a CLI generator for scaffolding Clean Architecture Angular features with NgRx SignalStore state management.
+[![npm version](https://img.shields.io/npm/v/@devmed555/angular-clean-architecture-cli.svg)](https://www.npmjs.com/package/@devmed555/angular-clean-architecture-cli)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 🎯 Overview
+> 🚀 Scaffold Angular features following Clean Architecture principles with NgRx SignalStore.
 
-This project provides a powerful CLI tool that generates production-ready Angular features following Clean Architecture principles. Each generated feature is structured into clear layers (Domain, Infrastructure, Application, UI) with proper separation of concerns, making your codebase maintainable, testable, and scalable.
+A powerful CLI that generates production-ready Angular features structured into **Domain**, **Infrastructure**, **Application**, and **UI** layers — keeping your codebase maintainable, testable, and scalable.
 
-**Key Features:**
-- 🏗️ **Clean Architecture**: Enforces separation between business logic, data access, and UI
-- 🔄 **NgRx SignalStore**: Modern reactive state management with Angular Signals
-- 📦 **Nx Monorepo**: Efficient build system with caching and task orchestration
-- 🚀 **Standalone Components**: Ready for Angular's future (zoneless, fully typed)
-- 🧪 **Test-Ready**: Generated code is designed for easy unit testing
-- 🎨 **Best Practices**: TypeScript strict mode, ESLint, Prettier
+---
 
-## 📁 Project Structure
+## 📦 Installation
 
+```bash
+# Global installation (recommended)
+npm install -g @devmed555/angular-clean-architecture-cli
+
+# Verify installation
+aca --version
 ```
-angular-clean-architecture/
-├── apps/
-│   ├── cli/                    # Code generator (Nx plugin)
-│   │   ├── src/
-│   │   │   └── generators/
-│   │   │       └── clean-feature/
-│   │   │           ├── files/          # Templates for generated code
-│   │   │           │   ├── application/  # State management layer
-│   │   │           │   ├── domain/       # Business models
-│   │   │           │   ├── infrastructure/ # API services
-│   │   │           │   └── ui/           # Components
-│   │   │           ├── generator.ts     # Generator logic
-│   │   │           └── schema.json      # CLI options schema
-│   │   └── package.json
-│   │
-│   └── sandbox/                # Angular app for testing generated code
-│       ├── src/
-│       │   └── app/
-│       │       └── features/   # Generated features go here
-│       └── project.json
-│
-├── ARCHITECTURE.md             # Architecture documentation
-├── ROADMAP.md                  # Future enhancements
-├── package.json                # Root workspace configuration
-└── nx.json                     # Nx workspace configuration
-```
-
-## 🚀 Quick Start
 
 ### Prerequisites
 
-- Node.js (v18 or higher)
-- npm (v9 or higher)
+- **Node.js** v18+
+- **Angular** 16+ project
+- **@ngrx/signals** installed:
+  ```bash
+  npm install @ngrx/signals
+  ```
 
-### Installation
+---
 
-```bash
-# Clone the repository
-git clone <repository-url>
-cd angular-clean-architecture
-
-# Install dependencies
-npm install
-```
-
-### Generate Your First Feature
+## ⚡ Quick Start
 
 ```bash
-# Generate a new feature interactively
-npm run generate:feature
+# Generate all features from feature-schema.json
+aca g feature
 
-# You'll be asked for:
-# - Feature name (singular)
-# - Attributes (name and type)
+# Generate a single feature with attributes
+aca g feature product --attributes="name:string,price:number"
 
-# Or provide name via flag:
-npm run generate:feature -- --name=products
+# Generate ALL core assets (auth, navbar, menu, theme, etc.)
+aca g core
+
+# Generate ALL shared components (button, card, input, etc.)
+aca g shared
 ```
 
-This creates a complete feature structure in `apps/sandbox/src/app/features/products/`.
+---
 
-## 🌍 Global Usage (NPM)
+## 🛠️ Generators
 
-You can install the CLI globally to use it in any Angular project:
+| Generator   | Command         | Description                                     |
+| ----------- | --------------- | ----------------------------------------------- |
+| **Feature** | `aca g feature` | Complete Clean Architecture feature (4 layers)  |
+| **Core**    | `aca g core`    | Core system assets (auth, guards, interceptors) |
+| **Shared**  | `aca g shared`  | Shared UI components & utilities                |
+
+---
+
+## 📁 Feature Generator
+
+Creates a complete Clean Architecture feature with 4 layers:
+
+```
+features/<name>/
+├── domain/model.ts           # Business entities & interfaces
+├── infrastructure/service.ts # HTTP service with CRUD operations
+├── application/store.ts      # NgRx SignalStore state management
+└── ui/component.ts           # Standalone Angular component
+```
+
+### Usage
 
 ```bash
-# Install globally
-npm install -g @devmed555/angular-clean-architecture-cli
+# Interactive mode
+aca g feature
 
-# Generate a feature with attributes
-aca generate feature products --attributes="name:string,price:number,inStock:boolean"
+# With name argument
+aca g feature product
+
+# With inline attributes
+aca g feature product --attributes="name:string,price:number,inStock:boolean"
+
+# From blueprint file
+aca g feature --blueprint=./my-feature.json
 ```
 
-### Interactive Mode
+### Options
 
-You can also use the CLI interactively:
+| Option         | Description                    | Example                                    |
+| -------------- | ------------------------------ | ------------------------------------------ |
+| `--attributes` | Define model properties inline | `--attributes="title:string,views:number"` |
+| `--blueprint`  | Use a JSON blueprint file      | `--blueprint=./order.json`                 |
+
+### Supported Types
+
+| Type      | Description                             |
+| --------- | --------------------------------------- |
+| `string`  | Text data                               |
+| `number`  | Numeric values                          |
+| `boolean` | True/false values                       |
+| `Date`    | Date/time values                        |
+| `any`     | Flexible type (use sparingly)           |
+| `Type[]`  | Arrays (e.g., `string[]`, `CartItem[]`) |
+
+### Interactive Mode Example
+
+```
+$ aca g feature
+
+? What is the name of the feature (singular)? product
+Let's add some attributes (property fields).
+? Enter attribute name (or press enter to finish): name
+? Select type: string
+? Enter attribute name (or press enter to finish): price
+? Select type: number
+? Enter attribute name (or press enter to finish): [Press Enter]
+
+✓ Generated feature "product" in src/app/features/products
+```
+
+---
+
+## 🔧 Core Generator
+
+Creates core system assets like authentication, guards, and interceptors.
+
+**Running without arguments generates ALL core assets automatically:**
 
 ```bash
-aca generate feature
-# Prompts:
-# ? What is the name of the feature (singular)? product
-# ? Enter attribute name (or press enter to finish): name
-# ? Select type: string
+# Generate ALL core assets (recommended)
+aca g core
+
+# Output:
+# 🚀 Generating ALL core assets: navbar, menu, theme-selector, language-selector, translate, auth...
+# ✓ Generated core navbar in apps/sandbox/src/app/core/navbar
+# ✓ Generated core menu in apps/sandbox/src/app/core/menu
+# ...
 ```
 
-Generated model will automatically include these properties:
+### Generated Assets
 
-```typescript
-export interface Product {
-  id: string;
-  name: string;
-  price: number;
-  inStock: boolean;
+| Asset               | Description                              |
+| ------------------- | ---------------------------------------- |
+| `navbar`            | Top navigation bar                       |
+| `menu`              | Side navigation menu                     |
+| `theme-selector`    | Dark/light theme toggle                  |
+| `language-selector` | Language switcher component              |
+| `translate`         | i18n translation setup                   |
+| `auth`              | Authentication service with login/logout |
+
+### Generate Specific Asset
+
+```bash
+# Generate only a specific asset
+aca g core --type=navbar
+aca g core --type=auth
+aca g core --type=guard
+aca g core --type=interceptor
+```
+
+---
+
+## 🎨 Shared Generator
+
+Creates shared reusable components and utilities.
+
+**Running without arguments generates ALL shared UI components automatically:**
+
+```bash
+# Generate ALL shared UI components (recommended)
+aca g shared
+
+# Output:
+# 🚀 Generating standard shared UI components: button, card, input, icon, loader, confirm-dialog...
+# ✓ Generated shared ui "button" in apps/sandbox/src/app/shared/ui/button
+# ✓ Generated shared ui "card" in apps/sandbox/src/app/shared/ui/card
+# ...
+```
+
+### Generated Components
+
+| Component        | Description                   |
+| ---------------- | ----------------------------- |
+| `button`         | Reusable button component     |
+| `card`           | Card container component      |
+| `input`          | Form input component          |
+| `icon`           | Icon wrapper component        |
+| `loader`         | Loading spinner component     |
+| `confirm-dialog` | Confirmation dialog component |
+
+### Generate Specific Component
+
+```bash
+# Generate only a specific UI component
+aca g shared myButton --type=ui
+
+# Generate a utility module
+aca g shared format --type=util
+```
+
+---
+
+## 📋 Blueprint Mode
+
+For complex features with multiple related models, use a JSON blueprint file.
+
+### Blueprint Schema
+
+```json
+{
+  "name": "order",
+  "models": [
+    {
+      "name": "Order",
+      "attributes": [
+        { "name": "customerId", "type": "string" },
+        { "name": "total", "type": "number" },
+        { "name": "status", "type": "string" }
+      ]
+    },
+    {
+      "name": "OrderItem",
+      "attributes": [
+        { "name": "orderId", "type": "string" },
+        { "name": "productId", "type": "string" },
+        { "name": "quantity", "type": "number" }
+      ]
+    }
+  ]
 }
 ```
 
-## 🚀 Quick Start (Monorepo)
-
-```
-products/
-├── application/
-│   └── store.ts              # NgRx SignalStore with state management
-├── domain/
-│   └── model.ts              # Business entities and interfaces
-├── infrastructure/
-│   └── service.ts            # HTTP services and data access
-└── ui/
-    └── component.ts          # Standalone Angular component
-```
-
-### Run the Sandbox Application
+### Generate from Blueprint
 
 ```bash
-# Serve the sandbox app with your generated features
-npm run sandbox:serve
-
-# Open your browser to http://localhost:4200
+aca g feature --blueprint=./order-blueprint.json
 ```
 
-## 🛠️ Available Scripts
+### Example: E-Commerce Blueprint
 
-### Global Commands
+```json
+{
+  "name": "ecommerce",
+  "models": [
+    {
+      "name": "Product",
+      "attributes": [
+        { "name": "name", "type": "string" },
+        { "name": "price", "type": "number" },
+        { "name": "stock", "type": "number" },
+        { "name": "imageUrl", "type": "string" }
+      ]
+    },
+    {
+      "name": "Cart",
+      "attributes": [
+        { "name": "userId", "type": "string" },
+        { "name": "items", "type": "CartItem[]" },
+        { "name": "total", "type": "number" }
+      ]
+    }
+  ]
+}
+```
 
-| Script | Description |
-|--------|-------------|
-| `npm run generate:feature -- --name=<feature-name>` | Generate a new clean architecture feature |
-| `npm run generate:feature:interactive` | Generate a feature with interactive prompts |
-| `npm run all:build` | Build all packages in the monorepo |
-| `npm run all:lint` | Lint all packages |
-| `npm run all:test` | Run tests for all packages |
-| `npm run full-check` | Run format check, lint, test, and build (CI pipeline) |
-| `npm run format` | Format all code with Prettier |
-| `npm run format:check` | Check code formatting without changes |
-| `npm run clean` | Clean Nx cache and node_modules |
+---
 
-### CLI Package Commands
+## 📂 Feature Schema (Batch Generation)
 
-| Script | Description |
-|--------|-------------|
-| `npm run cli:build` | Build the CLI generator |
-| `npm run cli:test` | Run CLI tests |
-| `npm run cli:lint` | Lint CLI code |
+The CLI automatically stores feature definitions in `feature-schema.json`. When you run `aca g feature` without arguments, it can batch-generate all features defined in this schema.
 
-### Sandbox Package Commands
+### Schema Format
 
-| Script | Description |
-|--------|-------------|
-| `npm run sandbox:serve` | Serve the sandbox app (dev mode) |
-| `npm run sandbox:build` | Build the sandbox app for production |
-| `npm run sandbox:test` | Run sandbox tests |
-| `npm run sandbox:lint` | Lint sandbox code |
+```json
+{
+  "version": "1.0",
+  "lastUpdated": "2026-01-04T20:11:51.889Z",
+  "features": {
+    "product": {
+      "name": "product",
+      "attributes": [
+        { "name": "name", "type": "string" },
+        { "name": "price", "type": "number" }
+      ]
+    },
+    "book": {
+      "name": "book",
+      "attributes": [
+        { "name": "title", "type": "string" },
+        { "name": "author", "type": "string" }
+      ]
+    }
+  }
+}
+```
 
-## 🏛️ Architecture Principles
+### Batch Generation
 
-This project follows **Clean Architecture** (also known as Hexagonal Architecture or Ports & Adapters). Each generated feature has four distinct layers:
+```bash
+# Running without a name triggers batch generation from feature-schema.json
+aca g feature
 
-### 1. **Domain Layer** (`domain/`)
-- **Purpose**: Pure business logic and domain models
-- **Contains**: Interfaces, types, validators, business rules
-- **Dependencies**: None (no Angular, no HTTP, no external libraries)
-- **Example**: `Product` interface, validation functions
+# Output:
+# 🚀 Found 4 features in feature-schema.json. Generating...
+# ✓ Generated feature "product" in src/app/features/products
+# ✓ Generated feature "book" in src/app/features/books
+```
 
-### 2. **Infrastructure Layer** (`infrastructure/`)
-- **Purpose**: External integrations and data access
-- **Contains**: HTTP services, API clients, data mapping
-- **Dependencies**: Angular HttpClient, RxJS
-- **Example**: `ProductService` with CRUD operations
+---
 
-### 3. **Application Layer** (`application/`)
-- **Purpose**: State management and orchestration
-- **Contains**: NgRx SignalStore, selectors, effects
-- **Dependencies**: @ngrx/signals, domain models, infrastructure services
-- **Example**: `ProductStore` managing product list state
+## 🏛️ Architecture Overview
 
-### 4. **UI Layer** (`ui/`)
-- **Purpose**: User interface and presentation
-- **Contains**: Standalone components, templates, styles
-- **Dependencies**: Angular components, application layer stores
-- **Example**: `ProductComponent` displaying products
+Generated features follow **Clean Architecture** (Hexagonal Architecture) principles:
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                         UI Layer                         │
+│              (Components, Templates, Styles)             │
+├─────────────────────────────────────────────────────────┤
+│                    Application Layer                     │
+│              (NgRx SignalStore, Selectors)               │
+├─────────────────────────────────────────────────────────┤
+│                  Infrastructure Layer                    │
+│              (HTTP Services, API Clients)                │
+├─────────────────────────────────────────────────────────┤
+│                      Domain Layer                        │
+│          (Interfaces, Types, Business Rules)             │
+└─────────────────────────────────────────────────────────┘
+```
 
 ### Dependency Flow
 
 ```
 UI → Application → Infrastructure → Domain
-                      ↓
-                 External APIs
+                        ↓
+                   External APIs
 ```
 
-- **UI** depends on **Application** (state)
-- **Application** depends on **Infrastructure** (data) and **Domain** (models)
-- **Infrastructure** depends on **Domain** (models)
-- **Domain** has no dependencies (pure TypeScript)
-
-## 🎨 Generated Code Example
-
-When you run `npm run generate:feature -- --name=user`, here's what you get:
-
-**Domain Model** (`domain/model.ts`):
-```typescript
-export interface User {
-  id: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-```
-
-**Infrastructure Service** (`infrastructure/service.ts`):
-```typescript
-@Injectable({ providedIn: 'root' })
-export class UserService {
-  private readonly apiUrl = '/api/users';
-
-  constructor(private http: HttpClient) {}
-
-  getAll(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiUrl);
-  }
-
-  getById(id: string): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/${id}`);
-  }
-
-  // ... create, update, delete methods
-}
-```
-
-**Application Store** (`application/store.ts`):
-```typescript
-export const UserStore = signalStore(
-  { providedIn: 'root' },
-  withState({ loading: false })
-);
-```
-
-**UI Component** (`ui/component.ts`):
-```typescript
-@Component({
-  selector: 'app-user-feature',
-  standalone: true,
-  imports: [CommonModule],
-  template: `...`,
-  styles: `...`
-})
-export class UserComponent {
-  protected readonly store = inject(UserStore);
-}
-```
-
-## 🧪 Testing
-
-All generated code is designed to be easily testable:
-
-```bash
-# Run all tests
-npm run all:test
-
-# Run tests for specific package
-npm run cli:test
-npm run sandbox:test
-```
-
-### Testing Strategy
-
-- **Domain**: Pure functions, easy to unit test
-- **Infrastructure**: Mock HttpClient for service tests
-- **Application**: Test store state transitions and selectors
-- **UI**: Test component behavior with mocked stores
-
-## 🤝 Contributing
-
-### Development Workflow
-
-1. Make changes to the CLI generator in `apps/cli/src/generators/`
-2. Build the CLI: `npm run cli:build`
-3. Test your changes: `npm run generate:feature -- --name=test-feature`
-4. Verify in sandbox: `npm run sandbox:serve`
-5. Run quality checks: `npm run full-check`
-
-### Code Quality
-
-Before committing, ensure:
-- ✅ Code is formatted: `npm run format`
-- ✅ No linting errors: `npm run all:lint`
-- ✅ All tests pass: `npm run all:test`
-- ✅ Build succeeds: `npm run all:build`
-
-## 📚 Additional Resources
-
-- [ARCHITECTURE.md](./ARCHITECTURE.md) - Detailed architecture documentation
-- [ROADMAP.md](./ROADMAP.md) - Future enhancements and planned features
-- [Nx Documentation](https://nx.dev)
-- [Angular Documentation](https://angular.dev)
-- [NgRx Signals](https://ngrx.io/guide/signals)
-
-## 📝 License
-
-This project is licensed under the MIT License.
-
-## 🙋 Support
-
-For issues, questions, or contributions, please open an issue in the repository.
+- **Domain**: Pure TypeScript, zero dependencies
+- **Infrastructure**: Depends on Domain
+- **Application**: Depends on Infrastructure + Domain
+- **UI**: Depends on Application
 
 ---
 
-**Built with ❤️ using Angular 18, Nx, and NgRx Signals**
+## 💡 Best Practices
+
+### ✅ Feature Naming
+
+```bash
+# Good (singular, kebab-case)
+aca g feature product
+aca g feature user-profile
+aca g feature order-item
+
+# Avoid
+aca g feature products      # Will become "productss"
+aca g feature UserProfile   # Use kebab-case
+```
+
+### ✅ Attribute Types
+
+```bash
+# Use appropriate TypeScript types
+--attributes="name:string,age:number,isActive:boolean,createdAt:Date,tags:string[]"
+```
+
+### ✅ Blueprint Organization
+
+```
+project-root/
+├── blueprints/
+│   ├── user.json
+│   ├── product.json
+│   └── order.json
+└── src/
+```
+
+---
+
+## 🔗 Nx Workspace Integration
+
+When using within an Nx monorepo:
+
+```bash
+# Generate feature using Nx
+nx g cli:feature product
+
+# Generate core assets
+nx g cli:core app --type=navbar
+
+# Generate shared components
+nx g cli:shared button --type=ui
+```
+
+---
+
+## 📚 Resources
+
+- [Architecture Documentation](https://github.com/MohamedBouattour/angular-clean-architecture/blob/main/ARCHITECTURE.md)
+- [Examples & Scenarios](./EXAMPLES.md)
+- [Roadmap](https://github.com/MohamedBouattour/angular-clean-architecture/blob/main/ROADMAP.md)
+- [GitHub Issues](https://github.com/MohamedBouattour/angular-clean-architecture/issues)
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+---
+
+## 📝 License
+
+MIT © [Mohamed Bouattour](https://github.com/MohamedBouattour)
+
+---
+
+**Built with ❤️ for the Angular community**

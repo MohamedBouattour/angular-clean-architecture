@@ -14,10 +14,10 @@
     },
     "type": {
       "type": "string",
-      "description": "Type of shared asset",
+      "description": "Type of shared asset (defaults to 'all' if not specified)",
       "enum": ["all", "ui", "util"],
-      "x-prompt": "What type of shared asset would you like to generate?"
+      "default": "all"
     }
   },
-  "required": ["type"]
+  "required": []
 }

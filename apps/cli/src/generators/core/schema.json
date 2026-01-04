@@ -14,10 +14,21 @@
     },
     "type": {
       "type": "string",
-      "description": "Type of core asset",
-      "enum": ["all", "auth", "guard", "interceptor", "service", "translate", "language-selector", "theme-selector", "menu", "navbar"],
-      "x-prompt": "What type of core asset would you like to generate?"
+      "description": "Type of core asset (defaults to 'all' if not specified)",
+      "enum": [
+        "all",
+        "auth",
+        "guard",
+        "interceptor",
+        "service",
+        "translate",
+        "language-selector",
+        "theme-selector",
+        "menu",
+        "navbar"
+      ],
+      "default": "all"
     }
   },
-  "required": ["type"]
+  "required": []
 }
