@@ -1,6 +1,6 @@
 {
   "name": "@devmed555/angular-clean-architecture-cli",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "CLI generator for Angular Clean Architecture features using NgRx SignalStore",
   "keywords": [
     "angular",

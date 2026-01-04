@@ -10,6 +10,11 @@ export async function sharedGenerator(
   tree: Tree,
   options: SharedGeneratorSchema,
 ) {
+  // Default to 'all' if no type specified
+  if (!options.type) {
+    options.type = 'all';
+  }
+
   if (options.type === 'all') {
     // Generate a standard set of UI components
     const commonComponents = ['confirm-dialog'];

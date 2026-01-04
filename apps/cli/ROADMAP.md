@@ -73,18 +73,6 @@ This document outlines the current features and planned enhancements for the Ang
 - [ ] **New Components**: Add frequently used components (Modal, Toast, Dropdown)
 - [ ] **Documentation**: Better documentation for usage of shared components
 
-#### 🧱 Custom Types & Modelling
-
-- [ ] **Custom Types Support**: Support for Enums, Unions, and complex object types in CLI attributes
-- [ ] **UML Modelling**: Generate features directly from UML class diagrams/PlantUML
-- [ ] **Type Validation**: Enhanced type checking for generated models
-
-#### 🧪 Testing Enhancements
-
-- [ ] **Unit Test Templates**: Generate comprehensive unit tests for all layers (Domain, Infrastructure, Application)
-- [ ] **Mock Generators**: Auto-generate mock data factories for testing
-- [ ] **E2E Scaffolding**: Setup Cyrpress/Playwright tests for generated features
-
 #### Service Layer Improvements
 
 - [ ] Add error handling patterns in services

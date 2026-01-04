@@ -23,7 +23,7 @@ aca --version
 
 - **Node.js** v20+
 - **Angular** 21+ project
-- **@ngrx/signals** installed: `npm install @ngrx/signals`
+- **@ngrx/signals** installed (`npm install @ngrx/signals`)
 
 ---
 
@@ -141,58 +141,6 @@ aca g feature --blueprint=./shop.json
 - **Unit Test Templates**: Comprehensive tests for all layers
 - **Custom Types (UML)**: Generate features from UML/PlantUML models
 - **MCP Server**: AI integration for smarter code generation
-
----
-
-## 🏛️ Architecture Overview
-
-Generated features follow **Clean Architecture** (Hexagonal Architecture) principles:
-
-```
-┌─────────────────────────────────────────────────────────┐
-│                         UI Layer                         │
-│              (Components, Templates, Styles)             │
-├─────────────────────────────────────────────────────────┤
-│                    Application Layer                     │
-│              (NgRx SignalStore, Selectors)               │
-├─────────────────────────────────────────────────────────┤
-│                  Infrastructure Layer                    │
-│              (HTTP Services, API Clients)                │
-├─────────────────────────────────────────────────────────┤
-│                      Domain Layer                        │
-│          (Interfaces, Types, Business Rules)             │
-└─────────────────────────────────────────────────────────┘
-```
-
-- **Domain**: Pure TypeScript, zero dependencies
-- **Infrastructure**: Depends on Domain
-- **Application**: Depends on Infrastructure + Domain
-- **UI**: Depends on Application
-
----
-
-## 🔗 Nx Workspace Integration
-
-When using within an Nx monorepo:
-
-```bash
-# Generate feature using Nx
-nx g cli:feature product
-
-# Generate core assets
-nx g cli:core
-
-# Generate shared components
-nx g cli:shared
-```
-
----
-
-## 📚 Resources
-
-- [Architecture Documentation](./ARCHITECTURE.md)
-- [Examples & Scenarios](./EXAMPLES.md)
-- [Roadmap](./ROADMAP.md)
 
 ---
 
