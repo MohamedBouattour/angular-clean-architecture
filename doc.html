@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angular Clean Architecture - Architecture Diagram</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          #1a1a2e 0%,
+          #16213e 50%,
+          #0f3460 100%
+        );
+        min-height: 100vh;
+        padding: 40px 20px;
+        color: #fff;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        background: linear-gradient(90deg, #00d9ff, #00ff88);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #8892b0;
+        margin-bottom: 40px;
+        font-size: 1.1rem;
+      }
+
+      /* Main Architecture Container */
+      .architecture {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      /* Monorepo Structure */
+      .monorepo {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .monorepo h2 {
+        color: #00d9ff;
+        margin-bottom: 20px;
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .monorepo h2::before {
+        content: '📦';
+      }
+
+      .app-box {
+        background: rgba(0, 217, 255, 0.1);
+        border: 2px solid rgba(0, 217, 255, 0.3);
+        border-radius: 12px;
+        padding: 15px;
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+
+      .app-box:hover {
+        transform: translateX(5px);
+        border-color: #00d9ff;
+        box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+      }
+
+      .app-box h3 {
+        color: #00d9ff;
+        font-size: 1rem;
+        margin-bottom: 8px;
+      }
+
+      .app-box p {
+        color: #8892b0;
+        font-size: 0.85rem;
+        line-height: 1.5;
+      }
+
+      .app-box.cli {
+        background: rgba(255, 136, 0, 0.1);
+        border-color: rgba(255, 136, 0, 0.3);
+      }
+
+      .app-box.cli:hover {
+        border-color: #ff8800;
+        box-shadow: 0 0 20px rgba(255, 136, 0, 0.3);
+      }
+
+      .app-box.cli h3 {
+        color: #ff8800;
+      }
+
+      .app-box.backend {
+        background: rgba(0, 255, 136, 0.1);
+        border-color: rgba(0, 255, 136, 0.3);
+      }
+
+      .app-box.backend:hover {
+        border-color: #00ff88;
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+      }
+
+      .app-box.backend h3 {
+        color: #00ff88;
+      }
+
+      /* Sandbox Architecture */
+      .sandbox-architecture {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .sandbox-architecture h2 {
+        color: #00d9ff;
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      /* App Structure */
+      .app-structure {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .module-box {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 15px;
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .module-box h3 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .module-box.core h3 {
+        color: #ff6b6b;
+      }
+
+      .module-box.shared h3 {
+        color: #feca57;
+      }
+
+      .module-box.features h3 {
+        color: #48dbfb;
+      }
+
+      .module-items {
+        list-style: none;
+      }
+
+      .module-items li {
+        color: #8892b0;
+        font-size: 0.9rem;
+        padding: 6px 0;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .module-items li::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: #00d9ff;
+      }
+
+      /* Feature Layers */
+      .feature-layers {
+        background: linear-gradient(
+          180deg,
+          rgba(0, 217, 255, 0.1) 0%,
+          rgba(0, 255, 136, 0.05) 100%
+        );
+        border-radius: 20px;
+        padding: 25px;
+        border: 1px solid rgba(0, 217, 255, 0.2);
+      }
+
+      .feature-layers h3 {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 25px;
+        font-size: 1.2rem;
+      }
+
+      .layers-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .layer {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .layer:hover {
+        transform: scale(1.02);
+      }
+
+      .layer-name {
+        font-weight: 600;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .layer-content {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .layer-item {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 10px 18px;
+        border-radius: 25px;
+        font-size: 0.85rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Layer Colors */
+      .layer.ui {
+        background: rgba(72, 219, 251, 0.15);
+        border: 2px solid rgba(72, 219, 251, 0.4);
+      }
+      .layer.ui .layer-name {
+        color: #48dbfb;
+      }
+      .layer.ui .layer-item {
+        border-color: rgba(72, 219, 251, 0.3);
+      }
+
+      .layer.application {
+        background: rgba(116, 185, 255, 0.15);
+        border: 2px solid rgba(116, 185, 255, 0.4);
+      }
+      .layer.application .layer-name {
+        color: #74b9ff;
+      }
+      .layer.application .layer-item {
+        border-color: rgba(116, 185, 255, 0.3);
+      }
+
+      .layer.domain {
+        background: rgba(162, 155, 254, 0.15);
+        border: 2px solid rgba(162, 155, 254, 0.4);
+      }
+      .layer.domain .layer-name {
+        color: #a29bfe;
+      }
+      .layer.domain .layer-item {
+        border-color: rgba(162, 155, 254, 0.3);
+      }
+
+      .layer.infrastructure {
+        background: rgba(0, 255, 136, 0.15);
+        border: 2px solid rgba(0, 255, 136, 0.4);
+      }
+      .layer.infrastructure .layer-name {
+        color: #00ff88;
+      }
+      .layer.infrastructure .layer-item {
+        border-color: rgba(0, 255, 136, 0.3);
+      }
+
+      /* Flow Arrows */
+      .flow-section {
+        margin-top: 40px;
+        text-align: center;
+      }
+
+      .flow-section h2 {
+        color: #fff;
+        margin-bottom: 30px;
+      }
+
+      .flow-diagram {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .flow-box {
+        padding: 20px 30px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-align: center;
+        min-width: 140px;
+      }
+
+      .flow-box.user {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+      }
+
+      .flow-box.component {
+        background: linear-gradient(135deg, #48dbfb, #0abde3);
+      }
+
+      .flow-box.store {
+        background: linear-gradient(135deg, #74b9ff, #0984e3);
+      }
+
+      .flow-box.service {
+        background: linear-gradient(135deg, #00ff88, #00b894);
+        color: #1a1a2e;
+      }
+
+      .flow-box.api {
+        background: linear-gradient(135deg, #fd79a8, #e84393);
+      }
+
+      .arrow {
+        font-size: 2rem;
+        color: #00d9ff;
+        animation: pulse 1.5s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.5;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.1);
+        }
+      }
+
+      /* Legend */
+      .legend {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .legend-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .legend-card h3 {
+        color: #00d9ff;
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+      }
+
+      .legend-card p {
+        color: #8892b0;
+        font-size: 0.9rem;
+        line-height: 1.7;
+      }
+
+      .legend-card strong {
+        color: #fff;
+      }
+
+      /* Responsive */
+      @media (max-width: 1200px) {
+        .architecture {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .app-structure {
+          grid-template-columns: 1fr;
+        }
+
+        .layer {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .layer-content {
+          justify-content: center;
+        }
+
+        .flow-diagram {
+          flex-direction: column;
+        }
+
+        .arrow {
+          transform: rotate(90deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🏗️ Angular Clean Architecture</h1>
+      <p class="subtitle">Nx Monorepo with Clean Architecture Principles</p>
+
+      <div class="architecture">
+        <!-- Monorepo Structure -->
+        <div class="monorepo">
+          <h2>Monorepo Structure</h2>
+
+          <div class="app-box">
+            <h3>📱 /apps/sandbox</h3>
+            <p>
+              Angular application to test and showcase generated features
+              following Clean Architecture.
+            </p>
+          </div>
+
+          <div class="app-box cli">
+            <h3>⚙️ /apps/cli</h3>
+            <p>
+              Code generator CLI (aca) that scaffolds features, core, and shared
+              modules.
+            </p>
+          </div>
+
+          <div class="app-box backend">
+            <h3>🖥️ /apps/backend</h3>
+            <p>NestJS mock API server providing endpoints for features.</p>
+          </div>
+        </div>
+
+        <!-- Sandbox Architecture -->
+        <div class="sandbox-architecture">
+          <h2>🎯 Sandbox Application Architecture</h2>
+
+          <!-- App Structure -->
+          <div class="app-structure">
+            <div class="module-box core">
+              <h3>🔴 Core Module</h3>
+              <ul class="module-items">
+                <li>Auth Services & Guards</li>
+                <li>HTTP Interceptors</li>
+                <li>Navigation (Navbar/Menu)</li>
+                <li>Theme Selector</li>
+                <li>Language Selector</li>
+                <li>Translation Service</li>
+              </ul>
+            </div>
+
+            <div class="module-box shared">
+              <h3>🟡 Shared Module</h3>
+              <ul class="module-items">
+                <li>Reusable UI Components</li>
+                <li>Common Pipes</li>
+                <li>Shared Directives</li>
+                <li>Utility Functions</li>
+              </ul>
+            </div>
+
+            <div class="module-box features">
+              <h3>🔵 Features Module</h3>
+              <ul class="module-items">
+                <li>Products Feature</li>
+                <li>Authors Feature</li>
+                <li>Books Feature</li>
+                <li>Publishers Feature</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Feature Layers -->
+          <div class="feature-layers">
+            <h3>📂 Feature Layer Architecture (Clean Architecture)</h3>
+
+            <div class="layers-container">
+              <div class="layer ui">
+                <span class="layer-name">🎨 UI Layer</span>
+                <div class="layer-content">
+                  <span class="layer-item">Smart Components</span>
+                  <span class="layer-item">Dumb Components</span>
+                  <span class="layer-item">Dialogs/Modals</span>
+                  <span class="layer-item">Templates</span>
+                </div>
+              </div>
+
+              <div class="layer application">
+                <span class="layer-name">⚡ Application</span>
+                <div class="layer-content">
+                  <span class="layer-item">NgRx SignalStore</span>
+                  <span class="layer-item">State Management</span>
+                  <span class="layer-item">Selectors</span>
+                  <span class="layer-item">Effects</span>
+                </div>
+              </div>
+
+              <div class="layer domain">
+                <span class="layer-name">💎 Domain</span>
+                <div class="layer-content">
+                  <span class="layer-item">Entity Models</span>
+                  <span class="layer-item">Interfaces/Types</span>
+                  <span class="layer-item">Business Logic</span>
+                  <span class="layer-item">Validators</span>
+                </div>
+              </div>
+
+              <div class="layer infrastructure">
+                <span class="layer-name">🔌 Infrastructure</span>
+                <div class="layer-content">
+                  <span class="layer-item">API Services</span>
+                  <span class="layer-item">HTTP Client</span>
+                  <span class="layer-item">DTO Mappers</span>
+                  <span class="layer-item">External APIs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Flow -->
+      <div class="flow-section">
+        <h2>🔄 Data Flow</h2>
+        <div class="flow-diagram">
+          <div class="flow-box user">👤 User</div>
+          <span class="arrow">→</span>
+          <div class="flow-box component">🎨 Component</div>
+          <span class="arrow">→</span>
+          <div class="flow-box store">⚡ Store</div>
+          <span class="arrow">→</span>
+          <div class="flow-box service">🔌 Service</div>
+          <span class="arrow">→</span>
+          <div class="flow-box api">🌐 Backend API</div>
+        </div>
+      </div>
+
+      <!-- Legend -->
+      <div class="legend">
+        <div class="legend-card">
+          <h3>🎨 UI Layer</h3>
+          <p>
+            <strong>Role:</strong> Renders state from the Store and dispatches
+            user events.<br />
+            <strong>Contains:</strong> Smart (container) and Dumb
+            (presentational) components.<br />
+            <strong>Rule:</strong> No business logic or direct API calls.
+          </p>
+        </div>
+
+        <div class="legend-card">
+          <h3>⚡ Application Layer</h3>
+          <p>
+            <strong>Role:</strong> Orchestrates between UI, Domain, and
+            Infrastructure.<br />
+            <strong>Contains:</strong> NgRx SignalStore with entities, call
+            state, and effects.<br />
+            <strong>Rule:</strong> Manages all state mutations and side effects.
+          </p>
+        </div>
+
+        <div class="legend-card">
+          <h3>💎 Domain Layer</h3>
+          <p>
+            <strong>Role:</strong> Defines core business entities and logic.<br />
+            <strong>Contains:</strong> Pure TypeScript interfaces, types, and
+            validators.<br />
+            <strong>Rule:</strong> No Angular or HTTP dependencies - pure
+            business logic.
+          </p>
+        </div>
+
+        <div class="legend-card">
+          <h3>🔌 Infrastructure Layer</h3>
+          <p>
+            <strong>Role:</strong> Implements data access and external
+            integrations.<br />
+            <strong>Contains:</strong> API services using HttpClient, DTO
+            mappers.<br />
+            <strong>Rule:</strong> Only layer that knows about external systems.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,7 +1,5 @@
-@use './_theme' as theme;
-
-.product-container {
-  padding: theme.$spacing-lg;
+.feature-container {
+  padding: var(--spacing-lg);
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -10,8 +8,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: theme.$spacing-xl;
-  padding-bottom: theme.$spacing-sm;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-sm);
   border-bottom: 1px solid var(--color-border);
 
   h1 {
@@ -35,7 +33,7 @@
     height: 48px;
     padding: 0 24px;
     font-weight: 600;
-    border-radius: 24px; // Pill shape
+    border-radius: 24px;
     box-shadow: var(--shadow-md);
     transition: all 0.3s ease;
 
@@ -45,71 +43,71 @@
     }
 
     mat-icon {
-      margin-right: theme.$spacing-sm;
+      margin-right: var(--spacing-sm);
     }
   }
 }
 
 .filter-field {
   width: 100%;
-  margin-bottom: theme.$spacing-md;
+  margin-bottom: var(--spacing-md);
 }
 
 .loading-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: theme.$spacing-xl;
+  padding: var(--spacing-xl);
 }
 
 .error-message {
   display: flex;
   align-items: center;
-  gap: theme.$spacing-sm;
-  padding: theme.$spacing-md;
-  background-color: theme.$error-background;
-  color: theme.$error-color;
-  border-radius: theme.$border-radius;
-  margin-bottom: theme.$spacing-md;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background-color: var(--color-error-bg);
+  color: var(--color-error);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-md);
 
   mat-icon {
-    color: theme.$error-color;
+    color: var(--color-error);
   }
 }
 
 .table-container {
   overflow-x: auto;
-  border-radius: theme.$border-radius;
+  border-radius: var(--radius-sm);
 
   table {
     width: 100%;
-    background-color: theme.$card-background;
+    background-color: var(--color-bg-card);
 
     th {
-      background-color: theme.$table-header-background;
-      color: theme.$text-primary;
+      background-color: var(--color-bg-elevated);
+      color: var(--color-text);
       font-weight: 600;
-      padding: theme.$spacing-md;
+      padding: var(--spacing-md);
     }
 
     td {
-      padding: theme.$spacing-md;
-      color: theme.$text-secondary;
+      padding: var(--spacing-md);
+      color: var(--color-text-secondary);
 
       mat-icon {
         &.active {
-          color: theme.$success-color;
+          color: var(--color-success);
         }
 
         &:not(.active) {
-          color: theme.$text-disabled;
+          color: var(--color-text-disabled);
         }
       }
     }
 
     tr {
       &:hover {
-        background-color: theme.$table-row-hover;
+        background-color: var(--color-bg-hover);
       }
     }
   }
@@ -123,8 +121,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: theme.$spacing-sm;
-    color: theme.$text-disabled;
+    gap: var(--spacing-sm);
+    color: var(--color-text-disabled);
 
     mat-icon {
       font-size: 48px;
@@ -141,14 +139,14 @@
 
 // Responsive
 @media (max-width: 768px) {
-  .product-container {
-    padding: theme.$spacing-md;
+  .feature-container {
+    padding: var(--spacing-md);
   }
 
   .header {
     flex-direction: column;
     align-items: flex-start;
-    gap: theme.$spacing-md;
+    gap: var(--spacing-md);
 
     button {
       width: 100%;
@@ -159,7 +157,7 @@
     table {
       th,
       td {
-        padding: theme.$spacing-sm;
+        padding: var(--spacing-sm);
         font-size: 0.875rem;
       }
     }
