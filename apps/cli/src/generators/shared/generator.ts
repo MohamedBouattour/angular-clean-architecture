@@ -25,6 +25,11 @@ export async function sharedGenerator(
     for (const name of commonComponents) {
       await sharedGenerator(tree, { ...options, type: 'ui', name });
     }
+
+    // Generate essential utility services
+    console.log('\n🚀 Generating essential utility services: toast...');
+    await sharedGenerator(tree, { ...options, type: 'util', name: 'toast' });
+
     return;
   }
 

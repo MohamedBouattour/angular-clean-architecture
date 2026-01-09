@@ -1,0 +1,74 @@
+import { Injectable, inject } from '@angular/core';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+
+export type ToastType = 'success' | 'error' | 'info' | 'warning';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class ToastService {
+  private readonly snackBar = inject(MatSnackBar);
+
+  private readonly defaultConfig: MatSnackBarConfig = {
+    duration: 4000,
+    horizontalPosition: 'end',
+    verticalPosition: 'top',
+  };
+
+  /**
+   * Show a success toast notification
+   */
+  success(message: string, duration?: number): void {
+    this.show(message, 'success', duration);
+  }
+
+  /**
+   * Show an error toast notification
+   */
+  error(messageOrError: string | any, duration?: number): void {
+    let message = 'An unexpected error occurred';
+
+    if (typeof messageOrError === 'string') {
+      message = messageOrError;
+    } else if (messageOrError?.message) {
+      // Friendly error mapping
+      if (messageOrError.message.includes('0 Unknown Error')) {
+        message =
+          'Unable to connect to the server. Please check your internet connection.';
+      } else if (messageOrError.message.includes('404')) {
+        message = 'The requested resource was not found.';
+      } else {
+        message = messageOrError.message;
+      }
+    }
+
+    this.show(message, 'error', duration);
+  }
+
+  /**
+   * Show an info toast notification
+   */
+  info(message: string, duration?: number): void {
+    this.show(message, 'info', duration);
+  }
+
+  /**
+   * Show a warning toast notification
+   */
+  warning(message: string, duration?: number): void {
+    this.show(message, 'warning', duration);
+  }
+
+  /**
+   * Show a toast notification with custom type
+   */
+  private show(message: string, type: ToastType, duration?: number): void {
+    const config: MatSnackBarConfig = {
+      ...this.defaultConfig,
+      duration: duration ?? this.defaultConfig.duration,
+      panelClass: [`toast-${type}`],
+    };
+
+    this.snackBar.open(message, 'Close', config);
+  }
+}

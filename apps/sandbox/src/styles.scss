@@ -8,7 +8,8 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 // Global Resets
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -24,20 +25,21 @@ body {
 .mat-mdc-card {
   background-color: var(--color-bg-card) !important;
   color: var(--color-text) !important;
-  
+
   .mat-mdc-card-header {
     .mat-mdc-card-title {
       color: var(--color-text) !important;
     }
+
     .mat-mdc-card-subtitle {
       color: var(--color-text-secondary) !important;
     }
   }
-  
+
   .mat-mdc-card-content {
     color: var(--color-text) !important;
   }
-  
+
   .mat-mdc-card-actions {
     color: var(--color-text) !important;
   }
@@ -99,7 +101,7 @@ body {
   --mdc-filled-text-field-focus-label-text-color: var(--color-primary);
   --mdc-filled-text-field-hover-label-text-color: var(--color-text);
   --mdc-filled-text-field-disabled-label-text-color: var(--color-text-disabled);
-  
+
   --mdc-outlined-text-field-outline-color: var(--color-border);
   --mdc-outlined-text-field-hover-outline-color: var(--color-text-secondary);
   --mdc-outlined-text-field-focus-outline-color: var(--color-primary);
@@ -110,7 +112,7 @@ body {
   --mdc-outlined-text-field-hover-label-text-color: var(--color-text);
   --mdc-outlined-text-field-disabled-label-text-color: var(--color-text-disabled);
   --mdc-outlined-text-field-disabled-outline-color: var(--color-border);
-  
+
   // Mat form field specific overrides
   --mat-form-field-container-text-color: var(--color-text);
   --mat-form-field-state-layer-color: transparent;
@@ -189,11 +191,11 @@ body {
 
 .mat-mdc-option {
   --mat-option-label-text-color: var(--color-text);
-  
+
   &:hover:not(.mdc-list-item--disabled) {
     background-color: var(--color-bg-elevated) !important;
   }
-  
+
   &.mdc-list-item--selected:not(.mdc-list-item--disabled) {
     background-color: rgba(var(--color-primary), 0.12) !important;
   }
@@ -206,7 +208,7 @@ body {
 
 .mat-mdc-menu-item {
   color: var(--color-text) !important;
-  
+
   &:hover:not([disabled]) {
     background-color: var(--color-bg-elevated) !important;
   }
@@ -216,7 +218,7 @@ body {
 .mat-mdc-checkbox {
   --mdc-checkbox-unselected-icon-color: var(--color-text-secondary);
   --mdc-checkbox-selected-checkmark-color: white;
-  
+
   .mdc-label {
     color: var(--color-text) !important;
   }
@@ -233,7 +235,7 @@ body {
     --mdc-protected-button-container-color: var(--color-primary);
     --mdc-protected-button-label-text-color: white;
   }
-  
+
   &:not(.mat-primary):not(.mat-accent):not(.mat-warn) {
     --mdc-protected-button-container-color: var(--color-bg-elevated);
     --mdc-protected-button-label-text-color: var(--color-text);
@@ -253,13 +255,13 @@ body {
   .mat-mdc-button {
     color: var(--color-text) !important;
   }
-  
+
   .mat-mdc-raised-button.mat-primary,
   .mat-mdc-unelevated-button.mat-primary {
     background-color: var(--color-primary) !important;
     color: white !important;
   }
-  
+
   .mat-mdc-raised-button:disabled,
   .mat-mdc-unelevated-button:disabled {
     background-color: var(--color-bg-elevated) !important;
@@ -276,10 +278,10 @@ body {
 // Outlined text field - dark mode background fix
 .mdc-text-field--outlined {
   background-color: var(--color-bg-card) !important;
-  
+
   .mdc-text-field__input {
     color: var(--color-text) !important;
-    
+
     &::placeholder {
       color: var(--color-text-disabled) !important;
     }
@@ -301,24 +303,24 @@ body {
     background-color: var(--color-bg-card) !important;
     border: 1px solid var(--color-border);
   }
-  
+
   .mat-mdc-form-field {
     width: 100%;
   }
-  
+
   .error-banner {
     background-color: rgba(244, 67, 54, 0.2) !important;
     color: var(--color-error) !important;
     border: 1px solid var(--color-error);
   }
-  
+
   p {
     color: var(--color-text-secondary);
   }
-  
+
   a {
     color: var(--color-primary) !important;
-    
+
     &:hover {
       text-decoration: underline;
     }
@@ -333,4 +335,96 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px var(--color-bg-card) inset !important;
   -webkit-text-fill-color: var(--color-text) !important;
   caret-color: var(--color-text) !important;
+}
+
+// Toast notification styles - Forceful overrides for correct coloring
+.toast-success {
+  --mdc-snackbar-container-color: #4caf50 !important;
+  --mdc-snackbar-supporting-text-color: white !important;
+  --mat-mdc-snack-bar-button-color: white !important;
+
+  .mdc-snackbar__surface {
+    background-color: #4caf50 !important;
+  }
+}
+
+.toast-error {
+  --mdc-snackbar-container-color: #f44336 !important;
+  --mdc-snackbar-supporting-text-color: white !important;
+  --mat-mdc-snack-bar-button-color: white !important;
+
+  .mdc-snackbar__surface {
+    background-color: #f44336 !important;
+  }
+}
+
+.toast-info {
+  --mdc-snackbar-container-color: #2196f3 !important;
+  --mdc-snackbar-supporting-text-color: white !important;
+  --mat-mdc-snack-bar-button-color: white !important;
+
+  .mdc-snackbar__surface {
+    background-color: #2196f3 !important;
+  }
+}
+
+.toast-warning {
+  --mdc-snackbar-container-color: #ff9800 !important;
+  --mdc-snackbar-supporting-text-color: white !important;
+  --mat-mdc-snack-bar-button-color: white !important;
+
+  .mdc-snackbar__surface {
+    background-color: #ff9800 !important;
+  }
+}
+
+// Common styles for all custom toasts
+.toast-success,
+.toast-error,
+.toast-info,
+.toast-warning {
+  .mat-mdc-snack-bar-label {
+    color: white !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  .mat-mdc-button {
+    color: white !important;
+    font-weight: 600;
+  }
+
+  // Ensure shadow matches the color (using a generic shadow for now to keep it simple but colored)
+  &.toast-success {
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4) !important;
+  }
+
+  &.toast-error {
+    box-shadow: 0 4px 12px rgba(244, 67, 54, 0.4) !important;
+  }
+
+  &.toast-info {
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4) !important;
+  }
+
+  &.toast-warning {
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.4) !important;
+  }
+}
+
+// Enhanced toast animations and positioning
+.mat-mdc-snack-bar-container {
+
+  &.toast-success,
+  &.toast-error,
+  &.toast-info,
+  &.toast-warning {
+    border-radius: 8px !important;
+    min-width: 300px;
+
+    .mat-mdc-snack-bar-label {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  }
 }

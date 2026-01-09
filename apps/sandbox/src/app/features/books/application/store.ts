@@ -7,10 +7,11 @@ import {
 } from '@ngrx/signals';
 import { computed, inject } from '@angular/core';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { pipe, tap, switchMap, catchError, of } from 'rxjs';
+import { pipe, tap, switchMap } from 'rxjs';
 import { tapResponse } from '@ngrx/operators';
 import { BookService } from '../infrastructure/service';
 import { Book } from '../domain/model';
+import { ToastService } from '../../../shared/util/toast/toast.service';
 
 interface BookState {
   items: Book[];
@@ -58,84 +59,116 @@ export const BookStore = signalStore(
       return items;
     }),
   })),
-  withMethods((store, service = inject(BookService)) => ({
-    loadAll: rxMethod<void>(
-      pipe(
-        tap(() => patchState(store, { loading: true, error: null })),
-        switchMap(() =>
-          service.getAll().pipe(
-            tapResponse({
-              next: (items) => patchState(store, { items, loading: false }),
-              error: (error: Error) =>
-                patchState(store, { error: error.message, loading: false }),
-            }),
+  withMethods(
+    (
+      store,
+      service = inject(BookService),
+      toastService = inject(ToastService),
+    ) => ({
+      loadAll: rxMethod<void>(
+        pipe(
+          tap(() => patchState(store, { loading: true, error: null })),
+          switchMap(() =>
+            service.getAll().pipe(
+              tapResponse({
+                next: (items) => patchState(store, { items, loading: false }),
+                error: (error: any) => {
+                  toastService.error(error);
+                  patchState(store, {
+                    error: error?.message || 'Unknown error',
+                    loading: false,
+                  });
+                },
+              }),
+            ),
           ),
         ),
       ),
-    ),
 
-    create: rxMethod<Omit<Book, 'id' | 'createdAt' | 'updatedAt'>>(
-      pipe(
-        tap(() => patchState(store, { loading: true, error: null })),
-        switchMap((data) =>
-          service.create(data).pipe(
-            tapResponse({
-              next: (item) =>
-                patchState(store, (state) => ({
-                  items: [...state.items, item],
-                  loading: false,
-                })),
-              error: (error: Error) =>
-                patchState(store, { error: error.message, loading: false }),
-            }),
+      create: rxMethod<Omit<Book, 'id' | 'createdAt' | 'updatedAt'>>(
+        pipe(
+          tap(() => patchState(store, { loading: true, error: null })),
+          switchMap((data) =>
+            service.create(data).pipe(
+              tapResponse({
+                next: (item) => {
+                  toastService.success('Book created successfully');
+                  patchState(store, (state) => ({
+                    items: [...state.items, item],
+                    loading: false,
+                  }));
+                },
+                error: (error: any) => {
+                  toastService.error(error);
+                  patchState(store, {
+                    error: error?.message || 'Unknown error',
+                    loading: false,
+                  });
+                },
+              }),
+            ),
           ),
         ),
       ),
-    ),
 
-    update: rxMethod<{ id: string; data: Partial<Book> }>(
-      pipe(
-        tap(() => patchState(store, { loading: true, error: null })),
-        switchMap(({ id, data }) =>
-          service.update(id, data).pipe(
-            tapResponse({
-              next: (updated) =>
-                patchState(store, (state) => ({
-                  items: state.items.map((item) =>
-                    item.id === id ? updated : item,
-                  ),
-                  loading: false,
-                })),
-              error: (error: Error) =>
-                patchState(store, { error: error.message, loading: false }),
-            }),
+      update: rxMethod<{ id: string; data: Partial<Book> }>(
+        pipe(
+          tap(() => patchState(store, { loading: true, error: null })),
+          switchMap(({ id, data }) =>
+            service.update(id, data).pipe(
+              tapResponse({
+                next: (updated) => {
+                  toastService.success('Book updated successfully');
+                  patchState(store, (state) => ({
+                    items: state.items.map((item) =>
+                      item.id === id ? updated : item,
+                    ),
+                    loading: false,
+                  }));
+                },
+                error: (error: any) => {
+                  toastService.error(error);
+                  patchState(store, {
+                    error: error?.message || 'Unknown error',
+                    loading: false,
+                  });
+                },
+              }),
+            ),
           ),
         ),
       ),
-    ),
 
-    delete: rxMethod<string>(
-      pipe(
-        tap(() => patchState(store, { loading: true, error: null })),
-        switchMap((id) =>
-          service.delete(id).pipe(
-            tapResponse({
-              next: () =>
-                patchState(store, (state) => ({
-                  items: state.items.filter((item) => item.id !== id),
-                  loading: false,
-                })),
-              error: (error: Error) =>
-                patchState(store, { error: error.message, loading: false }),
-            }),
+      delete: rxMethod<string>(
+        pipe(
+          tap(() => patchState(store, { loading: true, error: null })),
+          switchMap((id) =>
+            service.delete(id).pipe(
+              tapResponse({
+                next: () => {
+                  toastService.success('Book deleted successfully');
+                  patchState(store, (state) => ({
+                    items: state.items.filter((item) => item.id !== id),
+                    loading: false,
+                  }));
+                },
+                error: (error: any) => {
+                  toastService.error(error);
+                  patchState(store, {
+                    error: error?.message || 'Unknown error',
+                    loading: false,
+                  });
+                },
+              }),
+            ),
           ),
         ),
       ),
-    ),
 
-    setFilter: (filter: string) => patchState(store, { filter }),
+      setFilter: (filter: string) => patchState(store, { filter }),
 
-    setSort: (field: keyof Book, direction: 'asc' | 'desc') =>
-      patchState(store, { sortField: field, sortDirection: direction }),
-  })),
+      setSort: (field: keyof Book, direction: 'asc' | 'desc') =>
+        patchState(store, { sortField: field, sortDirection: direction }),
+    }),
+  ),
 );

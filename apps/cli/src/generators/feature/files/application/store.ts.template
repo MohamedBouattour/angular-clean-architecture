@@ -1,10 +1,11 @@
 import { signalStore, withState, withMethods, withComputed, patchState } from '@ngrx/signals';
 import { computed, inject } from '@angular/core';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { pipe, tap, switchMap, catchError, of } from 'rxjs';
+import { pipe, tap, switchMap } from 'rxjs';
 import { tapResponse } from '@ngrx/operators';
 import { <%= pascalName %>Service } from '../infrastructure/service';
 import { <%= pascalName %> } from '../domain/model';
+import { ToastService } from '../../../shared/util/toast/toast.service';
 
 interface <%= pascalName %>State {
   items: <%= pascalName %>[];
@@ -52,7 +53,7 @@ export const <%= pascalName %>Store = signalStore(
       return items;
     })
   })),
-  withMethods((store, service = inject(<%= pascalName %>Service)) => ({
+  withMethods((store, service = inject(<%= pascalName %>Service), toastService = inject(ToastService)) => ({
     loadAll: rxMethod<void>(
       pipe(
         tap(() => patchState(store, { loading: true, error: null })),
@@ -60,8 +61,10 @@ export const <%= pascalName %>Store = signalStore(
           service.getAll().pipe(
             tapResponse({
               next: (items) => patchState(store, { items, loading: false }),
-              error: (error: Error) =>
-                patchState(store, { error: error.message, loading: false })
+              error: (error: any) => {
+                toastService.error(error);
+                patchState(store, { error: error?.message || 'Unknown error', loading: false });
+              }
             })
           )
         )
@@ -74,13 +77,17 @@ export const <%= pascalName %>Store = signalStore(
         switchMap((data) =>
           service.create(data).pipe(
             tapResponse({
-              next: (item) =>
+              next: (item) => {
+                toastService.success('<%= pascalName %> created successfully');
                 patchState(store, (state) => ({
                   items: [...state.items, item],
                   loading: false
-                })),
-              error: (error: Error) =>
-                patchState(store, { error: error.message, loading: false })
+                }));
+              },
+              error: (error: any) => {
+                toastService.error(error);
+                patchState(store, { error: error?.message || 'Unknown error', loading: false });
+              }
             })
           )
         )
@@ -93,15 +100,19 @@ export const <%= pascalName %>Store = signalStore(
         switchMap(({ id, data }) =>
           service.update(id, data).pipe(
             tapResponse({
-              next: (updated) =>
+              next: (updated) => {
+                toastService.success('<%= pascalName %> updated successfully');
                 patchState(store, (state) => ({
                   items: state.items.map((item) =>
                     item.id === id ? updated : item
                   ),
                   loading: false
-                })),
-              error: (error: Error) =>
-                patchState(store, { error: error.message, loading: false })
+                }));
+              },
+              error: (error: any) => {
+                toastService.error(error);
+                patchState(store, { error: error?.message || 'Unknown error', loading: false });
+              }
             })
           )
         )
@@ -114,13 +125,17 @@ export const <%= pascalName %>Store = signalStore(
         switchMap((id) =>
           service.delete(id).pipe(
             tapResponse({
-              next: () =>
+              next: () => {
+                toastService.success('<%= pascalName %> deleted successfully');
                 patchState(store, (state) => ({
                   items: state.items.filter((item) => item.id !== id),
                   loading: false
-                })),
-              error: (error: Error) =>
-                patchState(store, { error: error.message, loading: false })
+                }));
+              },
+              error: (error: any) => {
+                toastService.error(error);
+                patchState(store, { error: error?.message || 'Unknown error', loading: false });
+              }
             })
           )
         )
