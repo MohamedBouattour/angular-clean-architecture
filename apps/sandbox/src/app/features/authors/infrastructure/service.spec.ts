@@ -1,0 +1,102 @@
+import { TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
+import {
+  provideHttpClientTesting,
+  HttpTestingController,
+} from '@angular/common/http/testing';
+import { AuthorService } from './service';
+import { Author } from '../domain/model';
+import { environment } from '../../../../environments/environment';
+
+describe('AuthorService', () => {
+  let service: AuthorService;
+  let httpMock: HttpTestingController;
+  const apiUrl = `${environment.apiUrl}/features/authors`;
+
+  const mockItem: Author = {
+    id: '1',
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+
+    name: 'test',
+
+    bio: 'test',
+
+    birthDate: new Date(),
+  } as Author;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [
+        AuthorService,
+        provideHttpClient(),
+        provideHttpClientTesting(),
+      ],
+    });
+
+    service = TestBed.inject(AuthorService);
+    httpMock = TestBed.inject(HttpTestingController);
+  });
+
+  afterEach(() => {
+    httpMock.verify();
+  });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+
+  it('should get all items', () => {
+    const mockItems = [mockItem];
+
+    service.getAll().subscribe((items) => {
+      expect(items.length).toBe(1);
+      expect(items).toEqual(mockItems);
+    });
+
+    const req = httpMock.expectOne(apiUrl);
+    expect(req.request.method).toBe('GET');
+    req.flush(mockItems);
+  });
+
+  it('should create an item', () => {
+    const newItem = { ...mockItem };
+    delete (newItem as any).id;
+    delete (newItem as any).createdAt;
+    delete (newItem as any).updatedAt;
+
+    service.create(newItem).subscribe((item) => {
+      expect(item).toEqual(mockItem);
+    });
+
+    const req = httpMock.expectOne(apiUrl);
+    expect(req.request.method).toBe('POST');
+    req.flush(mockItem);
+  });
+
+  it('should update an item', () => {
+    const updateData = {
+      name: mockItem.name,
+      bio: mockItem.bio,
+      birthDate: mockItem.birthDate,
+    };
+
+    service.update('1', updateData).subscribe((item) => {
+      expect(item).toEqual(mockItem);
+    });
+
+    const req = httpMock.expectOne(`${apiUrl}/1`);
+    expect(req.request.method).toBe('PUT');
+    req.flush(mockItem);
+  });
+
+  it('should delete an item', () => {
+    service.delete('1').subscribe((response) => {
+      expect(response).toBeNull();
+    });
+
+    const req = httpMock.expectOne(`${apiUrl}/1`);
+    expect(req.request.method).toBe('DELETE');
+    req.flush(null);
+  });
+});

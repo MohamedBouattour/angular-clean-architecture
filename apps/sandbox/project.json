@@ -70,11 +70,11 @@
     "lint": {
       "executor": "@nx/eslint:lint"
     },
-    "test": {
-      "executor": "@nx/jest:jest",
+    "test-old": {
+      "executor": "@nx/vitest:test",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/sandbox/jest.config.ts"
+        "reportsDirectory": "../../coverage/apps/sandbox"
       }
     },
     "serve-static": {
@@ -83,6 +83,13 @@
         "buildTarget": "sandbox:build",
         "staticFilePath": "dist/apps/sandbox/browser",
         "spa": true
+      }
+    },
+    "test": {
+      "executor": "@nx/vitest:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../../coverage/apps/sandbox"
       }
     }
   }

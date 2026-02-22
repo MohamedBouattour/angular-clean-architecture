@@ -1,16 +1,30 @@
-<mat-nav-list>
-  <div mat-subheader>Features</div>
+<mat-nav-list class="!py-2">
+  <div
+    mat-subheader
+    class="!text-gray-500 !dark:text-gray-400 !font-bold !uppercase !text-[0.7rem] !tracking-[0.12rem] !mb-2 !px-4"
+  >
+    Features
+  </div>
+
   @for (feature of features; track feature.path) {
     <a
       mat-list-item
       [routerLink]="['/', feature.path]"
-      routerLinkActive="selected-nav"
+      routerLinkActive="!bg-primary/10 !border-l-4 !border-primary !text-primary"
+      class="!mx-2 !rounded-lg transition-all duration-200 !h-12 hover:!bg-gray-100 dark:hover:!bg-gray-800 group"
     >
-      <mat-icon matListItemIcon>extension</mat-icon>
-      <span matListItemTitle>{{ feature.label }}</span>
+      <mat-icon
+        matListItemIcon
+        class="!text-gray-400 group-hover:!text-gray-700 dark:group-hover:!text-gray-200 transition-colors"
+        >extension</mat-icon
+      >
+      <span matListItemTitle class="!font-medium">{{ feature.label }}</span>
     </a>
   }
+
   @if (features.length === 0) {
-    <div class="no-features-msg">No features generated yet.</div>
+    <div class="px-6 py-4 text-gray-400 italic text-sm text-center">
+      No features generated yet.
+    </div>
   }
 </mat-nav-list>

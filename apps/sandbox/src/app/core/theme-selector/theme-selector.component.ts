@@ -19,15 +19,12 @@ export type Theme = 'light' | 'dark';
       mat-icon-button
       [matTooltip]="isDark() ? 'Switch to light mode' : 'Switch to dark mode'"
       (click)="toggleTheme()"
+      class="!text-white/80 hover:!text-white"
     >
       <mat-icon>{{ isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
     </button>
   `,
-  styles: `
-    button {
-      color: inherit;
-    }
-  `,
+  styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ThemeSelectorComponent {
@@ -53,6 +50,11 @@ export class ThemeSelectorComponent {
 
   private applyTheme(theme: Theme): void {
     document.documentElement.setAttribute('data-theme', theme);
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
     localStorage.setItem('theme', theme);
   }
 }

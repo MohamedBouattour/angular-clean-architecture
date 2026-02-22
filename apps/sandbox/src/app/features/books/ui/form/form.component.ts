@@ -36,69 +36,71 @@ import { Book } from '../../domain/model';
     @let isEditMode = !!data;
     @let title = isEditMode ? 'Edit' : 'Create';
 
-    <h2 mat-dialog-title>{{ title }} Book</h2>
-
-    <mat-dialog-content>
-      <form [formGroup]="form" class="form-container">
-        <mat-form-field class="form-field" appearance="outline">
-          <mat-label>Title</mat-label>
-          <input matInput formControlName="title" />
-          @if (form.get('title')?.hasError('required')) {
-            <mat-error>This field is required</mat-error>
-          }
-        </mat-form-field>
-
-        <mat-form-field class="form-field" appearance="outline">
-          <mat-label>Author</mat-label>
-          <input matInput formControlName="author" />
-          @if (form.get('author')?.hasError('required')) {
-            <mat-error>This field is required</mat-error>
-          }
-        </mat-form-field>
-
-        <mat-form-field class="form-field" appearance="outline">
-          <mat-label>Isbn</mat-label>
-          <input matInput formControlName="isbn" />
-          @if (form.get('isbn')?.hasError('required')) {
-            <mat-error>This field is required</mat-error>
-          }
-        </mat-form-field>
-
-        <mat-form-field class="form-field" appearance="outline">
-          <mat-label>PublishedDate</mat-label>
-          <input matInput formControlName="publishedDate" />
-          @if (form.get('publishedDate')?.hasError('required')) {
-            <mat-error>This field is required</mat-error>
-          }
-        </mat-form-field>
-      </form>
-    </mat-dialog-content>
-
-    <mat-dialog-actions align="end">
-      <button mat-button (click)="onCancel()">Cancel</button>
-      <button
-        mat-raised-button
-        color="primary"
-        (click)="onSave()"
-        [disabled]="isFormInvalid()"
+    <div class="p-2">
+      <h2
+        mat-dialog-title
+        class="!m-0 !mb-6 text-2xl font-bold text-gray-800 dark:text-white border-b border-gray-100 dark:border-gray-700 pb-4"
       >
-        {{ title }}
-      </button>
-    </mat-dialog-actions>
-  `,
-  styles: `
-    .form-container {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      min-width: 400px;
-      padding: 1rem 0;
-    }
+        {{ title }} Book
+      </h2>
 
-    .form-field {
-      width: 100%;
-    }
+      <mat-dialog-content class="!p-0">
+        <form
+          [formGroup]="form"
+          class="flex flex-col gap-4 min-w-[320px] md:min-w-[480px] py-4"
+        >
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title" />
+            @if (form.get('title')?.hasError('required')) {
+              <mat-error>This field is required</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Author</mat-label>
+            <input matInput formControlName="author" />
+            @if (form.get('author')?.hasError('required')) {
+              <mat-error>This field is required</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Isbn</mat-label>
+            <input matInput formControlName="isbn" />
+            @if (form.get('isbn')?.hasError('required')) {
+              <mat-error>This field is required</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>PublishedDate</mat-label>
+            <input matInput formControlName="publishedDate" />
+            @if (form.get('publishedDate')?.hasError('required')) {
+              <mat-error>This field is required</mat-error>
+            }
+          </mat-form-field>
+        </form>
+      </mat-dialog-content>
+
+      <mat-dialog-actions
+        align="end"
+        class="!px-0 !pt-6 border-t border-gray-100 dark:border-gray-700 mt-4"
+      >
+        <button mat-button (click)="onCancel()" class="!px-6">Cancel</button>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="onSave()"
+          class="!px-8 !rounded-full shadow-md transition-all hover:shadow-lg hover:-translate-y-0.5"
+          [disabled]="isFormInvalid()"
+        >
+          {{ title }}
+        </button>
+      </mat-dialog-actions>
+    </div>
   `,
+  styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BookFormComponent {

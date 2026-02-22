@@ -1,0 +1,5895 @@
+[
+  {
+    "timestamp": "2026-02-22T01:05:48.926Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########0",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 2999,
+      "output": 87,
+      "total": 3420
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 6917,
+      "chatHistoryTurns": 2,
+      "ideContextChars": 0
+    },
+    "model": "gemini-2.5-flash-lite",
+    "durationMs": 2548,
+    "requestPayloadSize": 7309,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:06:06.218Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########0",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 10617,
+      "output": 45,
+      "total": 11192
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 6917,
+      "chatHistoryTurns": 2,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-pro-preview",
+    "durationMs": 17281,
+    "requestPayloadSize": 7309,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:06:21.358Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########0",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 17110,
+      "output": 32,
+      "total": 18207
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 35282,
+      "chatHistoryTurns": 4,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-pro-preview",
+    "durationMs": 14880,
+    "requestPayloadSize": 39529,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:06:31.482Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########0",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 17886,
+      "output": 38,
+      "total": 18371,
+      "cached": 15651
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 38065,
+      "chatHistoryTurns": 6,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-pro-preview",
+    "durationMs": 9919,
+    "requestPayloadSize": 48787,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:06:39.684Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########0",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 18370,
+      "output": 53,
+      "total": 18741,
+      "cached": 15458
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 39924,
+      "chatHistoryTurns": 8,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-pro-preview",
+    "durationMs": 8026,
+    "requestPayloadSize": 53333,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:06:59.637Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########0",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 18470,
+      "output": 19,
+      "total": 18703,
+      "cached": 15261
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 40345,
+      "chatHistoryTurns": 10,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-pro-preview",
+    "durationMs": 7928,
+    "requestPayloadSize": 55793,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:07:16.368Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########0",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 18532,
+      "output": 801,
+      "total": 19710,
+      "cached": 18150
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 40657,
+      "chatHistoryTurns": 12,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-pro-preview",
+    "durationMs": 16588,
+    "requestPayloadSize": 57616,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:07:55.590Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########0",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 19582,
+      "output": 72,
+      "total": 19834,
+      "cached": 9042
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 45050,
+      "chatHistoryTurns": 14,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-pro-preview",
+    "durationMs": 10599,
+    "requestPayloadSize": 64376,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:08:28.004Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########0",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 19673,
+      "output": 50,
+      "total": 19933,
+      "cached": 17966
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 45444,
+      "chatHistoryTurns": 16,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-pro-preview",
+    "durationMs": 9809,
+    "requestPayloadSize": 66117,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:08:42.840Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########0",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 19784,
+      "output": 51,
+      "total": 20712,
+      "cached": 17835
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 45931,
+      "chatHistoryTurns": 18,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-pro-preview",
+    "durationMs": 12869,
+    "requestPayloadSize": 68051,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:08:58.367Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########0",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 19854,
+      "output": 22,
+      "total": 19982,
+      "cached": 17279
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 46246,
+      "chatHistoryTurns": 20,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-pro-preview",
+    "durationMs": 5270,
+    "requestPayloadSize": 73805,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:09:12.010Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########0",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 20045,
+      "output": 337,
+      "total": 20937,
+      "cached": 17245
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 47046,
+      "chatHistoryTurns": 22,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-pro-preview",
+    "durationMs": 11679,
+    "requestPayloadSize": 75504,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:11:11.957Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########1",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 2526,
+      "output": 96,
+      "total": 3020
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 0,
+      "chatHistoryChars": 3186,
+      "chatHistoryTurns": 9,
+      "ideContextChars": 0
+    },
+    "model": "gemini-2.5-flash-lite",
+    "durationMs": 3676,
+    "requestPayloadSize": 11132,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:11:18.840Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########1",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 20385,
+      "output": 188,
+      "total": 20924
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 48494,
+      "chatHistoryTurns": 24,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 6873,
+    "requestPayloadSize": 77064,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:11:24.272Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########1-codebase_investigator-zeiie7#0",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 4321,
+      "output": 23,
+      "total": 4955
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 1007,
+      "chatHistoryChars": 1007,
+      "chatHistoryTurns": 1,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 5344,
+    "requestPayloadSize": 1058,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:11:27.638Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########1-codebase_investigator-zeiie7#1",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 5167,
+      "output": 29,
+      "total": 5373
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 1007,
+      "chatHistoryChars": 4369,
+      "chatHistoryTurns": 3,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3308,
+    "requestPayloadSize": 8279,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:11:29.861Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########1-codebase_investigator-zeiie7#2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 5239,
+      "output": 31,
+      "total": 5287,
+      "cached": 2933
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 1007,
+      "chatHistoryChars": 4780,
+      "chatHistoryTurns": 5,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2174,
+    "requestPayloadSize": 10045,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:11:32.362Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########1-codebase_investigator-zeiie7#3",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 5315,
+      "output": 33,
+      "total": 5381,
+      "cached": 2926
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 1007,
+      "chatHistoryChars": 5208,
+      "chatHistoryTurns": 7,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2451,
+    "requestPayloadSize": 10784,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:11:34.522Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########1-codebase_investigator-zeiie7#4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 5379,
+      "output": 33,
+      "total": 5425,
+      "cached": 2912
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 1007,
+      "chatHistoryChars": 5607,
+      "chatHistoryTurns": 9,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2119,
+    "requestPayloadSize": 11610,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:11:36.861Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########1-codebase_investigator-zeiie7#5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 5443,
+      "output": 33,
+      "total": 5489,
+      "cached": 2905
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 1007,
+      "chatHistoryChars": 5996,
+      "chatHistoryTurns": 11,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2301,
+    "requestPayloadSize": 12266,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:11:39.169Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########1-codebase_investigator-zeiie7#6",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 5507,
+      "output": 33,
+      "total": 5553,
+      "cached": 2899
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 1007,
+      "chatHistoryChars": 6403,
+      "chatHistoryTurns": 13,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2269,
+    "requestPayloadSize": 12948,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:11:42.437Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########1-codebase_investigator-zeiie7#7",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 5590,
+      "output": 37,
+      "total": 5714,
+      "cached": 2896
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 1007,
+      "chatHistoryChars": 6847,
+      "chatHistoryTurns": 15,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3215,
+    "requestPayloadSize": 13651,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:11:46.983Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########1-codebase_investigator-zeiie7#8",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 6919,
+      "output": 39,
+      "total": 7054,
+      "cached": 3030
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 1007,
+      "chatHistoryChars": 12525,
+      "chatHistoryTurns": 17,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4495,
+    "requestPayloadSize": 20136,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:11:50.820Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########1-codebase_investigator-zeiie7#9",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 8093,
+      "output": 39,
+      "total": 8259,
+      "cached": 6224
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 1007,
+      "chatHistoryChars": 17121,
+      "chatHistoryTurns": 19,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3786,
+    "requestPayloadSize": 25527,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:12:00.212Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########1-codebase_investigator-zeiie7#10",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 8180,
+      "output": 601,
+      "total": 9394,
+      "cached": 3466
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 1007,
+      "chatHistoryChars": 17534,
+      "chatHistoryTurns": 21,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 9338,
+    "requestPayloadSize": 27009,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:12:10.513Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########1",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 21338,
+      "output": 83,
+      "total": 21730,
+      "cached": 16882
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 52798,
+      "chatHistoryTurns": 26,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 10204,
+    "requestPayloadSize": 83815,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:12:17.802Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########1",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 24140,
+      "output": 98,
+      "total": 24652,
+      "cached": 20402
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 64076,
+      "chatHistoryTurns": 28,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 7085,
+    "requestPayloadSize": 97300,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:12:24.489Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########1",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 27968,
+      "output": 40,
+      "total": 28514
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 77087,
+      "chatHistoryTurns": 30,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 6541,
+    "requestPayloadSize": 113342,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:12:32.742Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########1",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 29101,
+      "output": 30,
+      "total": 29545,
+      "cached": 23995
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 81510,
+      "chatHistoryTurns": 32,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 8013,
+    "requestPayloadSize": 121280,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:12:51.087Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########1",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 30545,
+      "output": 933,
+      "total": 31669,
+      "cached": 27268
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 86908,
+      "chatHistoryTurns": 34,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 18012,
+    "requestPayloadSize": 129621,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:17:40.739Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 12042,
+      "output": 98,
+      "total": 12650
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 0,
+      "chatHistoryChars": 38349,
+      "chatHistoryTurns": 9,
+      "ideContextChars": 0
+    },
+    "model": "gemini-2.5-flash-lite",
+    "durationMs": 5107,
+    "requestPayloadSize": 48063,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:17:42.955Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 31518,
+      "output": 81,
+      "total": 31599,
+      "cached": 18113
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 91452,
+      "chatHistoryTurns": 36,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2211,
+    "requestPayloadSize": 134297,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:17:45.047Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 31727,
+      "output": 96,
+      "total": 31823,
+      "cached": 28938
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 92487,
+      "chatHistoryTurns": 38,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2030,
+    "requestPayloadSize": 135575,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:17:47.646Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 35495,
+      "output": 91,
+      "total": 35586,
+      "cached": 29545
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 105197,
+      "chatHistoryTurns": 40,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2360,
+    "requestPayloadSize": 148528,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:17:49.200Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 35697,
+      "output": 33,
+      "total": 35730,
+      "cached": 33188
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 106181,
+      "chatHistoryTurns": 42,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1500,
+    "requestPayloadSize": 149755,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:17:51.064Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 35771,
+      "output": 60,
+      "total": 35831,
+      "cached": 33170
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 106538,
+      "chatHistoryTurns": 44,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1836,
+    "requestPayloadSize": 150275,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:17:52.614Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 35915,
+      "output": 34,
+      "total": 35949,
+      "cached": 33137
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 107243,
+      "chatHistoryTurns": 46,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1485,
+    "requestPayloadSize": 151183,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:17:54.327Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 35990,
+      "output": 28,
+      "total": 36018,
+      "cached": 33117
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 107612,
+      "chatHistoryTurns": 48,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1686,
+    "requestPayloadSize": 151715,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:18:04.096Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 36116,
+      "output": 33,
+      "total": 36149,
+      "cached": 33104
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 108153,
+      "chatHistoryTurns": 50,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1729,
+    "requestPayloadSize": 152419,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:18:07.618Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 36254,
+      "output": 33,
+      "total": 36287,
+      "cached": 33093
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 108790,
+      "chatHistoryTurns": 52,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1781,
+    "requestPayloadSize": 153219,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:18:20.619Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 37692,
+      "output": 2579,
+      "total": 40271,
+      "cached": 33296
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 113708,
+      "chatHistoryTurns": 54,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 12878,
+    "requestPayloadSize": 158300,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:18:22.813Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 40321,
+      "output": 58,
+      "total": 40379,
+      "cached": 37196
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 122967,
+      "chatHistoryTurns": 56,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1712,
+    "requestPayloadSize": 167722,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:18:31.015Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 40418,
+      "output": 1430,
+      "total": 41848,
+      "cached": 37175
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 123455,
+      "chatHistoryTurns": 58,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 7875,
+    "requestPayloadSize": 168373,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:18:33.395Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 41887,
+      "output": 85,
+      "total": 41972,
+      "cached": 37262
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 128596,
+      "chatHistoryTurns": 60,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2038,
+    "requestPayloadSize": 173677,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:18:35.276Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 42096,
+      "output": 62,
+      "total": 42158,
+      "cached": 40934
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 129633,
+      "chatHistoryTurns": 62,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1826,
+    "requestPayloadSize": 174957,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:18:42.885Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 43855,
+      "output": 1267,
+      "total": 45122,
+      "cached": 41206
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 134369,
+      "chatHistoryTurns": 64,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 7419,
+    "requestPayloadSize": 179896,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:18:45.096Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 45160,
+      "output": 58,
+      "total": 45218,
+      "cached": 41273
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 139099,
+      "chatHistoryTurns": 66,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1964,
+    "requestPayloadSize": 184789,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:18:47.394Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 45256,
+      "output": 85,
+      "total": 45341,
+      "cached": 45002
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 139576,
+      "chatHistoryTurns": 68,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1989,
+    "requestPayloadSize": 185429,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:18:51.661Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 46113,
+      "output": 552,
+      "total": 46665,
+      "cached": 45077
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 142284,
+      "chatHistoryTurns": 70,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4042,
+    "requestPayloadSize": 188380,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:18:54.745Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 46703,
+      "output": 70,
+      "total": 46773,
+      "cached": 18786
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 144332,
+      "chatHistoryTurns": 72,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2922,
+    "requestPayloadSize": 190591,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:18:58.330Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 46811,
+      "output": 58,
+      "total": 46869,
+      "cached": 45066
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 144836,
+      "chatHistoryTurns": 74,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3383,
+    "requestPayloadSize": 191258,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:19:00.081Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 47269,
+      "output": 35,
+      "total": 47304,
+      "cached": 45053
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 146620,
+      "chatHistoryTurns": 76,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1561,
+    "requestPayloadSize": 193245,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:19:02.407Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 47356,
+      "output": 27,
+      "total": 47383,
+      "cached": 45034
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 147038,
+      "chatHistoryTurns": 78,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2294,
+    "requestPayloadSize": 193826,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:19:04.239Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 47426,
+      "output": 23,
+      "total": 47449,
+      "cached": 45013
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 147393,
+      "chatHistoryTurns": 80,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1799,
+    "requestPayloadSize": 194344,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:19:05.970Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 47485,
+      "output": 31,
+      "total": 47516,
+      "cached": 44992
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 147706,
+      "chatHistoryTurns": 82,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1609,
+    "requestPayloadSize": 194820,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:19:11.760Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 48051,
+      "output": 616,
+      "total": 48667,
+      "cached": 45064
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 149680,
+      "chatHistoryTurns": 84,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 5640,
+    "requestPayloadSize": 196957,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:19:13.736Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 48705,
+      "output": 46,
+      "total": 48751,
+      "cached": 45079
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 151972,
+      "chatHistoryTurns": 86,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1825,
+    "requestPayloadSize": 199412,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:19:15.865Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 48821,
+      "output": 50,
+      "total": 48871,
+      "cached": 45041
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 152603,
+      "chatHistoryTurns": 88,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1949,
+    "requestPayloadSize": 200246,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:19:18.104Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 48949,
+      "output": 70,
+      "total": 49019,
+      "cached": 48753
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 153290,
+      "chatHistoryTurns": 90,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1887,
+    "requestPayloadSize": 201136,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:19:23.664Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 50331,
+      "output": 759,
+      "total": 51090,
+      "cached": 48947
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 157891,
+      "chatHistoryTurns": 92,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 5378,
+    "requestPayloadSize": 205940,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:19:28.783Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 3837,
+      "output": 107,
+      "total": 4248
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 28,
+      "chatHistoryChars": 13273,
+      "chatHistoryTurns": 20,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4963,
+    "requestPayloadSize": 14977,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:19:34.460Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 51131,
+      "output": 884,
+      "total": 52015,
+      "cached": 48972
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 160903,
+      "chatHistoryTurns": 94,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 5672,
+    "requestPayloadSize": 209115,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:19:36.701Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 52056,
+      "output": 57,
+      "total": 52113,
+      "cached": 49006
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 163996,
+      "chatHistoryTurns": 96,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2005,
+    "requestPayloadSize": 212371,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:19:46.863Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 58091,
+      "output": 27,
+      "total": 58118,
+      "cached": 46020
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 180260,
+      "chatHistoryTurns": 98,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 9901,
+    "requestPayloadSize": 228878,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:19:54.826Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 58230,
+      "output": 27,
+      "total": 58257,
+      "cached": 49838
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 180883,
+      "chatHistoryTurns": 100,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1924,
+    "requestPayloadSize": 229664,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:20:17.179Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 58982,
+      "output": 39,
+      "total": 59021,
+      "cached": 57526
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 183252,
+      "chatHistoryTurns": 102,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2366,
+    "requestPayloadSize": 232196,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:21:29.139Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 59224,
+      "output": 22,
+      "total": 59246,
+      "cached": 57513
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 184143,
+      "chatHistoryTurns": 104,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2182,
+    "requestPayloadSize": 233250,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:21:34.008Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 59338,
+      "output": 18,
+      "total": 59356,
+      "cached": 57493
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 184567,
+      "chatHistoryTurns": 106,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1627,
+    "requestPayloadSize": 233837,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:21:37.504Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 59503,
+      "output": 15,
+      "total": 59518,
+      "cached": 57476
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 185276,
+      "chatHistoryTurns": 108,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1691,
+    "requestPayloadSize": 234709,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:21:43.623Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 59638,
+      "output": 26,
+      "total": 59664,
+      "cached": 57458
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 185715,
+      "chatHistoryTurns": 110,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1837,
+    "requestPayloadSize": 235311,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:21:47.078Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 59829,
+      "output": 20,
+      "total": 59849,
+      "cached": 57443
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 186533,
+      "chatHistoryTurns": 112,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1694,
+    "requestPayloadSize": 236292,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:21:50.481Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 59933,
+      "output": 20,
+      "total": 59953,
+      "cached": 57422
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 187016,
+      "chatHistoryTurns": 114,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1644,
+    "requestPayloadSize": 236938,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:22:01.428Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 60849,
+      "output": 24,
+      "total": 60873,
+      "cached": 57452
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 190063,
+      "chatHistoryTurns": 116,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 1898,
+    "requestPayloadSize": 240148,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:22:34.564Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 60999,
+      "output": 17,
+      "total": 61016
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 190688,
+      "chatHistoryTurns": 118,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 10830,
+    "requestPayloadSize": 240936,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:23:00.283Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 61229,
+      "output": 4597,
+      "total": 65826,
+      "cached": 57423
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 191609,
+      "chatHistoryTurns": 120,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 22116,
+    "requestPayloadSize": 242020,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:23:04.285Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 65892,
+      "output": 495,
+      "total": 66387,
+      "cached": 57655
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 205380,
+      "chatHistoryTurns": 122,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3941,
+    "requestPayloadSize": 255954,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:23:12.670Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 6985,
+      "output": 151,
+      "total": 7912
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 28,
+      "chatHistoryChars": 21455,
+      "chatHistoryTurns": 20,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 7635,
+    "requestPayloadSize": 22999,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:23:17.755Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########2",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 66412,
+      "output": 507,
+      "total": 66919,
+      "cached": 65343
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 207151,
+      "chatHistoryTurns": 124,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 5080,
+    "requestPayloadSize": 257888,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:25:43.017Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########3",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 6658,
+      "output": 78,
+      "total": 7169
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 0,
+      "chatHistoryChars": 19293,
+      "chatHistoryTurns": 9,
+      "ideContextChars": 0
+    },
+    "model": "gemini-2.5-flash-lite",
+    "durationMs": 6015,
+    "requestPayloadSize": 19936,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:25:47.470Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########3",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 66929,
+      "output": 17,
+      "total": 67224,
+      "cached": 30836
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 209456,
+      "chatHistoryTurns": 126,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4443,
+    "requestPayloadSize": 260298,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:25:51.160Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########3",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 67384,
+      "output": 18,
+      "total": 67491,
+      "cached": 65321
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 211059,
+      "chatHistoryTurns": 128,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3537,
+    "requestPayloadSize": 263692,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:25:56.672Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########3",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 67481,
+      "output": 48,
+      "total": 67622,
+      "cached": 65219
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 211489,
+      "chatHistoryTurns": 130,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3736,
+    "requestPayloadSize": 264917,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:26:15.000Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########3",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 69092,
+      "output": 29,
+      "total": 69175,
+      "cached": 30685
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 217342,
+      "chatHistoryTurns": 132,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3533,
+    "requestPayloadSize": 271565,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:26:17.984Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########3",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 70760,
+      "output": 29,
+      "total": 70816,
+      "cached": 65231
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 223140,
+      "chatHistoryTurns": 134,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2824,
+    "requestPayloadSize": 277982,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:26:22.282Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########3",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 70803,
+      "output": 360,
+      "total": 71214,
+      "cached": 69019
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 223394,
+      "chatHistoryTurns": 136,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4141,
+    "requestPayloadSize": 278659,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:28:00.962Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 4555,
+      "output": 117,
+      "total": 5149
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 0,
+      "chatHistoryChars": 13850,
+      "chatHistoryTurns": 9,
+      "ideContextChars": 0
+    },
+    "model": "gemini-2.5-flash-lite",
+    "durationMs": 4240,
+    "requestPayloadSize": 15829,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:28:04.096Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 71181,
+      "output": 13,
+      "total": 71244,
+      "cached": 65683
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 224988,
+      "chatHistoryTurns": 138,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3124,
+    "requestPayloadSize": 280346,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:28:08.382Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 72808,
+      "output": 13,
+      "total": 73094,
+      "cached": 65698
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 229566,
+      "chatHistoryTurns": 140,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4139,
+    "requestPayloadSize": 285491,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:28:11.885Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 72838,
+      "output": 17,
+      "total": 72988,
+      "cached": 69292
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 229776,
+      "chatHistoryTurns": 142,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3311,
+    "requestPayloadSize": 287548,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:28:19.103Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 72878,
+      "output": 37,
+      "total": 73158,
+      "cached": 69149
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 229991,
+      "chatHistoryTurns": 144,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4330,
+    "requestPayloadSize": 288758,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:28:57.517Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 73066,
+      "output": 21,
+      "total": 73369,
+      "cached": 68919
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 230762,
+      "chatHistoryTurns": 146,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 5041,
+    "requestPayloadSize": 291060,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:29:02.964Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 73171,
+      "output": 38,
+      "total": 73468,
+      "cached": 72466
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 231196,
+      "chatHistoryTurns": 148,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 5289,
+    "requestPayloadSize": 293257,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:29:05.994Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 73236,
+      "output": 19,
+      "total": 73302,
+      "cached": 72201
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 231514,
+      "chatHistoryTurns": 150,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2877,
+    "requestPayloadSize": 295146,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:29:09.999Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 73383,
+      "output": 203,
+      "total": 73666,
+      "cached": 72141
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 232044,
+      "chatHistoryTurns": 152,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3872,
+    "requestPayloadSize": 296183,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:29:23.264Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 73611,
+      "output": 142,
+      "total": 73769,
+      "cached": 68255
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 232896,
+      "chatHistoryTurns": 154,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 13132,
+    "requestPayloadSize": 297770,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:29:41.015Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 73782,
+      "output": 188,
+      "total": 74148,
+      "cached": 72014
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 233590,
+      "chatHistoryTurns": 156,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 16706,
+    "requestPayloadSize": 298731,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:30:09.404Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 73993,
+      "output": 13,
+      "total": 74203,
+      "cached": 71832
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 234557,
+      "chatHistoryTurns": 158,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 27285,
+    "requestPayloadSize": 300957,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:30:26.686Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 74087,
+      "output": 17,
+      "total": 74245,
+      "cached": 71636
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 234966,
+      "chatHistoryTurns": 160,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 5893,
+    "requestPayloadSize": 302717,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:30:34.414Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 74158,
+      "output": 24,
+      "total": 74231,
+      "cached": 71490
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 235265,
+      "chatHistoryTurns": 162,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3294,
+    "requestPayloadSize": 304015,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:30:40.706Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 74283,
+      "output": 183,
+      "total": 74521,
+      "cached": 71430
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 235767,
+      "chatHistoryTurns": 164,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4509,
+    "requestPayloadSize": 304984,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:30:43.384Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 74489,
+      "output": 17,
+      "total": 74520,
+      "cached": 71361
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 236672,
+      "chatHistoryTurns": 166,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2521,
+    "requestPayloadSize": 306396,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:30:50.621Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 74707,
+      "output": 14,
+      "total": 74917,
+      "cached": 71340
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 237598,
+      "chatHistoryTurns": 168,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3711,
+    "requestPayloadSize": 307593,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:30:58.563Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 74890,
+      "output": 15,
+      "total": 74954,
+      "cached": 71157
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 238108,
+      "chatHistoryTurns": 170,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3646,
+    "requestPayloadSize": 309466,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:31:05.493Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 74927,
+      "output": 28,
+      "total": 75133,
+      "cached": 71092
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 238315,
+      "chatHistoryTurns": 172,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4212,
+    "requestPayloadSize": 310144,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:31:10.273Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 75434,
+      "output": 31,
+      "total": 75510,
+      "cached": 74689
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 239411,
+      "chatHistoryTurns": 174,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3051,
+    "requestPayloadSize": 312411,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:31:16.825Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 75629,
+      "output": 34,
+      "total": 75993,
+      "cached": 74638
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 240097,
+      "chatHistoryTurns": 176,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4801,
+    "requestPayloadSize": 313596,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:31:34.796Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 75799,
+      "output": 17,
+      "total": 75833
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 240804,
+      "chatHistoryTurns": 178,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 7656,
+    "requestPayloadSize": 316254,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:31:45.817Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 75961,
+      "output": 26,
+      "total": 76112,
+      "cached": 74304
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 241534,
+      "chatHistoryTurns": 180,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4212,
+    "requestPayloadSize": 317263,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:31:51.984Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 76153,
+      "output": 26,
+      "total": 76219,
+      "cached": 74185
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 242304,
+      "chatHistoryTurns": 182,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4324,
+    "requestPayloadSize": 319008,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:31:57.577Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 76692,
+      "output": 35,
+      "total": 76909,
+      "cached": 74173
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 244027,
+      "chatHistoryTurns": 184,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3820,
+    "requestPayloadSize": 321182,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:32:14.551Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 76865,
+      "output": 320,
+      "total": 77221,
+      "cached": 74004
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 244740,
+      "chatHistoryTurns": 186,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4337,
+    "requestPayloadSize": 323162,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:32:17.470Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 77211,
+      "output": 17,
+      "total": 77245,
+      "cached": 73968
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 246095,
+      "chatHistoryTurns": 188,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2466,
+    "requestPayloadSize": 324920,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:32:25.638Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 77408,
+      "output": 37,
+      "total": 77569,
+      "cached": 73946
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 246948,
+      "chatHistoryTurns": 190,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4297,
+    "requestPayloadSize": 326052,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:32:39.040Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 77581,
+      "output": 17,
+      "total": 77615,
+      "cached": 73830
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 247680,
+      "chatHistoryTurns": 192,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2847,
+    "requestPayloadSize": 327799,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:32:49.338Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 77778,
+      "output": 22,
+      "total": 77852,
+      "cached": 73808
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 248533,
+      "chatHistoryTurns": 194,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3537,
+    "requestPayloadSize": 328931,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:33:04.297Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 2466,
+      "output": 150,
+      "total": 4140
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 28,
+      "chatHistoryChars": 8654,
+      "chatHistoryTurns": 20,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 13100,
+    "requestPayloadSize": 15630,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:33:07.303Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 77956,
+      "output": 16,
+      "total": 78010,
+      "cached": 77442
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 249279,
+      "chatHistoryTurns": 196,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3000,
+    "requestPayloadSize": 330248,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:33:15.564Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 78109,
+      "output": 18,
+      "total": 78224,
+      "cached": 77397
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 249756,
+      "chatHistoryTurns": 198,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3821,
+    "requestPayloadSize": 331192,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:33:20.256Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 78274,
+      "output": 34,
+      "total": 78347,
+      "cached": 77300
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 250447,
+      "chatHistoryTurns": 200,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2931,
+    "requestPayloadSize": 332634,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:33:26.315Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 78408,
+      "output": 33,
+      "total": 78662,
+      "cached": 77253
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 251031,
+      "chatHistoryTurns": 202,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4263,
+    "requestPayloadSize": 333681,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:33:31.964Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 79080,
+      "output": 24,
+      "total": 79261,
+      "cached": 77099
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 253534,
+      "chatHistoryTurns": 204,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3874,
+    "requestPayloadSize": 337599,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:33:57.515Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 79252,
+      "output": 17,
+      "total": 79293,
+      "cached": 76954
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 254265,
+      "chatHistoryTurns": 206,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2933,
+    "requestPayloadSize": 339461,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:34:13.400Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 79634,
+      "output": 22,
+      "total": 79839,
+      "cached": 76946
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 255482,
+      "chatHistoryTurns": 208,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4115,
+    "requestPayloadSize": 341033,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:34:18.832Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 79953,
+      "output": 37,
+      "total": 80019,
+      "cached": 76796
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 256434,
+      "chatHistoryTurns": 210,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3642,
+    "requestPayloadSize": 343220,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:34:21.619Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 80017,
+      "output": 17,
+      "total": 80051,
+      "cached": 76748
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 256750,
+      "chatHistoryTurns": 212,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2635,
+    "requestPayloadSize": 343883,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:34:35.358Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 80556,
+      "output": 218,
+      "total": 80813,
+      "cached": 76764
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 258561,
+      "chatHistoryTurns": 214,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 5139,
+    "requestPayloadSize": 345973,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:34:38.199Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 80800,
+      "output": 17,
+      "total": 80834,
+      "cached": 76720
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 259539,
+      "chatHistoryTurns": 216,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2697,
+    "requestPayloadSize": 347426,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:35:07.548Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 81336,
+      "output": 254,
+      "total": 81690
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 261360,
+      "chatHistoryTurns": 218,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 18569,
+    "requestPayloadSize": 349526,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:35:10.727Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 81616,
+      "output": 17,
+      "total": 81650,
+      "cached": 80294
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 262439,
+      "chatHistoryTurns": 220,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3011,
+    "requestPayloadSize": 351332,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:35:28.180Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 82154,
+      "output": 37,
+      "total": 83209,
+      "cached": 80310
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 264252,
+      "chatHistoryTurns": 222,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 8686,
+    "requestPayloadSize": 353424,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:35:41.086Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 3391,
+      "output": 121,
+      "total": 4459
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 28,
+      "chatHistoryChars": 10936,
+      "chatHistoryTurns": 20,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 8750,
+    "requestPayloadSize": 16120,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:35:44.987Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 82248,
+      "output": 72,
+      "total": 82418,
+      "cached": 79418
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 264680,
+      "chatHistoryTurns": 224,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3895,
+    "requestPayloadSize": 359035,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:35:49.091Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 82343,
+      "output": 37,
+      "total": 82418,
+      "cached": 79310
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 265171,
+      "chatHistoryTurns": 226,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3345,
+    "requestPayloadSize": 360265,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:36:24.409Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 82616,
+      "output": 21,
+      "total": 82661,
+      "cached": 79284
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 266265,
+      "chatHistoryTurns": 228,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2766,
+    "requestPayloadSize": 361822,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:36:30.870Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 82873,
+      "output": 21,
+      "total": 83245,
+      "cached": 79268
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 267190,
+      "chatHistoryTurns": 230,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4617,
+    "requestPayloadSize": 363102,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:38:20.149Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 82913,
+      "output": 307,
+      "total": 83235,
+      "cached": 82543
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 267408,
+      "chatHistoryTurns": 232,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4214,
+    "requestPayloadSize": 365347,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:38:23.382Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 83246,
+      "output": 16,
+      "total": 83285,
+      "cached": 82541
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 268599,
+      "chatHistoryTurns": 234,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2783,
+    "requestPayloadSize": 366809,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:38:31.499Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 83315,
+      "output": 17,
+      "total": 83399,
+      "cached": 82504
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 268894,
+      "chatHistoryTurns": 236,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3389,
+    "requestPayloadSize": 367447,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:38:34.388Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 84095,
+      "output": 17,
+      "total": 84129,
+      "cached": 78928
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 271959,
+      "chatHistoryTurns": 238,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2733,
+    "requestPayloadSize": 371127,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:38:50.561Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 84796,
+      "output": 25,
+      "total": 84886,
+      "cached": 82560
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 274145,
+      "chatHistoryTurns": 240,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3188,
+    "requestPayloadSize": 373592,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:38:53.917Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 85039,
+      "output": 26,
+      "total": 85077,
+      "cached": 82508
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 275245,
+      "chatHistoryTurns": 242,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3171,
+    "requestPayloadSize": 375287,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:38:58.720Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 85232,
+      "output": 23,
+      "total": 85274,
+      "cached": 82496
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 276005,
+      "chatHistoryTurns": 244,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2715,
+    "requestPayloadSize": 376314,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:39:02.683Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 85422,
+      "output": 176,
+      "total": 85634,
+      "cached": 82492
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 276758,
+      "chatHistoryTurns": 246,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3789,
+    "requestPayloadSize": 377346,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:39:05.513Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 85629,
+      "output": 17,
+      "total": 85663,
+      "cached": 82458
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 277690,
+      "chatHistoryTurns": 248,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2641,
+    "requestPayloadSize": 378729,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:39:28.946Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 86373,
+      "output": 106,
+      "total": 86678,
+      "cached": 82508
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 279855,
+      "chatHistoryTurns": 250,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4417,
+    "requestPayloadSize": 381173,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:39:33.640Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 3777,
+      "output": 112,
+      "total": 4261
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 28,
+      "chatHistoryChars": 12665,
+      "chatHistoryTurns": 20,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4524,
+    "requestPayloadSize": 16121,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:39:37.029Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 86506,
+      "output": 17,
+      "total": 86540,
+      "cached": 85909
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 280462,
+      "chatHistoryTurns": 252,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3384,
+    "requestPayloadSize": 383175,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:39:55.941Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 87335,
+      "output": 219,
+      "total": 87711,
+      "cached": 85971
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 282877,
+      "chatHistoryTurns": 254,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4739,
+    "requestPayloadSize": 385869,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:39:58.882Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 87581,
+      "output": 17,
+      "total": 87615,
+      "cached": 85838
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 283888,
+      "chatHistoryTurns": 256,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2785,
+    "requestPayloadSize": 388003,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:40:16.547Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 87803,
+      "output": 17,
+      "total": 87906,
+      "cached": 85825
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 284695,
+      "chatHistoryTurns": 258,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3775,
+    "requestPayloadSize": 389089,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:40:19.703Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 88220,
+      "output": 37,
+      "total": 88315,
+      "cached": 85778
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 286289,
+      "chatHistoryTurns": 260,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2995,
+    "requestPayloadSize": 391430,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:40:33.089Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 88313,
+      "output": 70,
+      "total": 88399,
+      "cached": 85699
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 286711,
+      "chatHistoryTurns": 262,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 9375,
+    "requestPayloadSize": 392383,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:40:36.294Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 88406,
+      "output": 37,
+      "total": 88456,
+      "cached": 85678
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 287180,
+      "chatHistoryTurns": 264,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3043,
+    "requestPayloadSize": 393127,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:40:43.261Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 88529,
+      "output": 17,
+      "total": 88569,
+      "cached": 85657
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 287683,
+      "chatHistoryTurns": 266,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2768,
+    "requestPayloadSize": 393901,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:40:57.417Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 89021,
+      "output": 25,
+      "total": 89104,
+      "cached": 85673
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 289334,
+      "chatHistoryTurns": 268,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3010,
+    "requestPayloadSize": 395939,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:41:00.594Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 89390,
+      "output": 23,
+      "total": 89448,
+      "cached": 85678
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 290722,
+      "chatHistoryTurns": 270,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3016,
+    "requestPayloadSize": 397918,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:41:05.520Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 91735,
+      "output": 25,
+      "total": 92059,
+      "cached": 89747
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 299077,
+      "chatHistoryTurns": 272,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4767,
+    "requestPayloadSize": 406752,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:41:09.101Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 91792,
+      "output": 115,
+      "total": 91933,
+      "cached": 89477
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 299362,
+      "chatHistoryTurns": 274,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3417,
+    "requestPayloadSize": 409012,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:41:12.250Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 91938,
+      "output": 17,
+      "total": 91972,
+      "cached": 89437
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 300085,
+      "chatHistoryTurns": 276,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2987,
+    "requestPayloadSize": 410110,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:41:22.899Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 92426,
+      "output": 25,
+      "total": 92549,
+      "cached": 89457
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 301784,
+      "chatHistoryTurns": 278,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4093,
+    "requestPayloadSize": 412084,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:41:28.590Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 92815,
+      "output": 345,
+      "total": 93404,
+      "cached": 89433
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 303230,
+      "chatHistoryTurns": 280,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 5530,
+    "requestPayloadSize": 414301,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:41:32.791Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 4819,
+      "output": 135,
+      "total": 5384
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 28,
+      "chatHistoryChars": 16737,
+      "chatHistoryTurns": 20,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3999,
+    "requestPayloadSize": 22213,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:41:36.774Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 93191,
+      "output": 17,
+      "total": 93410,
+      "cached": 89246
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 304721,
+      "chatHistoryTurns": 282,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3975,
+    "requestPayloadSize": 417351,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:41:46.928Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 93474,
+      "output": 17,
+      "total": 93533,
+      "cached": 85524
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 305834,
+      "chatHistoryTurns": 284,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3898,
+    "requestPayloadSize": 419715,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:41:51.750Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########4",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 94012,
+      "output": 23,
+      "total": 94127,
+      "cached": 92659
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 307891,
+      "chatHistoryTurns": 286,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4683,
+    "requestPayloadSize": 422231,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:42:50.617Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {},
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 0,
+      "chatHistoryChars": 5425,
+      "chatHistoryTurns": 9,
+      "ideContextChars": 0
+    },
+    "model": "gemini-2.5-flash-lite",
+    "durationMs": 1014,
+    "requestPayloadSize": 9460,
+    "toolCount": 20,
+    "status": "error",
+    "errorMessage": "No capacity available for model gemini-2.5-flash-lite on the server",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:42:57.724Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 2563,
+      "output": 80,
+      "total": 3088
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 0,
+      "memoryChars": 0,
+      "environmentContextChars": 0,
+      "chatHistoryChars": 5425,
+      "chatHistoryTurns": 9,
+      "ideContextChars": 0
+    },
+    "model": "gemini-2.5-flash-lite",
+    "durationMs": 2938,
+    "requestPayloadSize": 9460,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:43:04.635Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 94200,
+      "output": 92,
+      "total": 94668,
+      "cached": 69334
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 308655,
+      "chatHistoryTurns": 289,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 6891,
+    "requestPayloadSize": 423760,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:43:09.249Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 94453,
+      "output": 58,
+      "total": 94724,
+      "cached": 92017
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 310032,
+      "chatHistoryTurns": 291,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 4322,
+    "requestPayloadSize": 427768,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:43:16.676Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 96319,
+      "output": 784,
+      "total": 97231,
+      "cached": 92059
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 317063,
+      "chatHistoryTurns": 293,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 7189,
+    "requestPayloadSize": 436454,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:43:23.976Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 97143,
+      "output": 823,
+      "total": 98009,
+      "cached": 95797
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 320076,
+      "chatHistoryTurns": 295,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 7051,
+    "requestPayloadSize": 440458,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:43:28.012Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 98006,
+      "output": 32,
+      "total": 98116,
+      "cached": 95781
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 323287,
+      "chatHistoryTurns": 297,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3785,
+    "requestPayloadSize": 444156,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:43:35.039Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 99373,
+      "output": 766,
+      "total": 100242,
+      "cached": 95889
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 328347,
+      "chatHistoryTurns": 299,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 6866,
+    "requestPayloadSize": 449931,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:43:38.605Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 100183,
+      "output": 33,
+      "total": 100296,
+      "cached": 95816
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 331504,
+      "chatHistoryTurns": 301,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3333,
+    "requestPayloadSize": 453959,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:43:45.015Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 101756,
+      "output": 589,
+      "total": 102423,
+      "cached": 99757
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 336863,
+      "chatHistoryTurns": 303,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 6252,
+    "requestPayloadSize": 460009,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:43:59.145Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 102389,
+      "output": 16,
+      "total": 102448
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 339392,
+      "chatHistoryTurns": 305,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 13919,
+    "requestPayloadSize": 463237,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:44:12.054Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 104325,
+      "output": 19,
+      "total": 104358,
+      "cached": 99746
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 346223,
+      "chatHistoryTurns": 307,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3489,
+    "requestPayloadSize": 470627,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:45:09.905Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 110634,
+      "output": 34,
+      "total": 111831,
+      "cached": 103920
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 363717,
+      "chatHistoryTurns": 309,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 10061,
+    "requestPayloadSize": 488396,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:45:23.688Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 111497,
+      "output": 798,
+      "total": 113608,
+      "cached": 106832
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 366856,
+      "chatHistoryTurns": 311,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 13595,
+    "requestPayloadSize": 498422,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:45:30.994Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 112336,
+      "output": 846,
+      "total": 113253,
+      "cached": 109481
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 370124,
+      "chatHistoryTurns": 313,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 6855,
+    "requestPayloadSize": 509277,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:45:34.653Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 113219,
+      "output": 26,
+      "total": 113258,
+      "cached": 98131
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 373423,
+      "chatHistoryTurns": 315,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3169,
+    "requestPayloadSize": 513287,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:45:45.452Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 113355,
+      "output": 26,
+      "total": 113381,
+      "cached": 109426
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 374022,
+      "chatHistoryTurns": 317,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 2636,
+    "requestPayloadSize": 514173,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:46:49.665Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 118506,
+      "output": 1154,
+      "total": 120012
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 388981,
+      "chatHistoryTurns": 319,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 23591,
+    "requestPayloadSize": 529295,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:46:57.563Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 119697,
+      "output": 1032,
+      "total": 120759,
+      "cached": 117091
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 393273,
+      "chatHistoryTurns": 321,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 7379,
+    "requestPayloadSize": 535934,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:47:01.089Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 120770,
+      "output": 26,
+      "total": 120820,
+      "cached": 113336
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 397455,
+      "chatHistoryTurns": 323,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3045,
+    "requestPayloadSize": 540543,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:48:12.949Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 131867,
+      "output": 1223,
+      "total": 133855
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 431136,
+      "chatHistoryTurns": 325,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 15696,
+    "requestPayloadSize": 574643,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:48:21.672Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 133127,
+      "output": 1056,
+      "total": 134206,
+      "cached": 128615
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 435668,
+      "chatHistoryTurns": 327,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 8107,
+    "requestPayloadSize": 583822,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:48:25.956Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 134224,
+      "output": 26,
+      "total": 134258,
+      "cached": 132429
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 439955,
+      "chatHistoryTurns": 329,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3062,
+    "requestPayloadSize": 588488,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:49:15.605Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 141975,
+      "output": 1056,
+      "total": 143691,
+      "cached": 132949
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 463398,
+      "chatHistoryTurns": 331,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 12336,
+    "requestPayloadSize": 612182,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:49:19.280Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 143072,
+      "output": 26,
+      "total": 143133,
+      "cached": 139995
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 467687,
+      "chatHistoryTurns": 333,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 3061,
+    "requestPayloadSize": 620610,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  },
+  {
+    "timestamp": "2026-02-22T01:50:06.527Z",
+    "promptId": "a08dcf48-54ed-4d17-8a13-a95ab680ba5f########5",
+    "contextFiles": [
+      "c:\\users\\mafam\\.gemini\\gemini.md"
+    ],
+    "memoryFiles": [],
+    "tokens": {
+      "input": 148242,
+      "output": 610,
+      "total": 149293,
+      "cached": 140311
+    },
+    "contextBreakdown": {
+      "systemPromptChars": 0,
+      "fileTreeChars": 6483,
+      "memoryChars": 0,
+      "environmentContextChars": 6862,
+      "chatHistoryChars": 482999,
+      "chatHistoryTurns": 335,
+      "ideContextChars": 0
+    },
+    "model": "gemini-3-flash-preview",
+    "durationMs": 11729,
+    "requestPayloadSize": 636337,
+    "toolCount": 20,
+    "status": "success",
+    "compressionTriggered": false,
+    "ideConnected": false,
+    "platform": "win32"
+  }
+]

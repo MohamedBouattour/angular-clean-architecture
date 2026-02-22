@@ -9,58 +9,24 @@ import { TranslateService } from '../translate/translate.service';
   selector: 'app-language-selector',
   imports: [CommonModule, MatButtonModule, MatMenuModule, MatIconModule],
   template: `
-    <button mat-button [matMenuTriggerFor]="menu" class="lang-button">
-      <mat-icon>translate</mat-icon>
-      <span class="lang-label">{{ currentLangLabel() }}</span>
-      <mat-icon class="dropdown-icon">arrow_drop_down</mat-icon>
+    <button mat-button [matMenuTriggerFor]="menu" class="!flex !items-center !px-3 !h-10 !rounded-full !bg-white/10 !text-white hover:!bg-white/20 transition-all">
+      <mat-icon class="!text-xl">translate</mat-icon>
+      <span class="mx-1 font-medium uppercase text-[0.85rem] hidden sm:inline">{{ currentLangLabel() }}</span>
+      <mat-icon class="!m-0 !w-[18px] !h-[18px] !text-[18px]">arrow_drop_down</mat-icon>
     </button>
 
     <mat-menu #menu="matMenu" xPosition="before">
       @for (lang of languages; track lang.code) {
-      <button mat-menu-item (click)="changeLang(lang.code)" [class.active-lang]="translate.currentLang() === lang.code">
-        <mat-icon *ngIf="translate.currentLang() === lang.code">check</mat-icon>
+      <button mat-menu-item (click)="changeLang(lang.code)" [class.!text-primary]="translate.currentLang() === lang.code" [class.!font-bold]="translate.currentLang() === lang.code">
+        @if (translate.currentLang() === lang.code) {
+          <mat-icon>check</mat-icon>
+        }
         <span>{{ lang.label }}</span>
       </button>
       }
     </mat-menu>
   `,
-  styles: [
-    `
-      .lang-button {
-        display: flex;
-        align-items: center;
-        padding: 0 12px;
-        height: 40px;
-        border-radius: 20px;
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
-        transition: background 0.3s ease;
-      }
-
-      .lang-button:hover {
-        background: rgba(255, 255, 255, 0.2);
-      }
-
-      .lang-label {
-        margin: 0 4px;
-        font-weight: 500;
-        text-transform: uppercase;
-        font-size: 0.85rem;
-      }
-
-      .dropdown-icon {
-        margin: 0;
-        width: 18px;
-        height: 18px;
-        font-size: 18px;
-      }
-
-      .active-lang {
-        color: var(--primary-color, #3f51b5);
-        font-weight: bold;
-      }
-    `,
-  ],
+  styles: [],
 })
 export class LanguageSelectorComponent {
   translate = inject(TranslateService);

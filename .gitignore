@@ -3,3 +3,5 @@ node_modules
 dist
 .nx
 .angular
+
+vitest.config.*.timestamp*

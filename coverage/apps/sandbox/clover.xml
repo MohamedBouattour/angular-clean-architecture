@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1771724993135" clover="3.2.0">
+  <project timestamp="1771724993135" name="All files">
+    <metrics statements="491" coveredstatements="330" conditionals="186" coveredconditionals="69" methods="247" coveredmethods="177" elements="924" coveredelements="576" complexity="0" loc="491" ncloc="491" packages="26" files="40" classes="40"/>
+    <package name="app">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="app.component.html" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\app.component.html">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="app.component.scss" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\app.component.scss">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="app.component.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\app.component.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="20" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.core.auth">
+      <metrics statements="57" coveredstatements="20" conditionals="16" coveredconditionals="3" methods="17" coveredmethods="2"/>
+      <file name="auth.service.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\core\auth\auth.service.ts">
+        <metrics statements="57" coveredstatements="20" conditionals="16" coveredconditionals="3" methods="17" coveredmethods="2"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="50" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="65" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="84" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="92" count="0" type="stmt"/>
+        <line num="93" count="0" type="stmt"/>
+        <line num="94" count="0" type="stmt"/>
+        <line num="98" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="100" count="0" type="stmt"/>
+        <line num="104" count="0" type="stmt"/>
+        <line num="105" count="0" type="stmt"/>
+        <line num="109" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="110" count="0" type="stmt"/>
+        <line num="111" count="0" type="stmt"/>
+        <line num="117" count="0" type="stmt"/>
+        <line num="118" count="0" type="stmt"/>
+        <line num="119" count="0" type="stmt"/>
+        <line num="120" count="0" type="stmt"/>
+        <line num="124" count="0" type="stmt"/>
+        <line num="125" count="0" type="stmt"/>
+        <line num="126" count="0" type="stmt"/>
+        <line num="127" count="0" type="stmt"/>
+        <line num="131" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="132" count="1" type="stmt"/>
+        <line num="136" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="137" count="1" type="stmt"/>
+        <line num="138" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="142" count="0" type="stmt"/>
+        <line num="146" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.core.language-selector">
+      <metrics statements="7" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="language-selector.component.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\core\language-selector\language-selector.component.ts">
+        <metrics statements="7" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="56" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="60" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.core.menu">
+      <metrics statements="6" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <file name="menu.component.html" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\core\menu\menu.component.html">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="menu.component.scss" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\core\menu\menu.component.scss">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="menu.component.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\core\menu\menu.component.ts">
+        <metrics statements="6" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.core.navbar">
+      <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="navbar.component.html" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\core\navbar\navbar.component.html">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="navbar.component.scss" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\core\navbar\navbar.component.scss">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="navbar.component.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\core\navbar\navbar.component.ts">
+        <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.core.theme-selector">
+      <metrics statements="13" coveredstatements="6" conditionals="8" coveredconditionals="2" methods="6" coveredmethods="2"/>
+      <file name="theme-selector.component.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\core\theme-selector\theme-selector.component.ts">
+        <metrics statements="13" coveredstatements="6" conditionals="8" coveredconditionals="2" methods="6" coveredmethods="2"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="46" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.core.translate">
+      <metrics statements="6" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="1"/>
+      <file name="translate.service.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\core\translate\translate.service.ts">
+        <metrics statements="6" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="18" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="22" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.features.authors.application">
+      <metrics statements="44" coveredstatements="24" conditionals="20" coveredconditionals="4" methods="29" coveredmethods="22"/>
+      <file name="store.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\authors\application\store.ts">
+        <metrics statements="44" coveredstatements="24" conditionals="20" coveredconditionals="4" methods="29" coveredmethods="22"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="35" count="8" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="56" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="67" count="8" type="stmt"/>
+        <line num="70" count="4" type="stmt"/>
+        <line num="72" count="4" type="stmt"/>
+        <line num="74" count="3" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="92" count="1" type="stmt"/>
+        <line num="95" count="1" type="stmt"/>
+        <line num="96" count="1" type="stmt"/>
+        <line num="102" count="0" type="stmt"/>
+        <line num="103" count="0" type="stmt"/>
+        <line num="116" count="1" type="stmt"/>
+        <line num="118" count="1" type="stmt"/>
+        <line num="121" count="1" type="stmt"/>
+        <line num="122" count="1" type="stmt"/>
+        <line num="124" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="130" count="0" type="stmt"/>
+        <line num="131" count="0" type="stmt"/>
+        <line num="144" count="1" type="stmt"/>
+        <line num="146" count="1" type="stmt"/>
+        <line num="149" count="1" type="stmt"/>
+        <line num="150" count="1" type="stmt"/>
+        <line num="151" count="1" type="stmt"/>
+        <line num="156" count="0" type="stmt"/>
+        <line num="157" count="0" type="stmt"/>
+        <line num="168" count="1" type="stmt"/>
+        <line num="170" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.features.authors.infrastructure">
+      <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
+      <file name="service.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\authors\infrastructure\service.ts">
+        <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.features.authors.ui">
+      <metrics statements="24" coveredstatements="24" conditionals="6" coveredconditionals="3" methods="11" coveredmethods="11"/>
+      <file name="author.component.html" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\authors\ui\author.component.html">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="author.component.scss" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\authors\ui\author.component.scss">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="author.component.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\authors\ui\author.component.ts">
+        <metrics statements="24" coveredstatements="24" conditionals="6" coveredconditionals="3" methods="11" coveredmethods="11"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="51" count="7" type="stmt"/>
+        <line num="52" count="7" type="stmt"/>
+        <line num="53" count="7" type="stmt"/>
+        <line num="56" count="7" type="stmt"/>
+        <line num="66" count="7" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
+        <line num="86" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="87" count="1" type="stmt"/>
+        <line num="88" count="1" type="stmt"/>
+        <line num="94" count="1" type="stmt"/>
+        <line num="101" count="1" type="stmt"/>
+        <line num="102" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="103" count="1" type="stmt"/>
+        <line num="104" count="1" type="stmt"/>
+        <line num="110" count="1" type="stmt"/>
+        <line num="120" count="1" type="stmt"/>
+        <line num="121" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="122" count="1" type="stmt"/>
+        <line num="123" count="1" type="stmt"/>
+        <line num="130" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.features.authors.ui.form">
+      <metrics statements="17" coveredstatements="17" conditionals="10" coveredconditionals="9" methods="6" coveredmethods="6"/>
+      <file name="form.component.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\authors\ui\form\form.component.ts">
+        <metrics statements="17" coveredstatements="17" conditionals="10" coveredconditionals="9" methods="6" coveredmethods="6"/>
+        <line num="98" count="2" type="stmt"/>
+        <line num="99" count="4" type="stmt"/>
+        <line num="100" count="4" type="stmt"/>
+        <line num="103" count="4" type="stmt"/>
+        <line num="106" count="4" type="stmt"/>
+        <line num="107" count="4" type="stmt"/>
+        <line num="109" count="4" type="stmt"/>
+        <line num="118" count="4" type="stmt"/>
+        <line num="119" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="124" count="4" type="stmt"/>
+        <line num="125" count="3" type="stmt"/>
+        <line num="127" count="4" type="stmt"/>
+        <line num="128" count="3" type="stmt"/>
+        <line num="131" count="4" type="stmt"/>
+        <line num="135" count="1" type="stmt"/>
+        <line num="139" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="140" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.features.books.application">
+      <metrics statements="44" coveredstatements="24" conditionals="20" coveredconditionals="4" methods="29" coveredmethods="22"/>
+      <file name="store.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\books\application\store.ts">
+        <metrics statements="44" coveredstatements="24" conditionals="20" coveredconditionals="4" methods="29" coveredmethods="22"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="35" count="8" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="56" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="67" count="8" type="stmt"/>
+        <line num="70" count="4" type="stmt"/>
+        <line num="72" count="4" type="stmt"/>
+        <line num="74" count="3" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="92" count="1" type="stmt"/>
+        <line num="95" count="1" type="stmt"/>
+        <line num="96" count="1" type="stmt"/>
+        <line num="102" count="0" type="stmt"/>
+        <line num="103" count="0" type="stmt"/>
+        <line num="116" count="1" type="stmt"/>
+        <line num="118" count="1" type="stmt"/>
+        <line num="121" count="1" type="stmt"/>
+        <line num="122" count="1" type="stmt"/>
+        <line num="124" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="130" count="0" type="stmt"/>
+        <line num="131" count="0" type="stmt"/>
+        <line num="144" count="1" type="stmt"/>
+        <line num="146" count="1" type="stmt"/>
+        <line num="149" count="1" type="stmt"/>
+        <line num="150" count="1" type="stmt"/>
+        <line num="151" count="1" type="stmt"/>
+        <line num="156" count="0" type="stmt"/>
+        <line num="157" count="0" type="stmt"/>
+        <line num="168" count="1" type="stmt"/>
+        <line num="170" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.features.books.infrastructure">
+      <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
+      <file name="service.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\books\infrastructure\service.ts">
+        <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.features.books.ui">
+      <metrics statements="24" coveredstatements="24" conditionals="6" coveredconditionals="3" methods="11" coveredmethods="11"/>
+      <file name="book.component.html" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\books\ui\book.component.html">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="book.component.scss" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\books\ui\book.component.scss">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="book.component.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\books\ui\book.component.ts">
+        <metrics statements="24" coveredstatements="24" conditionals="6" coveredconditionals="3" methods="11" coveredmethods="11"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="51" count="7" type="stmt"/>
+        <line num="52" count="7" type="stmt"/>
+        <line num="53" count="7" type="stmt"/>
+        <line num="56" count="7" type="stmt"/>
+        <line num="67" count="7" type="stmt"/>
+        <line num="71" count="1" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="87" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="88" count="1" type="stmt"/>
+        <line num="89" count="1" type="stmt"/>
+        <line num="95" count="1" type="stmt"/>
+        <line num="102" count="1" type="stmt"/>
+        <line num="103" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="104" count="1" type="stmt"/>
+        <line num="105" count="1" type="stmt"/>
+        <line num="111" count="1" type="stmt"/>
+        <line num="121" count="1" type="stmt"/>
+        <line num="122" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="123" count="1" type="stmt"/>
+        <line num="124" count="1" type="stmt"/>
+        <line num="131" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.features.books.ui.form">
+      <metrics statements="17" coveredstatements="17" conditionals="12" coveredconditionals="11" methods="6" coveredmethods="6"/>
+      <file name="form.component.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\books\ui\form\form.component.ts">
+        <metrics statements="17" coveredstatements="17" conditionals="12" coveredconditionals="11" methods="6" coveredmethods="6"/>
+        <line num="106" count="2" type="stmt"/>
+        <line num="107" count="4" type="stmt"/>
+        <line num="108" count="4" type="stmt"/>
+        <line num="111" count="4" type="stmt"/>
+        <line num="114" count="4" type="stmt"/>
+        <line num="115" count="4" type="stmt"/>
+        <line num="117" count="4" type="stmt"/>
+        <line num="128" count="4" type="stmt"/>
+        <line num="129" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="134" count="4" type="stmt"/>
+        <line num="135" count="4" type="stmt"/>
+        <line num="137" count="4" type="stmt"/>
+        <line num="138" count="4" type="stmt"/>
+        <line num="141" count="4" type="stmt"/>
+        <line num="145" count="1" type="stmt"/>
+        <line num="149" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="150" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.features.products.application">
+      <metrics statements="44" coveredstatements="24" conditionals="20" coveredconditionals="4" methods="29" coveredmethods="22"/>
+      <file name="store.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\products\application\store.ts">
+        <metrics statements="44" coveredstatements="24" conditionals="20" coveredconditionals="4" methods="29" coveredmethods="22"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="35" count="8" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="56" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="67" count="8" type="stmt"/>
+        <line num="70" count="4" type="stmt"/>
+        <line num="72" count="4" type="stmt"/>
+        <line num="74" count="3" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="92" count="1" type="stmt"/>
+        <line num="95" count="1" type="stmt"/>
+        <line num="96" count="1" type="stmt"/>
+        <line num="102" count="0" type="stmt"/>
+        <line num="103" count="0" type="stmt"/>
+        <line num="116" count="1" type="stmt"/>
+        <line num="118" count="1" type="stmt"/>
+        <line num="121" count="1" type="stmt"/>
+        <line num="122" count="1" type="stmt"/>
+        <line num="124" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="130" count="0" type="stmt"/>
+        <line num="131" count="0" type="stmt"/>
+        <line num="144" count="1" type="stmt"/>
+        <line num="146" count="1" type="stmt"/>
+        <line num="149" count="1" type="stmt"/>
+        <line num="150" count="1" type="stmt"/>
+        <line num="151" count="1" type="stmt"/>
+        <line num="156" count="0" type="stmt"/>
+        <line num="157" count="0" type="stmt"/>
+        <line num="168" count="1" type="stmt"/>
+        <line num="170" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.features.products.infrastructure">
+      <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
+      <file name="service.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\products\infrastructure\service.ts">
+        <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.features.products.ui">
+      <metrics statements="24" coveredstatements="24" conditionals="6" coveredconditionals="3" methods="11" coveredmethods="11"/>
+      <file name="product.component.html" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\products\ui\product.component.html">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="product.component.scss" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\products\ui\product.component.scss">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="product.component.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\products\ui\product.component.ts">
+        <metrics statements="24" coveredstatements="24" conditionals="6" coveredconditionals="3" methods="11" coveredmethods="11"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="51" count="7" type="stmt"/>
+        <line num="52" count="7" type="stmt"/>
+        <line num="53" count="7" type="stmt"/>
+        <line num="56" count="7" type="stmt"/>
+        <line num="66" count="7" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
+        <line num="86" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="87" count="1" type="stmt"/>
+        <line num="88" count="1" type="stmt"/>
+        <line num="94" count="1" type="stmt"/>
+        <line num="101" count="1" type="stmt"/>
+        <line num="102" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="103" count="1" type="stmt"/>
+        <line num="104" count="1" type="stmt"/>
+        <line num="110" count="1" type="stmt"/>
+        <line num="120" count="1" type="stmt"/>
+        <line num="121" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="122" count="1" type="stmt"/>
+        <line num="123" count="1" type="stmt"/>
+        <line num="130" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.features.products.ui.form">
+      <metrics statements="17" coveredstatements="17" conditionals="10" coveredconditionals="9" methods="6" coveredmethods="6"/>
+      <file name="form.component.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\products\ui\form\form.component.ts">
+        <metrics statements="17" coveredstatements="17" conditionals="10" coveredconditionals="9" methods="6" coveredmethods="6"/>
+        <line num="98" count="2" type="stmt"/>
+        <line num="99" count="4" type="stmt"/>
+        <line num="100" count="4" type="stmt"/>
+        <line num="103" count="4" type="stmt"/>
+        <line num="106" count="4" type="stmt"/>
+        <line num="107" count="4" type="stmt"/>
+        <line num="109" count="4" type="stmt"/>
+        <line num="118" count="4" type="stmt"/>
+        <line num="119" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="124" count="4" type="stmt"/>
+        <line num="125" count="3" type="stmt"/>
+        <line num="127" count="4" type="stmt"/>
+        <line num="128" count="3" type="stmt"/>
+        <line num="131" count="4" type="stmt"/>
+        <line num="135" count="1" type="stmt"/>
+        <line num="139" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="140" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.features.publishers.application">
+      <metrics statements="44" coveredstatements="24" conditionals="20" coveredconditionals="4" methods="29" coveredmethods="22"/>
+      <file name="store.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\publishers\application\store.ts">
+        <metrics statements="44" coveredstatements="24" conditionals="20" coveredconditionals="4" methods="29" coveredmethods="22"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="35" count="8" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="56" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="67" count="8" type="stmt"/>
+        <line num="70" count="4" type="stmt"/>
+        <line num="72" count="4" type="stmt"/>
+        <line num="74" count="3" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="92" count="1" type="stmt"/>
+        <line num="95" count="1" type="stmt"/>
+        <line num="96" count="1" type="stmt"/>
+        <line num="102" count="0" type="stmt"/>
+        <line num="103" count="0" type="stmt"/>
+        <line num="116" count="1" type="stmt"/>
+        <line num="118" count="1" type="stmt"/>
+        <line num="121" count="1" type="stmt"/>
+        <line num="122" count="1" type="stmt"/>
+        <line num="124" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="130" count="0" type="stmt"/>
+        <line num="131" count="0" type="stmt"/>
+        <line num="144" count="1" type="stmt"/>
+        <line num="146" count="1" type="stmt"/>
+        <line num="149" count="1" type="stmt"/>
+        <line num="150" count="1" type="stmt"/>
+        <line num="151" count="1" type="stmt"/>
+        <line num="156" count="0" type="stmt"/>
+        <line num="157" count="0" type="stmt"/>
+        <line num="168" count="1" type="stmt"/>
+        <line num="170" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.features.publishers.infrastructure">
+      <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
+      <file name="service.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\publishers\infrastructure\service.ts">
+        <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.features.publishers.ui">
+      <metrics statements="24" coveredstatements="24" conditionals="6" coveredconditionals="3" methods="11" coveredmethods="11"/>
+      <file name="publisher.component.html" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\publishers\ui\publisher.component.html">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="publisher.component.scss" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\publishers\ui\publisher.component.scss">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="publisher.component.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\publishers\ui\publisher.component.ts">
+        <metrics statements="24" coveredstatements="24" conditionals="6" coveredconditionals="3" methods="11" coveredmethods="11"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="51" count="7" type="stmt"/>
+        <line num="52" count="7" type="stmt"/>
+        <line num="53" count="7" type="stmt"/>
+        <line num="56" count="7" type="stmt"/>
+        <line num="65" count="7" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="73" count="1" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="84" count="1" type="stmt"/>
+        <line num="85" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="87" count="1" type="stmt"/>
+        <line num="93" count="1" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
+        <line num="101" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="102" count="1" type="stmt"/>
+        <line num="103" count="1" type="stmt"/>
+        <line num="109" count="1" type="stmt"/>
+        <line num="119" count="1" type="stmt"/>
+        <line num="120" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="121" count="1" type="stmt"/>
+        <line num="122" count="1" type="stmt"/>
+        <line num="129" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.features.publishers.ui.form">
+      <metrics statements="17" coveredstatements="17" conditionals="8" coveredconditionals="7" methods="6" coveredmethods="6"/>
+      <file name="form.component.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\features\publishers\ui\form\form.component.ts">
+        <metrics statements="17" coveredstatements="17" conditionals="8" coveredconditionals="7" methods="6" coveredmethods="6"/>
+        <line num="90" count="2" type="stmt"/>
+        <line num="91" count="4" type="stmt"/>
+        <line num="92" count="4" type="stmt"/>
+        <line num="95" count="4" type="stmt"/>
+        <line num="98" count="4" type="stmt"/>
+        <line num="99" count="4" type="stmt"/>
+        <line num="101" count="4" type="stmt"/>
+        <line num="108" count="4" type="stmt"/>
+        <line num="109" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="114" count="4" type="stmt"/>
+        <line num="115" count="2" type="stmt"/>
+        <line num="117" count="4" type="stmt"/>
+        <line num="118" count="2" type="stmt"/>
+        <line num="121" count="4" type="stmt"/>
+        <line num="125" count="1" type="stmt"/>
+        <line num="129" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="130" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.shared.ui.confirm-dialog">
+      <metrics statements="5" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="confirm-dialog.component.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\shared\ui\confirm-dialog\confirm-dialog.component.ts">
+        <metrics statements="5" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="51" count="4" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.shared.util.toast">
+      <metrics statements="18" coveredstatements="1" conditionals="10" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <file name="toast.service.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\app\shared\util\toast\toast.service.ts">
+        <metrics statements="18" coveredstatements="1" conditionals="10" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="9" count="8" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="31" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="35" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="38" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="environments">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="environment.ts" path="G:\WORK\angular-clean-architecture\apps\sandbox\src\environments\environment.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="13" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

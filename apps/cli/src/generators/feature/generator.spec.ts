@@ -1,12 +1,15 @@
 import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing';
-import { Tree, readProjectConfiguration } from '@nx/devkit';
+import { Tree } from '@nx/devkit';
 
 import { featureGenerator } from './generator';
 import { FeatureGeneratorSchema } from './schema';
 
 describe('feature generator', () => {
   let tree: Tree;
-  const options: FeatureGeneratorSchema = { name: 'test' };
+  const options: FeatureGeneratorSchema = {
+    name: 'test',
+    attributes: 'name:string,age:number',
+  };
 
   beforeEach(() => {
     tree = createTreeWithEmptyWorkspace();
@@ -15,16 +18,16 @@ describe('feature generator', () => {
   it('should run successfully', async () => {
     await featureGenerator(tree, options);
     const modelExists = tree.exists(
-      'apps/sandbox/src/app/features/test/domain/model.ts',
+      'apps/sandbox/src/app/features/tests/domain/model.ts',
     );
     const storeExists = tree.exists(
-      'apps/sandbox/src/app/features/test/application/store.ts',
+      'apps/sandbox/src/app/features/tests/application/store.ts',
     );
     const componentExists = tree.exists(
-      'apps/sandbox/src/app/features/test/ui/component.ts',
+      'apps/sandbox/src/app/features/tests/ui/test.component.ts',
     );
     const serviceExists = tree.exists(
-      'apps/sandbox/src/app/features/test/infrastructure/service.ts',
+      'apps/sandbox/src/app/features/tests/infrastructure/service.ts',
     );
 
     expect(modelExists).toBeTruthy();
