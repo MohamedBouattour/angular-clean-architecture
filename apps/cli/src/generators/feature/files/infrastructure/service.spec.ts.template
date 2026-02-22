@@ -4,10 +4,13 @@ import { provideHttpClientTesting, HttpTestingController } from '@angular/common
 import { <%= pascalName %>Service } from './service';
 import { <%= pascalName %> } from '../domain/model';
 import { environment } from '../../../../environments/environment';
+import { NetworkService } from '../../../shared/util/network/network.service';
+import { signal } from '@angular/core';
 
 describe('<%= pascalName %>Service', () => {
   let service: <%= pascalName %>Service;
   let httpMock: HttpTestingController;
+  let networkMock: any;
   const apiUrl = `${environment.apiUrl}/features/<%= name %>`;
 
   const mockItem: <%= pascalName %> = {
@@ -20,9 +23,14 @@ describe('<%= pascalName %>Service', () => {
   } as <%= pascalName %>;
 
   beforeEach(() => {
+    networkMock = {
+      isOnline: signal(true),
+    };
+
     TestBed.configureTestingModule({
       providers: [
         <%= pascalName %>Service,
+        { provide: NetworkService, useValue: networkMock },
         provideHttpClient(),
         provideHttpClientTesting(),
       ],

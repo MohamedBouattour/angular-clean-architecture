@@ -8,15 +8,24 @@ import inquirer from 'inquirer';
 import { FeatureGeneratorSchema } from './schema';
 import { toPascalCase, pluralize } from '../../utils/string-utils';
 
+interface FeatureSchema {
+  version: string;
+  lastUpdated: string;
+  features: Record<string, {
+    name: string;
+    attributes: { name: string; type: string }[];
+  }>;
+}
+
 /**
  * Load or create feature schema for persistence
  */
-function loadFeatureSchema(tree: Tree): any {
+function loadFeatureSchema(tree: Tree): FeatureSchema {
   const schemaPath = 'feature-schema.json';
   if (tree.exists(schemaPath)) {
     const content = tree.read(schemaPath);
     if (content) {
-      return JSON.parse(content.toString());
+      return JSON.parse(content.toString()) as FeatureSchema;
     }
   }
   return {
@@ -29,7 +38,7 @@ function loadFeatureSchema(tree: Tree): any {
 /**
  * Save feature schema
  */
-function saveFeatureSchema(tree: Tree, schema: any): void {
+function saveFeatureSchema(tree: Tree, schema: FeatureSchema): void {
   schema.lastUpdated = new Date().toISOString();
   tree.write('feature-schema.json', JSON.stringify(schema, null, 2));
 }
@@ -46,16 +55,27 @@ function updateAppRoutes(
   const routesPath = 'apps/sandbox/src/app/app.routes.ts';
   if (!tree.exists(routesPath)) return;
 
-  let content = tree.read(routesPath)!.toString();
+  const contentBuffer = tree.read(routesPath);
+  if (!contentBuffer) return;
+  
+  let content = contentBuffer.toString();
+
+  // Handle dashboard specially
+  const routePath = featureName === 'dashboard' ? 'dashboard' : folderName;
 
   // Check if route already exists
-  if (content.includes(`path: '${folderName}'`)) return;
+  if (content.includes(`path: '${routePath}'`)) return;
 
   const newRoute = `  {
-    path: '${folderName}',
+    path: '${routePath}',
     loadComponent: () => import('./features/${folderName}/ui/${featureName}.component').then(m => m.${pascalName}Component),
-    data: { label: '${pascalName}s' }
+    data: { label: '${pascalName}${featureName === 'dashboard' ? '' : 's'}' }
   },`;
+
+  // Update redirect if it's the dashboard
+  if (featureName === 'dashboard') {
+    content = content.replace(/redirectTo: '[^']+'/, "redirectTo: 'dashboard'");
+  }
 
   // Find the appRoutes array
   const routesArrayRegex =
@@ -98,7 +118,7 @@ export async function featureGenerator(
         const feature = schema.features[name];
         // Convert stored attributes back to string format for recursivity or handle manually
         const attributesStr = feature.attributes
-          .map((a: any) => `${a.name}:${a.type}`)
+          .map((a: { name: string; type: string }) => `${a.name}:${a.type}`)
           .join(',');
 
         console.log(`Generating feature: ${name}`);
@@ -136,7 +156,7 @@ export async function featureGenerator(
       featureName = blueprint.name;
 
       if (blueprint.models && Array.isArray(blueprint.models)) {
-        models = blueprint.models.map((m: any) => ({
+        models = (blueprint.models as { name: string; attributes: { name: string; type: string }[] }[]).map((m) => ({
           name: toPascalCase(m.name),
           attributes: m.attributes || [],
         }));

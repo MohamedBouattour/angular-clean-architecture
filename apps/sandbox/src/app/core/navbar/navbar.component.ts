@@ -3,12 +3,15 @@ import {
   inject,
   output,
   ChangeDetectionStrategy,
+  HostListener,
+  signal,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatRippleModule } from '@angular/material/core';
 import { LanguageSelectorComponent } from '../language-selector/language-selector.component';
 import { ThemeSelectorComponent } from '../theme-selector/theme-selector.component';
 import { AuthService } from '../auth/auth.service';
@@ -21,6 +24,7 @@ import { AuthService } from '../auth/auth.service';
     MatIconModule,
     MatButtonModule,
     MatTooltipModule,
+    MatRippleModule,
     LanguageSelectorComponent,
     ThemeSelectorComponent,
   ],
@@ -30,6 +34,12 @@ import { AuthService } from '../auth/auth.service';
 })
 export class NavbarComponent {
   protected readonly authService = inject(AuthService);
+  isScrolled = signal(false);
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled.set(window.scrollY > 20);
+  }
 
   readonly toggleSidenav = output<void>();
 

@@ -7,10 +7,13 @@ import {
 import { PublisherService } from './service';
 import { Publisher } from '../domain/model';
 import { environment } from '../../../../environments/environment';
+import { NetworkService } from '../../../shared/util/network/network.service';
+import { signal } from '@angular/core';
 
 describe('PublisherService', () => {
   let service: PublisherService;
   let httpMock: HttpTestingController;
+  let networkMock: any;
   const apiUrl = `${environment.apiUrl}/features/publishers`;
 
   const mockItem: Publisher = {
@@ -24,9 +27,14 @@ describe('PublisherService', () => {
   } as Publisher;
 
   beforeEach(() => {
+    networkMock = {
+      isOnline: signal(true),
+    };
+
     TestBed.configureTestingModule({
       providers: [
         PublisherService,
+        { provide: NetworkService, useValue: networkMock },
         provideHttpClient(),
         provideHttpClientTesting(),
       ],

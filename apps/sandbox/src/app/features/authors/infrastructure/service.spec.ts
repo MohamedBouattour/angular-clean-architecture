@@ -7,10 +7,13 @@ import {
 import { AuthorService } from './service';
 import { Author } from '../domain/model';
 import { environment } from '../../../../environments/environment';
+import { NetworkService } from '../../../shared/util/network/network.service';
+import { signal } from '@angular/core';
 
 describe('AuthorService', () => {
   let service: AuthorService;
   let httpMock: HttpTestingController;
+  let networkMock: any;
   const apiUrl = `${environment.apiUrl}/features/authors`;
 
   const mockItem: Author = {
@@ -26,9 +29,14 @@ describe('AuthorService', () => {
   } as Author;
 
   beforeEach(() => {
+    networkMock = {
+      isOnline: signal(true),
+    };
+
     TestBed.configureTestingModule({
       providers: [
         AuthorService,
+        { provide: NetworkService, useValue: networkMock },
         provideHttpClient(),
         provideHttpClientTesting(),
       ],

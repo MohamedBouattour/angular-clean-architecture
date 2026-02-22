@@ -1,43 +1,25 @@
-<mat-toolbar
-  color="primary"
-  class="!flex !justify-between !items-center !px-4 !h-16 !bg-gradient-to-r !from-primary-dark !to-primary !text-white !shadow-lg !z-[1000] !relative"
->
-  <div class="flex items-center gap-4">
-    <button
-      mat-icon-button
-      (click)="onToggleSidenav()"
-      aria-label="Toggle sidenav"
-      class="!text-white"
-    >
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span class="font-bold text-xl tracking-wide drop-shadow-sm"
-      >Clean Architecture</span
-    >
-  </div>
+<mat-toolbar class="navbar-container" [class.scrolled]="isScrolled()">
+  <button
+    class="logo-section"
+    (click)="onToggleSidenav()"
+    matRipple
+    aria-label="Toggle Sidenav"
+  >
+    <div class="logo-icon">
+      <mat-icon>architecture</mat-icon>
+    </div>
+    <span class="logo-text">Clean Architecture</span>
+  </button>
 
-  <span class="flex-grow"></span>
-
-  <div class="flex items-center gap-2 md:gap-4">
+  <div class="actions-section">
     @if (authService.isAuthenticated()) {
-      <!-- Authenticated: Show user info and logout -->
       @if (authService.currentUser(); as user) {
-        <div
-          class="flex items-center gap-3 px-3 py-1.5 rounded-full bg-white/15 border border-white/10 hover:bg-white/25 transition-all cursor-default"
-        >
-          <div class="hidden sm:flex flex-col items-end leading-tight">
-            <span
-              class="text-[0.65rem] opacity-90 uppercase font-semibold tracking-wider"
-              >Welcome</span
-            >
-            <span class="text-[0.85rem] font-medium">{{
-              user.name || user.email
-            }}</span>
+        <div class="user-profile" matRipple>
+          <div class="user-info">
+            <span class="label">Account</span>
+            <span class="name">{{ user.name || user.email }}</span>
           </div>
-          <div
-            class="w-9 h-9 rounded-full bg-white text-primary flex items-center justify-center font-bold text-lg shadow-md"
-            [title]="user.email"
-          >
+          <div class="avatar">
             {{ (user.name || user.email).charAt(0).toUpperCase() }}
           </div>
         </div>
@@ -46,34 +28,26 @@
         mat-icon-button
         (click)="onLogout()"
         matTooltip="Logout"
-        class="!text-white/80 hover:!text-white hover:!bg-white/10"
+        class="nav-button logout-btn"
       >
         <mat-icon>logout</mat-icon>
       </button>
     } @else {
-      <!-- Not authenticated: Show login/signup buttons -->
-      <a
-        mat-button
-        routerLink="/login"
-        class="!text-white !flex !items-center !gap-1.5"
-      >
-        <mat-icon class="!text-xl">login</mat-icon>
-        <span class="hidden sm:inline">Login</span>
-      </a>
-      <a
-        mat-raised-button
-        color="accent"
-        routerLink="/signup"
-        class="!bg-white/20 !border !border-white/30 hover:!bg-white/30 !text-white !flex !items-center !gap-1.5 !px-4"
-      >
-        <mat-icon class="!text-xl">person_add</mat-icon>
-        <span class="hidden sm:inline">Sign Up</span>
-      </a>
+      <div class="auth-group">
+        <a mat-button routerLink="/login" class="nav-button login-btn">
+          <mat-icon>login</mat-icon>
+          <span class="hidden sm:inline">Login</span>
+        </a>
+        <a mat-flat-button routerLink="/signup" class="nav-button signup-btn">
+          <mat-icon>person_add</mat-icon>
+          <span class="hidden sm:inline">Sign Up</span>
+        </a>
+      </div>
     }
 
-    <div class="w-px h-6 bg-white/30 mx-1"></div>
+    <div class="divider"></div>
 
-    <div class="flex items-center gap-1">
+    <div class="selectors">
       <app-theme-selector />
       <app-language-selector />
     </div>

@@ -1,30 +1,42 @@
-<mat-nav-list class="!py-2">
-  <div
-    mat-subheader
-    class="!text-gray-500 !dark:text-gray-400 !font-bold !uppercase !text-[0.7rem] !tracking-[0.12rem] !mb-2 !px-4"
+<mat-nav-list class="!py-4 space-y-1">
+  <a
+    mat-list-item
+    routerLink="/dashboard"
+    routerLinkActive="active-link"
+    class="!mx-3 !rounded-xl transition-all duration-200 !h-12 group"
   >
-    Features
-  </div>
+    <mat-icon matListItemIcon class="transition-colors group-hover:text-primary"
+      >home</mat-icon
+    >
+    <span matListItemTitle class="!font-bold !text-sm">Dashboard</span>
+  </a>
 
   @for (feature of features; track feature.path) {
     <a
       mat-list-item
       [routerLink]="['/', feature.path]"
-      routerLinkActive="!bg-primary/10 !border-l-4 !border-primary !text-primary"
-      class="!mx-2 !rounded-lg transition-all duration-200 !h-12 hover:!bg-gray-100 dark:hover:!bg-gray-800 group"
+      routerLinkActive="active-link"
+      class="!mx-3 !rounded-xl transition-all duration-200 !h-12 group"
     >
       <mat-icon
         matListItemIcon
-        class="!text-gray-400 group-hover:!text-gray-700 dark:group-hover:!text-gray-200 transition-colors"
-        >extension</mat-icon
+        class="transition-colors group-hover:text-primary"
+        >layers</mat-icon
       >
-      <span matListItemTitle class="!font-medium">{{ feature.label }}</span>
+      <span matListItemTitle class="!font-bold !text-sm">{{
+        feature.label
+      }}</span>
     </a>
   }
 
   @if (features.length === 0) {
-    <div class="px-6 py-4 text-gray-400 italic text-sm text-center">
-      No features generated yet.
+    <div
+      class="px-6 py-8 text-center flex flex-col items-center gap-2 opacity-50"
+    >
+      <mat-icon class="!text-3xl text-gray-300">hourglass_empty</mat-icon>
+      <span class="text-xs font-semibold uppercase tracking-wider italic"
+        >No features found</span
+      >
     </div>
   }
 </mat-nav-list>

@@ -3,12 +3,16 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Author } from '../domain/model';
 import { environment } from '../../../../environments/environment';
+import { NetworkService } from '../../../shared/util/network/network.service';
+import { Cachable } from '../../../shared/util/cache/cachable.decorator';
 
 @Injectable({ providedIn: 'root' })
 export class AuthorService {
   private readonly http = inject(HttpClient);
+  protected readonly networkService = inject(NetworkService);
   private readonly apiUrl = `${environment.apiUrl}/features/authors`;
 
+  @Cachable('authors_getAll')
   getAll(): Observable<Author[]> {
     return this.http.get<Author[]>(this.apiUrl);
   }

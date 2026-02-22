@@ -1,6 +1,6 @@
 import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { DatePipe, DecimalPipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatButtonModule } from '@angular/material/button';
@@ -30,7 +30,6 @@ import { ConfirmDialogComponent } from '../../../shared/ui/confirm-dialog/confir
   imports: [
     FormsModule,
     DatePipe,
-    DecimalPipe,
     MatTableModule,
     MatSortModule,
     MatButtonModule,

@@ -3,12 +3,16 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Publisher } from '../domain/model';
 import { environment } from '../../../../environments/environment';
+import { NetworkService } from '../../../shared/util/network/network.service';
+import { Cachable } from '../../../shared/util/cache/cachable.decorator';
 
 @Injectable({ providedIn: 'root' })
 export class PublisherService {
   private readonly http = inject(HttpClient);
+  protected readonly networkService = inject(NetworkService);
   private readonly apiUrl = `${environment.apiUrl}/features/publishers`;
 
+  @Cachable('publishers_getAll')
   getAll(): Observable<Publisher[]> {
     return this.http.get<Publisher[]>(this.apiUrl);
   }

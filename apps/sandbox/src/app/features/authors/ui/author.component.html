@@ -1,175 +1,243 @@
-<div class="p-6 max-w-7xl mx-auto">
+<div class="p-6 max-w-7xl mx-auto space-y-8">
   <!-- Use @let for computed template values -->
   @let isLoading = store.loading();
   @let hasError = store.error();
   @let items = store.filteredAndSortedItems();
   @let isEmpty = items.length === 0;
 
-  <!-- Header -->
+  <!-- Header Section -->
   <div
-    class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 pb-4 border-b border-gray-200 dark:border-gray-700 gap-4"
+    class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6"
   >
-    <h1
-      class="m-0 text-4xl font-bold tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
-    >
-      Author Management
-    </h1>
+    <div class="space-y-1">
+      <h1
+        class="m-0 text-4xl font-black tracking-tight text-gray-900 dark:text-white"
+      >
+        Author <span class="text-primary">Management</span>
+      </h1>
+      <p class="text-gray-500 dark:text-gray-400 font-medium">
+        Manage your author records, track changes and organize data efficiently.
+      </p>
+    </div>
+
     <button
       mat-raised-button
       color="primary"
-      class="h-12 px-6 font-semibold rounded-full shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 w-full md:w-auto"
+      class="!h-12 !px-8 !font-bold !rounded-2xl !shadow-xl !shadow-primary/20 hover:!-translate-y-1 transition-all duration-300 w-full md:w-auto"
       (click)="openCreateDialog()"
       [disabled]="isLoading"
     >
-      <mat-icon class="mr-2">add</mat-icon>
+      <mat-icon class="mr-2">add_circle</mat-icon>
       Create Author
     </button>
   </div>
 
-  <!-- Filter -->
-  <mat-form-field class="w-full mb-6">
-    <mat-label>Filter</mat-label>
-    <input
-      matInput
-      [ngModel]="store.filter()"
-      (ngModelChange)="onFilterChange($event)"
-      placeholder="Search..."
-    />
-    <mat-icon matSuffix>search</mat-icon>
-  </mat-form-field>
+  <!-- Search & Filter Card -->
+  <div
+    class="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-3xl p-2 shadow-sm"
+  >
+    <mat-form-field
+      class="w-full !mb-0"
+      appearance="fill"
+      subscriptSizing="dynamic"
+    >
+      <mat-icon matPrefix class="mr-2 text-gray-400">search</mat-icon>
+      <mat-label>Search authors...</mat-label>
+      <input
+        matInput
+        [ngModel]="store.filter()"
+        (ngModelChange)="onFilterChange($event)"
+        placeholder="Type to filter..."
+      />
+      @if (store.filter()) {
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="onFilterChange('')"
+          aria-label="Clear"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      }
+    </mat-form-field>
+  </div>
 
-  <!-- Loading Spinner -->
+  <!-- Status Feedback -->
   @if (isLoading) {
-    <div class="flex justify-center items-center py-12">
-      <mat-spinner diameter="50"></mat-spinner>
+    <div class="flex flex-col justify-center items-center py-20 gap-4">
+      <mat-spinner diameter="40" strokeWidth="4"></mat-spinner>
+      <span class="text-gray-400 font-medium animate-pulse"
+        >Loading data...</span
+      >
     </div>
   }
 
-  <!-- Error Message -->
   @if (hasError) {
     <div
-      class="flex items-center gap-3 p-4 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 rounded-lg mb-6 border border-red-100 dark:border-red-900/30"
+      class="flex items-center gap-4 p-5 rounded-2xl border bg-red-50/50 dark:bg-red-500/10 border-red-100 dark:border-red-500/20 text-red-600 dark:text-red-400"
     >
-      <mat-icon>error</mat-icon>
-      <span class="font-medium">{{ hasError }}</span>
+      <div
+        class="w-10 h-10 rounded-full bg-red-100 dark:bg-red-500/20 flex items-center justify-center"
+      >
+        <mat-icon>error_outline</mat-icon>
+      </div>
+      <div>
+        <h4 class="font-bold m-0">Action Required</h4>
+        <p class="text-sm opacity-80">{{ hasError }}</p>
+      </div>
     </div>
   }
 
-  <!-- Data Table -->
+  <!-- Data Table Section -->
   @if (!isLoading && !hasError) {
     <div
-      class="overflow-x-auto rounded-xl shadow-sm border border-gray-200 dark:border-gray-700"
+      class="bg-white dark:bg-white/5 rounded-3xl overflow-hidden border border-gray-100 dark:border-white/10 shadow-sm transition-all duration-300"
     >
-      <table
-        mat-table
-        [dataSource]="items"
-        class="w-full bg-white dark:bg-gray-800"
-      >
+      <table mat-table [dataSource]="items" class="w-full !bg-transparent">
         <!-- Name Column -->
         <ng-container matColumnDef="name">
-          <th
-            mat-header-cell
-            *matHeaderCellDef
-            class="bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300 font-semibold p-4"
-          >
-            Name
+          <th mat-header-cell *matHeaderCellDef class="!py-5 !px-6">
+            <div
+              class="text-[0.65rem] font-bold uppercase tracking-[0.15em] text-gray-400 dark:text-gray-500"
+            >
+              name
+            </div>
           </th>
           <td
             mat-cell
             *matCellDef="let item"
-            class="p-4 text-gray-600 dark:text-gray-400"
+            class="!py-4 !px-6 border-b border-gray-50 dark:border-white/5"
           >
-            {{ item.name }}
+            <span
+              class="text-sm font-medium text-gray-700 dark:text-gray-300"
+              >{{ item.name }}</span
+            >
           </td>
         </ng-container>
 
         <!-- Bio Column -->
         <ng-container matColumnDef="bio">
-          <th
-            mat-header-cell
-            *matHeaderCellDef
-            class="bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300 font-semibold p-4"
-          >
-            Bio
+          <th mat-header-cell *matHeaderCellDef class="!py-5 !px-6">
+            <div
+              class="text-[0.65rem] font-bold uppercase tracking-[0.15em] text-gray-400 dark:text-gray-500"
+            >
+              bio
+            </div>
           </th>
           <td
             mat-cell
             *matCellDef="let item"
-            class="p-4 text-gray-600 dark:text-gray-400"
+            class="!py-4 !px-6 border-b border-gray-50 dark:border-white/5"
           >
-            {{ item.bio }}
+            <span
+              class="text-sm font-medium text-gray-700 dark:text-gray-300"
+              >{{ item.bio }}</span
+            >
           </td>
         </ng-container>
 
         <!-- BirthDate Column -->
         <ng-container matColumnDef="birthDate">
-          <th
-            mat-header-cell
-            *matHeaderCellDef
-            class="bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300 font-semibold p-4"
-          >
-            BirthDate
+          <th mat-header-cell *matHeaderCellDef class="!py-5 !px-6">
+            <div
+              class="text-[0.65rem] font-bold uppercase tracking-[0.15em] text-gray-400 dark:text-gray-500"
+            >
+              birthDate
+            </div>
           </th>
           <td
             mat-cell
             *matCellDef="let item"
-            class="p-4 text-gray-600 dark:text-gray-400"
+            class="!py-4 !px-6 border-b border-gray-50 dark:border-white/5"
           >
-            {{ item.birthDate | date: 'short' }}
+            <div class="flex flex-col">
+              <span
+                class="text-sm font-medium text-gray-900 dark:text-gray-100"
+                >{{ item.birthDate | date: 'mediumDate' }}</span
+              >
+              <span class="text-[0.65rem] text-gray-400">{{
+                item.birthDate | date: 'shortTime'
+              }}</span>
+            </div>
           </td>
         </ng-container>
 
         <!-- Actions Column -->
         <ng-container matColumnDef="actions">
-          <th
-            mat-header-cell
-            *matHeaderCellDef
-            class="bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300 font-semibold p-4"
-          >
-            Actions
+          <th mat-header-cell *matHeaderCellDef class="!py-5 !px-6">
+            <div
+              class="text-[0.65rem] font-bold uppercase tracking-[0.15em] text-gray-400 dark:text-gray-500 text-right"
+            >
+              Actions
+            </div>
           </th>
           <td
             mat-cell
             *matCellDef="let item"
-            class="p-4 text-gray-600 dark:text-gray-400"
+            class="!py-4 !px-6 border-b border-gray-50 dark:border-white/5 text-right"
           >
-            <button
-              mat-icon-button
-              color="primary"
-              (click)="openEditDialog(item)"
-              matTooltip="Edit"
-            >
-              <mat-icon>edit</mat-icon>
-            </button>
-            <button
-              mat-icon-button
-              color="warn"
-              (click)="confirmDelete(item)"
-              matTooltip="Delete"
-            >
-              <mat-icon>delete</mat-icon>
-            </button>
+            <div class="flex justify-end gap-1">
+              <button
+                mat-icon-button
+                class="hover:!bg-primary/10 hover:!text-primary transition-colors"
+                (click)="openEditDialog(item)"
+                matTooltip="Edit entry"
+              >
+                <mat-icon class="!text-[20px]">edit_note</mat-icon>
+              </button>
+              <button
+                mat-icon-button
+                class="hover:!bg-red-50 dark:hover:!bg-red-500/10 hover:!text-red-500 transition-colors"
+                (click)="confirmDelete(item)"
+                matTooltip="Remove forever"
+              >
+                <mat-icon class="!text-[20px]">delete_outline</mat-icon>
+              </button>
+            </div>
           </td>
         </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr
+          mat-header-row
+          *matHeaderRowDef="displayedColumns"
+          class="!bg-gray-50/50 dark:!bg-white/[0.02]"
+        ></tr>
         <tr
           mat-row
           *matRowDef="let row; columns: displayedColumns"
-          class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors"
+          class="group hover:!bg-gray-50/80 dark:hover:!bg-white/[0.03] transition-all cursor-pointer"
         ></tr>
 
-        <!-- No Data Row -->
+        <!-- No Data State -->
         @if (isEmpty) {
           <tr class="mat-row">
             <td class="mat-cell p-0" [attr.colspan]="displayedColumns.length">
               <div
-                class="flex flex-col items-center justify-center py-20 gap-3 text-gray-400"
+                class="flex flex-col items-center justify-center py-24 gap-4"
               >
-                <mat-icon class="text-6xl h-16 w-16 mb-2 opacity-20"
-                  >inbox</mat-icon
+                <div
+                  class="w-20 h-20 rounded-full bg-gray-50 dark:bg-white/5 flex items-center justify-center"
                 >
-                <p class="text-lg font-medium italic">No authors found</p>
+                  <mat-icon class="text-4xl text-gray-300 dark:text-gray-600"
+                    >inventory_2</mat-icon
+                  >
+                </div>
+                <div class="text-center">
+                  <h3 class="font-bold text-gray-900 dark:text-white m-0">
+                    No records found
+                  </h3>
+                  <p class="text-sm text-gray-500 dark:text-gray-400 italic">
+                    Try adjusting your filters or create a new author.
+                  </p>
+                </div>
+                <button
+                  mat-stroked-button
+                  color="primary"
+                  (click)="onFilterChange('')"
+                  class="!rounded-full mt-2"
+                >
+                  Clear All Filters
+                </button>
               </div>
             </td>
           </tr>

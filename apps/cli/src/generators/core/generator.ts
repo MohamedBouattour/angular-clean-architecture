@@ -20,6 +20,7 @@ export async function coreGenerator(tree: Tree, options: CoreGeneratorSchema) {
       'language-selector',
       'translate',
       'auth',
+      'offline-indicator',
     ];
     console.log(`\n🚀 Generating ALL core assets: ${coreTypes.join(', ')}...`);
 
@@ -42,7 +43,8 @@ export async function coreGenerator(tree: Tree, options: CoreGeneratorSchema) {
     options.type === 'language-selector' ||
     options.type === 'theme-selector' ||
     options.type === 'menu' ||
-    options.type === 'navbar'
+    options.type === 'navbar' ||
+    options.type === 'offline-indicator'
       ? joinPathFragments('apps/sandbox/src/app/core', options.type)
       : joinPathFragments(
           'apps/sandbox/src/app/core',

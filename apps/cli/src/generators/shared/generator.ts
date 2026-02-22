@@ -27,8 +27,11 @@ export async function sharedGenerator(
     }
 
     // Generate essential utility services
-    console.log('\n🚀 Generating essential utility services: toast...');
-    await sharedGenerator(tree, { ...options, type: 'util', name: 'toast' });
+    const commonUtils = ['toast', 'network', 'cache'];
+    console.log(`\n🚀 Generating essential utility services: ${commonUtils.join(', ')}...`);
+    for (const name of commonUtils) {
+      await sharedGenerator(tree, { ...options, type: 'util', name });
+    }
 
     return;
   }
@@ -48,7 +51,7 @@ export async function sharedGenerator(
 
   generateFiles(
     tree,
-    joinPathFragments(__dirname, 'files', options.type),
+    joinPathFragments(__dirname, 'files', options.type, options.name!),
     targetPath,
     {
       ...options,

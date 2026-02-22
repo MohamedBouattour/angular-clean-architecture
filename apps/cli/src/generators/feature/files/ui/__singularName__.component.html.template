@@ -1,73 +1,271 @@
-<div class="p-6 max-w-7xl mx-auto">
+<% if (singularName === 'dashboard') { %>
+<div class="dashboard-container">
+  <!-- Hero Section -->
+  <header class="dashboard-hero">
+    <div class="hero-content">
+      <h1 class="welcome-text">
+        Welcome back, <span class="highlight">Admin</span>
+      </h1>
+      <p class="hero-subtitle">
+        Here's what's happening with your projects today.
+      </p>
+    </div>
+    <div class="hero-actions">
+      <button mat-flat-button color="primary" class="premium-btn">
+        <mat-icon>add</mat-icon>
+        New Project
+      </button>
+    </div>
+  </header>
+
+  <!-- Stats Grid -->
+  <div class="stats-grid">
+    <div class="stat-card glass">
+      <div class="stat-icon pulse-blue">
+        <mat-icon>trending_up</mat-icon>
+      </div>
+      <div class="stat-info">
+        <span class="stat-label">Total Revenue</span>
+        <h2 class="stat-value">$128,430</h2>
+        <span class="stat-trend positive">
+          <mat-icon>arrow_upward</mat-icon> +12.5%
+        </span>
+      </div>
+      <div class="stat-chart">
+        <svg viewBox="0 0 100 40" class="mini-chart">
+          <path d="M0 35 Q 25 35 40 20 T 80 10 T 100 5" fill="none" stroke="var(--color-primary)" stroke-width="2" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="stat-card glass">
+      <div class="stat-icon pulse-purple">
+        <mat-icon>group</mat-icon>
+      </div>
+      <div class="stat-info">
+        <span class="stat-label">Active Users</span>
+        <h2 class="stat-value">12,843</h2>
+        <span class="stat-trend positive">
+          <mat-icon>arrow_upward</mat-icon> +5.2%
+        </span>
+      </div>
+      <div class="stat-chart">
+        <svg viewBox="0 0 100 40" class="mini-chart">
+          <path d="M0 30 Q 20 20 40 25 T 70 15 T 100 10" fill="none" stroke="#a855f7" stroke-width="2" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="stat-card glass">
+      <div class="stat-icon pulse-orange">
+        <mat-icon>assignment_turned_in</mat-icon>
+      </div>
+      <div class="stat-info">
+        <span class="stat-label">Tasks Done</span>
+        <h2 class="stat-value">856</h2>
+        <span class="stat-trend positive">
+          <mat-icon>arrow_upward</mat-icon> +8.1%
+        </span>
+      </div>
+      <div class="stat-chart">
+        <svg viewBox="0 0 100 40" class="mini-chart">
+          <path d="M0 38 Q 30 35 50 15 T 80 20 T 100 25" fill="none" stroke="#f97316" stroke-width="2" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="stat-card glass">
+      <div class="stat-icon pulse-green">
+        <mat-icon>speed</mat-icon>
+      </div>
+      <div class="stat-info">
+        <span class="stat-label">Avg. Performance</span>
+        <h2 class="stat-value">98.2%</h2>
+        <span class="stat-trend neutral">
+          <mat-icon>remove</mat-icon> 0%
+        </span>
+      </div>
+      <div class="stat-chart">
+        <svg viewBox="0 0 100 40" class="mini-chart">
+          <path d="M0 10 Q 40 10 50 12 T 90 10 T 100 10" fill="none" stroke="#22c55e" stroke-width="2" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Areas -->
+  <div class="dashboard-content-grid">
+    <!-- Recent Activity Section -->
+    <section class="content-panel glass">
+      <div class="panel-header">
+        <h3 class="panel-title">Recent Activity</h3>
+        <button mat-button class="view-all-btn">View All</button>
+      </div>
+      <div class="activity-list">
+        <div class="activity-item">
+          <div class="user-avatar bg-blue-100 text-blue-600">JD</div>
+          <div class="item-details">
+            <p class="item-text"><strong>John Doe</strong> updated the <em>Project X</em> documentation.</p>
+            <span class="item-time">2 minutes ago</span>
+          </div>
+        </div>
+        <div class="activity-item">
+          <div class="user-avatar bg-purple-100 text-purple-600">AS</div>
+          <div class="item-details">
+            <p class="item-text"><strong>Alice Smith</strong> created a new <em>Task Flow</em>.</p>
+            <span class="item-time">45 minutes ago</span>
+          </div>
+        </div>
+        <div class="activity-item">
+          <div class="user-avatar bg-orange-100 text-orange-600">MK</div>
+          <div class="item-details">
+            <p class="item-text"><strong>Mike King</strong> deleted 2 outdated components.</p>
+            <span class="item-time">2 hours ago</span>
+          </div>
+        </div>
+        <div class="activity-item">
+          <div class="user-avatar bg-green-100 text-green-600">LR</div>
+          <div class="item-details">
+            <p class="item-text"><strong>Lisa Ray</strong> completed the monthly report.</p>
+            <span class="item-time">5 hours ago</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Actions / Features Section -->
+    <section class="content-panel glass">
+      <div class="panel-header">
+        <h3 class="panel-title">Application Status</h3>
+      </div>
+      <div class="status-content">
+        <div class="status-summary">
+          <div class="progress-ring">
+            <svg viewBox="0 0 36 36" class="circular-chart">
+              <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="circle" stroke-dasharray="75, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <text x="18" y="20.35" class="percentage">75%</text>
+            </svg>
+          </div>
+          <div class="summary-text">
+            <h4>System Integrity</h4>
+            <p>Overall system health is exceptionally good. All services are running optimally.</p>
+          </div>
+        </div>
+        <div class="quick-links">
+          <button mat-stroked-button class="action-btn">
+            <mat-icon>settings</mat-icon> System Settings
+          </button>
+          <button mat-stroked-button class="action-btn">
+            <mat-icon>security</mat-icon> Security Audit
+          </button>
+          <button mat-stroked-button class="action-btn">
+            <mat-icon>analytics</mat-icon> Deep Analytics
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+<% } else { %>
+<div class="p-6 max-w-7xl mx-auto space-y-8">
   <!-- Use @let for computed template values -->
   @let isLoading = store.loading();
   @let hasError = store.error();
   @let items = store.filteredAndSortedItems();
   @let isEmpty = items.length === 0;
   
-  <!-- Header -->
-  <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 pb-4 border-b border-gray-200 dark:border-gray-700 gap-4">
-    <h1 class="m-0 text-4xl font-bold tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-      <%= pascalName %> Management
-    </h1>
+  <!-- Header Section -->
+  <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+    <div class="space-y-1">
+      <h1 class="m-0 text-4xl font-black tracking-tight text-gray-900 dark:text-white">
+        <%= pascalName %> <span class="text-primary">Management</span>
+      </h1>
+      <p class="text-gray-500 dark:text-gray-400 font-medium">
+        Manage your <%= singularName %> records, track changes and organize data efficiently.
+      </p>
+    </div>
+    
     <button 
       mat-raised-button 
       color="primary" 
-      class="h-12 px-6 font-semibold rounded-full shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 w-full md:w-auto"
+      class="!h-12 !px-8 !font-bold !rounded-2xl !shadow-xl !shadow-primary/20 hover:!-translate-y-1 transition-all duration-300 w-full md:w-auto"
       (click)="openCreateDialog()"
       [disabled]="isLoading">
-      <mat-icon class="mr-2">add</mat-icon>
+      <mat-icon class="mr-2">add_circle</mat-icon>
       Create <%= pascalName %>
     </button>
   </div>
   
-  <!-- Filter -->
-  <mat-form-field class="w-full mb-6">
-    <mat-label>Filter</mat-label>
-    <input 
-      matInput 
-      [ngModel]="store.filter()"
-      (ngModelChange)="onFilterChange($event)"
-      placeholder="Search..." />
-    <mat-icon matSuffix>search</mat-icon>
-  </mat-form-field>
+  <!-- Search & Filter Card -->
+  <div class="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-3xl p-2 shadow-sm">
+    <mat-form-field class="w-full !mb-0" appearance="fill" subscriptSizing="dynamic">
+      <mat-icon matPrefix class="mr-2 text-gray-400">search</mat-icon>
+      <mat-label>Search <%= singularName %>s...</mat-label>
+      <input 
+        matInput 
+        [ngModel]="store.filter()"
+        (ngModelChange)="onFilterChange($event)"
+        placeholder="Type to filter..." />
+      @if (store.filter()) {
+        <button mat-icon-button matSuffix (click)="onFilterChange('')" aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+      }
+    </mat-form-field>
+  </div>
   
-  <!-- Loading Spinner -->
+  <!-- Status Feedback -->
   @if (isLoading) {
-    <div class="flex justify-center items-center py-12">
-      <mat-spinner diameter="50"></mat-spinner>
+    <div class="flex flex-col justify-center items-center py-20 gap-4">
+      <mat-spinner diameter="40" strokeWidth="4"></mat-spinner>
+      <span class="text-gray-400 font-medium animate-pulse">Loading data...</span>
     </div>
   }
   
-  <!-- Error Message -->
   @if (hasError) {
-    <div class="flex items-center gap-3 p-4 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 rounded-lg mb-6 border border-red-100 dark:border-red-900/30">
-      <mat-icon>error</mat-icon>
-      <span class="font-medium">{{ hasError }}</span>
+    <div class="flex items-center gap-4 p-5 rounded-2xl border bg-red-50/50 dark:bg-red-500/10 border-red-100 dark:border-red-500/20 text-red-600 dark:text-red-400">
+      <div class="w-10 h-10 rounded-full bg-red-100 dark:bg-red-500/20 flex items-center justify-center">
+        <mat-icon>error_outline</mat-icon>
+      </div>
+      <div>
+        <h4 class="font-bold m-0">Action Required</h4>
+        <p class="text-sm opacity-80">{{ hasError }}</p>
+      </div>
     </div>
   }
   
-  <!-- Data Table -->
+  <!-- Data Table Section -->
   @if (!isLoading && !hasError) {
-    <div class="overflow-x-auto rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
-      <table mat-table [dataSource]="items" class="w-full bg-white dark:bg-gray-800">
+    <div class="bg-white dark:bg-white/5 rounded-3xl overflow-hidden border border-gray-100 dark:border-white/10 shadow-sm transition-all duration-300">
+      <table mat-table [dataSource]="items" class="w-full !bg-transparent">
         <% attributes.forEach(function(attr) { %>
         <!-- <%= attr.name.charAt(0).toUpperCase() + attr.name.slice(1) %> Column -->
         <ng-container matColumnDef="<%= attr.name %>">
-          <th mat-header-cell *matHeaderCellDef class="bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300 font-semibold p-4">
-            <%= attr.name.charAt(0).toUpperCase() + attr.name.slice(1) %>
+          <th mat-header-cell *matHeaderCellDef class="!py-5 !px-6"> 
+            <div class="text-[0.65rem] font-bold uppercase tracking-[0.15em] text-gray-400 dark:text-gray-500">
+              <%= attr.name %>
+            </div>
           </th>
-          <td mat-cell *matCellDef="let item" class="p-4 text-gray-600 dark:text-gray-400">
+          <td mat-cell *matCellDef="let item" class="!py-4 !px-6 border-b border-gray-50 dark:border-white/5">
             <% if (attr.type === 'boolean') { %>
-            <mat-icon [class.text-green-500]="item.<%= attr.name %>" [class.text-gray-300]="!item.<%= attr.name %>">
-              {{ item.<%= attr.name %> ? 'check_circle' : 'cancel' }}
-            </mat-icon>
+            <div class="flex items-center">
+              <span class="w-2 h-2 rounded-full mr-2" [class.bg-green-500]="item.<%= attr.name %>" [class.bg-gray-300]="!item.<%= attr.name %>"></span>
+              <span class="text-sm font-semibold" [class.text-green-600]="item.<%= attr.name %>" [class.text-gray-400]="!item.<%= attr.name %>">
+                {{ item.<%= attr.name %> ? 'Active' : 'Inactive' }}
+              </span>
+            </div>
             <% } else if (attr.type === 'number') { %>
-            {{ item.<%= attr.name %> | number }}
+            <span class="font-mono font-bold text-gray-900 dark:text-gray-100 tabular-nums bg-gray-100 dark:bg-white/10 px-2 py-1 rounded-md text-sm">
+              {{ item.<%= attr.name %> | number }}
+            </span>
             <% } else if (attr.type === 'Date') { %>
-            {{ item.<%= attr.name %> | date:'short' }}
+            <div class="flex flex-col">
+              <span class="text-sm font-medium text-gray-900 dark:text-gray-100">{{ item.<%= attr.name %> | date:'mediumDate' }}</span>
+              <span class="text-[0.65rem] text-gray-400">{{ item.<%= attr.name %> | date:'shortTime' }}</span>
+            </div>
             <% } else { %>
-            {{ item.<%= attr.name %> }}
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ item.<%= attr.name %> }}</span>
             <% } %>
           </td>
         </ng-container>
@@ -75,35 +273,49 @@
         
         <!-- Actions Column -->
         <ng-container matColumnDef="actions">
-          <th mat-header-cell *matHeaderCellDef class="bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300 font-semibold p-4">Actions</th>
-          <td mat-cell *matCellDef="let item" class="p-4 text-gray-600 dark:text-gray-400">
-            <button 
-              mat-icon-button 
-              color="primary"
-              (click)="openEditDialog(item)"
-              matTooltip="Edit">
-              <mat-icon>edit</mat-icon>
-            </button>
-            <button 
-              mat-icon-button 
-              color="warn"
-              (click)="confirmDelete(item)"
-              matTooltip="Delete">
-              <mat-icon>delete</mat-icon>
-            </button>
+          <th mat-header-cell *matHeaderCellDef class="!py-5 !px-6">
+             <div class="text-[0.65rem] font-bold uppercase tracking-[0.15em] text-gray-400 dark:text-gray-500 text-right">
+              Actions
+            </div>
+          </th>
+          <td mat-cell *matCellDef="let item" class="!py-4 !px-6 border-b border-gray-50 dark:border-white/5 text-right">
+            <div class="flex justify-end gap-1">
+              <button 
+                mat-icon-button 
+                class="hover:!bg-primary/10 hover:!text-primary transition-colors"
+                (click)="openEditDialog(item)"
+                matTooltip="Edit entry">
+                <mat-icon class="!text-[20px]">edit_note</mat-icon>
+              </button>
+              <button 
+                mat-icon-button 
+                class="hover:!bg-red-50 dark:hover:!bg-red-500/10 hover:!text-red-500 transition-colors"
+                (click)="confirmDelete(item)"
+                matTooltip="Remove forever">
+                <mat-icon class="!text-[20px]">delete_outline</mat-icon>
+              </button>
+            </div>
           </td>
         </ng-container>
         
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors"></tr>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns" class="!bg-gray-50/50 dark:!bg-white/[0.02]"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="group hover:!bg-gray-50/80 dark:hover:!bg-white/[0.03] transition-all cursor-pointer"></tr>
         
-        <!-- No Data Row -->
+        <!-- No Data State -->
         @if (isEmpty) {
           <tr class="mat-row">
             <td class="mat-cell p-0" [attr.colspan]="displayedColumns.length">
-              <div class="flex flex-col items-center justify-center py-20 gap-3 text-gray-400">
-                <mat-icon class="text-6xl h-16 w-16 mb-2 opacity-20">inbox</mat-icon>
-                <p class="text-lg font-medium italic">No <%= singularName %>s found</p>
+              <div class="flex flex-col items-center justify-center py-24 gap-4">
+                <div class="w-20 h-20 rounded-full bg-gray-50 dark:bg-white/5 flex items-center justify-center">
+                  <mat-icon class="text-4xl text-gray-300 dark:text-gray-600">inventory_2</mat-icon>
+                </div>
+                <div class="text-center">
+                  <h3 class="font-bold text-gray-900 dark:text-white m-0">No records found</h3>
+                  <p class="text-sm text-gray-500 dark:text-gray-400 italic">Try adjusting your filters or create a new <%= singularName %>.</p>
+                </div>
+                <button mat-stroked-button color="primary" (click)="onFilterChange('')" class="!rounded-full mt-2">
+                  Clear All Filters
+                </button>
               </div>
             </td>
           </tr>
@@ -112,3 +324,4 @@
     </div>
   }
 </div>
+<% } %>

@@ -1,1 +1,188 @@
-/* Empty as styles are now handled by Tailwind CSS in the template */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+  padding: 0 1.5rem;
+  background: rgba(var(--color-bg-rgb), 0.75);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid rgba(var(--color-border-rgb), 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.scrolled {
+    height: 64px;
+    background: rgba(var(--color-bg-rgb), 0.85);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  color: inherit;
+  text-align: left;
+
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(
+      135deg,
+      var(--color-primary),
+      var(--color-primary-dark)
+    );
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 8px 16px -4px rgba(var(--color-primary-rgb), 0.4);
+    transition: transform 0.3s ease;
+
+    mat-icon {
+      font-size: 24px;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &:hover .logo-icon {
+    transform: rotate(-3deg) scale(1.05);
+  }
+
+  .logo-text {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    background: linear-gradient(
+      to right,
+      var(--color-text),
+      var(--color-text-secondary)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: none;
+
+    @media (min-width: 640px) {
+      display: block;
+    }
+  }
+}
+
+.actions-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  .auth-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 4px 4px 4px 12px;
+    background: rgba(var(--color-bg-subtle-rgb), 0.5);
+    border: 1px solid rgba(var(--color-border-rgb), 0.5);
+    border-radius: 99px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(var(--color-bg-hover-rgb), 0.8);
+      border-color: var(--color-primary);
+    }
+
+    .user-info {
+      display: none;
+      flex-direction: column;
+      text-align: right;
+
+      @media (min-width: 768px) {
+        display: flex;
+      }
+
+      .label {
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--color-text-muted);
+        letter-spacing: 0.05em;
+      }
+
+      .name {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--color-text);
+      }
+    }
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      box-shadow: 0 4px 10px rgba(var(--color-primary-rgb), 0.3);
+    }
+  }
+
+  .divider {
+    width: 1px;
+    height: 24px;
+    background: rgba(var(--color-border-rgb), 0.5);
+    margin: 0 4px;
+  }
+
+  .selectors {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+}
+
+.nav-button {
+  &.login-btn {
+    color: var(--color-text-secondary);
+    font-weight: 600;
+
+    &:hover {
+      color: var(--color-text);
+      background: rgba(var(--color-bg-hover-rgb), 0.5);
+    }
+  }
+
+  &.signup-btn {
+    background: var(--color-primary);
+    color: white;
+    font-weight: 700;
+    padding: 0 20px !important;
+    height: 40px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 20px -6px rgba(var(--color-primary-rgb), 0.5);
+    transition: all 0.3s ease !important;
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px -6px rgba(var(--color-primary-rgb), 0.6);
+    }
+  }
+}

@@ -1,38 +1,47 @@
+// Theme variables (light/dark) - must come first (SCSS requires @use before any other rules)
+@use './styles/theme' as *;
+
 // Tailwind CSS v4
 @import "tailwindcss";
-
-// Theme variables (light/dark) - must come first
-@use './styles/theme' as *;
 
 // Material Design
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
 
-// Material Icons
+// Material Icons + Google Font
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 // Global Resets
 html,
 body {
   height: 100%;
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Inter', Roboto, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 // Apply theme colors to body
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
+  overflow-x: hidden;
 }
 
-// Global Material Overrides for Dark Mode integration
-.dark {
-  // Dialog theming
+// =============================================
+// GLOBAL MATERIAL DARK MODE OVERRIDES
+// =============================================
+[data-theme="dark"] {
+
+  // --- Dialog ---
   .mat-mdc-dialog-container {
     --mdc-dialog-container-color: var(--color-bg-card);
   }
 
   .mat-mdc-dialog-surface {
     background-color: var(--color-bg-card) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: 24px !important;
   }
 
   .mat-mdc-dialog-title {
@@ -43,9 +52,11 @@ body {
     color: var(--color-text-secondary) !important;
   }
 
-  // Menu theming
+  // --- Menu ---
   .mat-mdc-menu-panel {
     background-color: var(--color-bg-card) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: 16px !important;
   }
 
   .mat-mdc-menu-item {
@@ -55,11 +66,198 @@ body {
       background-color: var(--color-bg-elevated) !important;
     }
   }
+
+  // --- Form Fields ---
+  .mat-mdc-form-field {
+    .mdc-text-field--outlined {
+      background-color: transparent !important;
+      
+      .mdc-notched-outline__leading,
+      .mdc-notched-outline__notch,
+      .mdc-notched-outline__trailing {
+        border-color: rgba(var(--color-border-rgb), 0.5) !important;
+      }
+    }
+
+    .mdc-text-field--filled {
+      background-color: rgba(var(--color-bg-elevated-rgb), 0.3) !important;
+      border-radius: 12px 12px 0 0 !important;
+      
+      &::before {
+        background-color: transparent !important;
+      }
+    }
+
+    .mat-mdc-input-element {
+      color: var(--color-text) !important;
+      caret-color: var(--color-primary) !important;
+      
+      &::placeholder {
+        color: var(--color-text-muted) !important;
+        opacity: 0.6;
+      }
+
+      // Fix for dark mode autofill
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus {
+        -webkit-text-fill-color: var(--color-text) !important;
+        -webkit-box-shadow: 0 0 0px 1000px var(--color-bg-card) inset !important;
+        transition: background-color 5000s ease-in-out 0s;
+      }
+    }
+
+    .mat-mdc-select-value {
+      color: var(--color-text) !important;
+    }
+
+    .mat-mdc-floating-label,
+    .mdc-floating-label {
+      color: var(--color-text-muted) !important;
+    }
+
+    .mat-mdc-form-field-icon-suffix,
+    .mat-mdc-form-field-icon-prefix {
+      color: var(--color-text-muted) !important;
+      opacity: 0.7;
+    }
+  }
+
+  // --- Table ---
+  .mat-mdc-table {
+    background-color: transparent !important;
+  }
+
+  .mat-mdc-header-row {
+    background-color: transparent !important;
+  }
+
+  .mat-mdc-header-cell {
+    color: var(--color-text-muted) !important;
+    border-bottom: 2px solid var(--color-table-border) !important;
+    font-weight: 700 !important;
+  }
+
+  .mat-mdc-cell {
+    color: var(--color-text-secondary) !important;
+    border-bottom-color: var(--color-table-border) !important;
+  }
+
+  .mat-mdc-row {
+    transition: background-color 0.2s ease;
+    &:hover {
+      background-color: var(--color-bg-hover) !important;
+    }
+  }
+
+  // --- Buttons ---
+  .mat-mdc-button,
+  .mat-mdc-outlined-button {
+    color: var(--color-text) !important;
+  }
+
+  .mat-mdc-raised-button {
+     &.mat-primary {
+         --mdc-filled-button-container-color: var(--color-primary);
+         --mdc-filled-button-label-text-color: #ffffff;
+     }
+  }
+
+  .mat-mdc-icon-button {
+    color: var(--color-text-secondary) !important;
+  }
+
+  // --- Checkbox ---
+  .mat-mdc-checkbox {
+    .mdc-checkbox__background {
+      border-color: var(--color-text-muted) !important;
+    }
+    .mdc-label {
+      color: var(--color-text) !important;
+    }
+  }
+
+  // --- Progress Spinner ---
+  .mat-mdc-progress-spinner {
+    --mdc-circular-progress-active-indicator-color: var(--color-primary);
+  }
+
+  // --- Tooltip ---
+  .mat-mdc-tooltip {
+    --mdc-plain-tooltip-container-color: var(--color-bg-elevated);
+    --mdc-plain-tooltip-supporting-text-color: var(--color-text);
+  }
+
+  // --- Snack Bar ---
+  .mat-mdc-snack-bar-container {
+    --mdc-snackbar-container-color: var(--color-bg-elevated);
+    --mdc-snackbar-supporting-text-color: var(--color-text);
+    --mat-snack-bar-button-color: var(--color-primary-light);
+  }
+
+  // --- Nav List (sidebar) ---
+  .mat-mdc-nav-list {
+    .mat-mdc-list-item {
+      color: var(--color-text-secondary) !important;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover {
+        background-color: rgba(var(--color-bg-hover-rgb), 0.5) !important;
+        color: var(--color-text) !important;
+        
+        mat-icon {
+          color: var(--color-primary-light) !important;
+        }
+      }
+
+      &.active-link {
+        background: linear-gradient(135deg, 
+          rgba(var(--color-primary-rgb), 0.2) 0%, 
+          rgba(var(--color-primary-rgb), 0.05) 100%
+        ) !important;
+        color: var(--color-primary-light) !important;
+        border: 1px solid rgba(var(--color-primary-rgb), 0.3);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        
+        mat-icon {
+          color: var(--color-primary-light) !important;
+        }
+        
+        .mdc-list-item__primary-text {
+          font-weight: 700 !important;
+        }
+      }
+    }
+
+    .mat-mdc-subheader {
+      color: var(--color-text-muted) !important;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.7rem;
+      font-weight: 800;
+    }
+  }
+
+  // --- Select ---
+  .mat-mdc-select-panel {
+    background-color: var(--color-bg-card) !important;
+    border-radius: 12px !important;
+  }
+
+  .mat-mdc-option {
+    color: var(--color-text) !important;
+    &:hover:not(.mdc-list-item--disabled) {
+      background-color: var(--color-bg-elevated) !important;
+    }
+  }
 }
 
 // Custom TailWind configuration for the project
 @theme {
   --color-primary: var(--color-primary);
+  --color-primary-light: var(--color-primary-light);
   --color-primary-dark: var(--color-primary-dark);
   --color-accent: var(--color-accent);
+  --color-accent-light: var(--color-accent-light);
+  --color-error: var(--color-error);
 }

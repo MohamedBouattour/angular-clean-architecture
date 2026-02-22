@@ -7,10 +7,13 @@ import {
 import { ProductService } from './service';
 import { Product } from '../domain/model';
 import { environment } from '../../../../environments/environment';
+import { NetworkService } from '../../../shared/util/network/network.service';
+import { signal } from '@angular/core';
 
 describe('ProductService', () => {
   let service: ProductService;
   let httpMock: HttpTestingController;
+  let networkMock: any;
   const apiUrl = `${environment.apiUrl}/features/products`;
 
   const mockItem: Product = {
@@ -26,9 +29,14 @@ describe('ProductService', () => {
   } as Product;
 
   beforeEach(() => {
+    networkMock = {
+      isOnline: signal(true),
+    };
+
     TestBed.configureTestingModule({
       providers: [
         ProductService,
+        { provide: NetworkService, useValue: networkMock },
         provideHttpClient(),
         provideHttpClientTesting(),
       ],

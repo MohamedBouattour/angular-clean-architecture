@@ -7,10 +7,13 @@ import {
 import { BookService } from './service';
 import { Book } from '../domain/model';
 import { environment } from '../../../../environments/environment';
+import { NetworkService } from '../../../shared/util/network/network.service';
+import { signal } from '@angular/core';
 
 describe('BookService', () => {
   let service: BookService;
   let httpMock: HttpTestingController;
+  let networkMock: any;
   const apiUrl = `${environment.apiUrl}/features/books`;
 
   const mockItem: Book = {
@@ -28,8 +31,17 @@ describe('BookService', () => {
   } as Book;
 
   beforeEach(() => {
+    networkMock = {
+      isOnline: signal(true),
+    };
+
     TestBed.configureTestingModule({
-      providers: [BookService, provideHttpClient(), provideHttpClientTesting()],
+      providers: [
+        BookService,
+        { provide: NetworkService, useValue: networkMock },
+        provideHttpClient(),
+        provideHttpClientTesting(),
+      ],
     });
 
     service = TestBed.inject(BookService);
