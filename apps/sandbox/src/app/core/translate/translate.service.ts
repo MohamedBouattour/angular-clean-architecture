@@ -7,8 +7,6 @@ export class TranslateService {
   public currentLang = signal('en');
   private translations: Record<string, any> = {};
 
-  constructor() {}
-
   setLanguage(lang: string) {
     this.currentLang.set(lang);
     // Here you would typically load the translation file for the language

@@ -70,13 +70,6 @@
     "lint": {
       "executor": "@nx/eslint:lint"
     },
-    "test-old": {
-      "executor": "@nx/vitest:test",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": {
-        "reportsDirectory": "../../coverage/apps/sandbox"
-      }
-    },
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {

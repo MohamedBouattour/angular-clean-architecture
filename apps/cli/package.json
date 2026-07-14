@@ -24,7 +24,7 @@
     "aca": "./bin/index.js"
   },
   "dependencies": {
-    "@nx/devkit": "20.0.4",
+    "@nx/devkit": "^22.7.7",
     "tslib": "^2.3.0",
     "inquirer": "^8.2.6"
   },

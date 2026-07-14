@@ -6,9 +6,12 @@ const fs = require('fs');
 const args = process.argv.slice(2);
 
 function findWorkspaceRoot(dir) {
-  if (fs.existsSync(path.join(dir, 'nx.json')) || fs.existsSync(path.join(dir, 'package.json'))) {
+  if (
+    fs.existsSync(path.join(dir, 'nx.json')) ||
+    fs.existsSync(path.join(dir, 'package.json'))
+  ) {
     if (fs.existsSync(path.join(dir, 'nx.json'))) {
-        return dir;
+      return dir;
     }
   }
   const parent = path.dirname(dir);
@@ -25,19 +28,19 @@ const root = findWorkspaceRoot(process.cwd());
  */
 function runGenerator(generator, remainingArgs) {
   const nxArgs = ['g', `cli:${generator}`];
-  
-  remainingArgs.forEach(arg => {
+
+  remainingArgs.forEach((arg) => {
     nxArgs.push(arg);
   });
-  
+
   console.log(`Executing: npx nx ${nxArgs.join(' ')}`);
-  
+
   const child = spawn('npx', ['nx', ...nxArgs], {
     stdio: 'inherit',
     shell: true,
     cwd: root || process.cwd(),
   });
-  
+
   child.on('exit', (code) => {
     process.exit(code || 0);
   });
@@ -47,17 +50,17 @@ function runGenerator(generator, remainingArgs) {
 if (args[0] === 'generate' || args[0] === 'g') {
   const generatorType = args[1];
   const remainingArgs = args.slice(2);
-  
+
   // Parse name from positional argument
   const nxArgs = [];
   if (remainingArgs[0] && !remainingArgs[0].startsWith('-')) {
     nxArgs.push(`--name=${remainingArgs[0]}`);
     remainingArgs.shift();
   }
-  
+
   // Pass through all other flags
-  remainingArgs.forEach(arg => nxArgs.push(arg));
-  
+  remainingArgs.forEach((arg) => nxArgs.push(arg));
+
   switch (generatorType) {
     case 'feature':
     case 'f':
@@ -85,11 +88,15 @@ if (args[0] === 'generate' || args[0] === 'g') {
   console.log('');
   console.log('Generators:');
   console.log('  feature (f)   Generate a Clean Architecture feature');
-  console.log('  core (c)      Generate a core asset (auth, guard, interceptor, etc.)');
+  console.log(
+    '  core (c)      Generate a core asset (auth, guard, interceptor, etc.)',
+  );
   console.log('  shared (s)    Generate a shared component or utility');
   console.log('');
   console.log('Examples:');
-  console.log('  aca g feature products --attributes="name:string,price:number"');
+  console.log(
+    '  aca g feature products --attributes="name:string,price:number"',
+  );
   console.log('  aca g core auth-service --type=service');
   console.log('  aca g core app --type=navbar');
   console.log('  aca g shared button --type=ui');
@@ -99,4 +106,3 @@ if (args[0] === 'generate' || args[0] === 'g') {
   console.log('  aca g core');
   process.exit(0);
 }
-

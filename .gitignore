@@ -3,5 +3,7 @@ node_modules
 dist
 .nx
 .angular
+coverage/
+doc.html
 
 vitest.config.*.timestamp*

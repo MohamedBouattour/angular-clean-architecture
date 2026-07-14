@@ -5,10 +5,10 @@
   "projectType": "application",
   "targets": {
     "e2e": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
+      "executor": "@nx/vitest:test",
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "jestConfig": "apps/backend-e2e/jest.config.ts",
+        "reportsDirectory": "../../coverage/backend-e2e",
         "passWithNoTests": true
       },
       "dependsOn": ["backend:build", "backend:serve"]

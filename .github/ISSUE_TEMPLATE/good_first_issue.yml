@@ -1,0 +1,26 @@
+name: Good First Issue
+description: A task well-suited for new contributors
+labels: [good first issue]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear description of the task.
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Links to relevant code, docs, or prior discussions.
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: What does "done" look like?
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
